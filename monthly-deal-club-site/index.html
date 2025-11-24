@@ -730,6 +730,16 @@
             margin: 0 auto 60px auto;
         }
 
+        .checkout-wrapper {
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+            text-align: center;
+        }
+
+        .checkout-wrapper [data-whop-checkout-product-id] {
+            min-height: 200px;
+        }
+
         .pricing-card {
             background: var(--bg-card);
             backdrop-filter: blur(20px);
@@ -1282,8 +1292,6 @@
                         <li>Private community</li>
                         <li>Expert sessions</li>
                     </ul>
-                    <!-- $197/month plan -->
-                    <div data-whop-checkout-plan-id="plan_hGiwfgDQ8NhFG"></div>
                 </div>
 
                 <div class="pricing-card featured">
@@ -1297,9 +1305,12 @@
                         <li>Stop wasting time on wrong deals</li>
                         <li>Worth $500 alone</li>
                     </ul>
-                    <!-- $525/3-month plan -->
-                    <div data-whop-checkout-plan-id="plan_G4q2wMMQu2ZRn"></div>
                 </div>
+            </div>
+
+            <!-- Single embedded checkout with both pricing options -->
+            <div class="checkout-wrapper">
+                <div data-whop-checkout-product-id="prod_9FUlRbfwt3Ucb"></div>
             </div>
 
             <p class="scarcity">Only 20 spots available • 7 already taken</p>
