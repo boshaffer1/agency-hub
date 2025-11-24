@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Deal Club - Expert Deal Review Before You Buy a Business</title>
+    <meta name="description" content="Get expert feedback on business acquisitions before you wire money. Weekly deal reviews, live teardowns, and a community of active buyers. 20 spots only.">
+    <link rel="icon" type="image/png" href="https://d2saw6je89goi1.cloudfront.net/uploads/digital_asset/file/1176545/NF_favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
+    <style>
+        /* Theme Variables */
+        :root[data-theme="light"] {
+            --bg-primary: #fafafa;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-accent: rgba(0, 153, 255, 0.05);
+            --text-primary: #1a1a1a;
+            --text-secondary: #666;
+            --text-tertiary: #999;
+            --border-color: #f0f0f0;
+            --border-hover: #e5e5e5;
+            --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
+            --glow: rgba(0, 153, 255, 0.15);
+        }
+
+        :root[data-theme="dark"] {
+            --bg-primary: #000000;
+            --bg-secondary: rgba(255, 255, 255, 0.02);
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-accent: rgba(0, 153, 255, 0.08);
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-tertiary: #666;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --border-hover: rgba(255, 255, 255, 0.2);
+            --shadow-sm: 0 4px 24px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 12px 40px rgba(0, 153, 255, 0.15);
+            --glow: rgba(0, 153, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: transform 0.2s, background 0.3s, border-color 0.3s;
+            margin-right: 16px;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.05);
+            border-color: #0099ff;
+            background: var(--bg-accent);
+        }
+
+        /* Sticky Navigation */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 24px 0;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            transition: color 0.3s ease;
+        }
+
+        .nav-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%);
+            color: white;
+            padding: 12px 32px;
+            text-decoration: none;
+            border-radius: 100px;
+            font-size: 15px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 24px rgba(0, 153, 255, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 153, 255, 0.5);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 0 140px 0;
+            position: relative;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(0, 153, 255, 0.12) 0%, rgba(0, 102, 204, 0.08) 100%);
+            border: 1.5px solid rgba(0, 153, 255, 0.3);
+            padding: 10px 24px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #0099ff;
+            margin-bottom: 32px;
+            position: relative;
+            animation: badge-pulse 3s ease-in-out infinite;
+            box-shadow: 0 4px 16px rgba(0, 153, 255, 0.15);
+        }
+
+        .badge-icon {
+            font-size: 16px;
+            animation: badge-icon-bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes badge-pulse {
+            0%, 100% {
+                box-shadow: 0 4px 16px rgba(0, 153, 255, 0.15), 0 0 0 0 rgba(0, 153, 255, 0.2);
+            }
+            50% {
+                box-shadow: 0 4px 16px rgba(0, 153, 255, 0.15), 0 0 0 6px rgba(0, 153, 255, 0);
+            }
+        }
+
+        @keyframes badge-icon-bounce {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 72px;
+            line-height: 1.1;
+            margin-bottom: 32px;
+            color: var(--text-primary);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .hero .subheadline {
+            font-size: 24px;
+            color: var(--text-secondary);
+            margin-bottom: 60px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .hero .insight {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            padding: 50px;
+            border-radius: 24px;
+            margin: 60px auto;
+            max-width: 900px;
+            font-size: 18px;
+            line-height: 1.9;
+            text-align: left;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] .hero .insight:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 153, 255, 0.5), transparent);
+        }
+
+        .hero .insight strong {
+            display: block;
+            margin-bottom: 24px;
+            font-size: 22px;
+            color: var(--text-primary);
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .hero .insight-list {
+            margin: 24px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .hero .insight-list li {
+            padding: 12px 0 12px 32px;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 17px;
+            transition: color 0.3s ease;
+        }
+
+        .hero .insight-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #0099ff;
+            font-weight: 700;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%);
+            color: white;
+            padding: 26px 64px;
+            text-decoration: none;
+            border-radius: 100px;
+            font-size: 20px;
+            font-weight: 800;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 16px 48px rgba(0, 153, 255, 0.5), 0 0 0 0 rgba(0, 153, 255, 0.4);
+            position: relative;
+            animation: pulse 2s infinite;
+            letter-spacing: 0.01em;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 56px rgba(0, 153, 255, 0.7), 0 0 0 8px rgba(0, 153, 255, 0.1);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 16px 48px rgba(0, 153, 255, 0.5), 0 0 0 0 rgba(0, 153, 255, 0.4);
+            }
+            50% {
+                box-shadow: 0 16px 48px rgba(0, 153, 255, 0.5), 0 0 0 12px rgba(0, 153, 255, 0);
+            }
+        }
+
+        .scarcity {
+            color: #ff4444;
+            font-weight: 700;
+            margin-top: 28px;
+            font-size: 17px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 68, 68, 0.08);
+            padding: 12px 24px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 68, 68, 0.2);
+        }
+
+        .scarcity:before {
+            content: "⚠️";
+            font-size: 18px;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            background: var(--bg-secondary);
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .social-proof-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-tertiary);
+            margin-bottom: 40px;
+            font-weight: 600;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .social-proof-items {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+
+        .social-proof-item {
+            opacity: 0.6;
+            font-size: 15px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: opacity 0.3s, color 0.3s;
+        }
+
+        .social-proof-item:hover {
+            opacity: 1;
+        }
+
+        /* What You Get */
+        .what-you-get {
+            padding: 140px 0;
+        }
+
+        .section-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 56px;
+            margin-bottom: 100px;
+            color: var(--text-primary);
+            text-align: center;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            transition: color 0.3s ease;
+        }
+
+        .deliverable {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            margin-bottom: 32px;
+            padding: 48px;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        [data-theme="dark"] .deliverable:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(0, 153, 255, 0.3), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .deliverable:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 153, 255, 0.3);
+            box-shadow: var(--shadow-lg);
+        }
+
+        [data-theme="dark"] .deliverable:hover:before {
+            opacity: 1;
+        }
+
+        .deliverable h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 26px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .deliverable p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 140px 0;
+            background: var(--bg-secondary);
+            transition: background 0.3s ease;
+        }
+
+        .video-testimonial {
+            max-width: 900px;
+            margin: 0 auto 80px auto;
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .video-testimonial:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-lg), 0 0 40px rgba(0, 153, 255, 0.15);
+            border-color: rgba(0, 153, 255, 0.4);
+        }
+
+        .video-testimonial video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            display: block;
+            background: #000;
+            object-fit: cover;
+        }
+
+        .video-label {
+            background: var(--bg-accent);
+            padding: 16px 24px;
+            text-align: center;
+            font-size: 14px;
+            color: #0099ff;
+            font-weight: 600;
+            border-top: 1px solid rgba(0, 153, 255, 0.2);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: var(--shadow-lg), 0 0 32px rgba(0, 153, 255, 0.12);
+            border-color: rgba(0, 153, 255, 0.4);
+        }
+
+        [data-theme="dark"] .testimonial-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 153, 255, 0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        [data-theme="dark"] .testimonial-card:hover:before {
+            opacity: 1;
+        }
+
+        .testimonial-card img {
+            width: 100%;
+            display: block;
+        }
+
+        .testimonial-result {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 153, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0, 153, 255, 0.4);
+            z-index: 10;
+        }
+
+        /* Meet Your Guide */
+        .meet-guide {
+            padding: 140px 0;
+            text-align: center;
+        }
+
+        .guide-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            padding: 60px;
+            border-radius: 32px;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .guide-content:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg), 0 0 32px rgba(0, 153, 255, 0.1);
+            border-color: rgba(0, 153, 255, 0.3);
+        }
+
+        .guide-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 32px auto;
+            border: 4px solid rgba(0, 153, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 153, 255, 0.2);
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .guide-content:hover .guide-photo {
+            border-color: rgba(0, 153, 255, 0.6);
+            box-shadow: 0 12px 40px rgba(0, 153, 255, 0.35);
+            transform: scale(1.05);
+        }
+
+        .guide-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .guide-content h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 36px;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+            font-weight: 900;
+            transition: color 0.3s ease;
+        }
+
+        .guide-credentials {
+            list-style: none;
+            padding: 0;
+            margin: 32px 0 0 0;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .guide-credentials li {
+            padding: 12px 0 12px 40px;
+            font-size: 17px;
+            color: var(--text-secondary);
+            position: relative;
+            line-height: 1.7;
+            transition: color 0.3s ease;
+        }
+
+        .guide-credentials li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: #0099ff;
+            font-size: 22px;
+        }
+
+        /* Who This Is For */
+        .who-for {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            padding: 100px 80px;
+            border-radius: 32px;
+            margin: 140px auto;
+            max-width: 1100px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .who-for h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 48px;
+            margin-bottom: 40px;
+            color: var(--text-primary);
+            font-weight: 900;
+            transition: color 0.3s ease;
+        }
+
+        .who-for ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 60px;
+        }
+
+        .who-for li {
+            padding: 18px 0 18px 40px;
+            font-size: 19px;
+            color: var(--text-secondary);
+            position: relative;
+            line-height: 1.7;
+            transition: color 0.3s ease;
+        }
+
+        .who-for li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: #0099ff;
+            font-size: 22px;
+        }
+
+        .who-for .not-for {
+            margin-top: 60px;
+            padding-top: 60px;
+            border-top: 1px solid var(--border-color);
+            transition: border-color 0.3s ease;
+        }
+
+        .who-for .not-for h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 32px;
+            margin-bottom: 24px;
+            color: #0099ff;
+            font-weight: 700;
+        }
+
+        .who-for .not-for p {
+            color: var(--text-secondary);
+            font-size: 19px;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 140px 0;
+            text-align: center;
+        }
+
+        .pricing-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto 60px auto;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 32px;
+            padding: 56px;
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(0, 153, 255, 0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-16px);
+            box-shadow: var(--shadow-lg), 0 0 40px rgba(0, 153, 255, 0.15);
+            border-color: rgba(0, 153, 255, 0.5);
+        }
+
+        .pricing-card:hover:before {
+            opacity: 1;
+        }
+
+        .pricing-card.featured {
+            border-color: rgba(0, 153, 255, 0.5);
+            background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-card) 100%);
+            box-shadow: 0 8px 32px rgba(0, 153, 255, 0.12);
+        }
+
+        .pricing-card.featured:after {
+            content: "BEST VALUE";
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%);
+            color: white;
+            padding: 8px 24px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 100px;
+            letter-spacing: 0.1em;
+            box-shadow: 0 4px 16px rgba(0, 153, 255, 0.4);
+        }
+
+        .pricing-card h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 22px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .pricing-card .price {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 56px;
+            font-weight: 900;
+            color: var(--text-primary);
+            margin: 24px 0;
+            letter-spacing: -0.02em;
+            transition: color 0.3s ease;
+        }
+
+        .pricing-card .price-detail {
+            font-size: 15px;
+            color: var(--text-tertiary);
+            margin-bottom: 40px;
+            transition: color 0.3s ease;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 40px;
+        }
+
+        .pricing-card li {
+            padding: 12px 0;
+            color: var(--text-secondary);
+            font-size: 16px;
+            position: relative;
+            padding-left: 32px;
+            transition: color 0.3s ease;
+        }
+
+        .pricing-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Embedded checkout in pricing cards */
+        .pricing-card [data-whop-checkout-plan-id] {
+            margin-top: 0;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 140px 0;
+            background: var(--bg-secondary);
+            transition: background 0.3s ease;
+        }
+
+        .faq-item {
+            margin-bottom: 48px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-item h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+            font-size: 17px;
+            line-height: 1.9;
+            transition: color 0.3s ease;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 160px 0;
+            text-align: center;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .final-cta:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .final-cta h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 64px;
+            margin-bottom: 40px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .footer p {
+            color: var(--text-tertiary);
+            font-size: 15px;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            .nav-container {
+                padding: 0 24px;
+            }
+
+            .hero {
+                padding: 80px 0 100px 0;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero .subheadline {
+                font-size: 19px;
+            }
+
+            .hero .insight {
+                padding: 36px 28px;
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 36px;
+                margin-bottom: 60px;
+            }
+
+            .pricing-options {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .who-for {
+                padding: 60px 36px;
+                margin: 100px 16px;
+            }
+
+            .final-cta h2 {
+                font-size: 40px;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .theme-toggle {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .video-testimonial {
+                margin-bottom: 60px;
+            }
+
+            .testimonial-result {
+                font-size: 11px;
+                padding: 8px 16px;
+                top: 12px;
+                left: 12px;
+            }
+
+            .meet-guide {
+                padding: 100px 0;
+            }
+
+            .guide-content {
+                padding: 40px 28px;
+            }
+
+            .guide-photo {
+                width: 140px;
+                height: 140px;
+            }
+
+            .guide-content h2 {
+                font-size: 28px;
+            }
+
+            .guide-credentials li {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">Monthly Deal Club</div>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span id="themeIcon">🌙</span>
+                </button>
+                <a href="#pricing" class="nav-cta">Join Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-badge">
+                <span class="badge-icon">🎯</span>
+                <span>20 Founding Member Spots Available</span>
+            </div>
+            <h1>Stop analyzing deals alone.</h1>
+
+            <p class="subheadline">Get expert feedback on your business acquisitions before you wire $50K+. Weekly calls, personal deal reviews, and a community of buyers who've been where you are.</p>
+
+            <div class="insight">
+                <strong>Most people who buy a bad business miss one thing:</strong>
+                <p>They analyze the numbers. They check the seller. But they never ask "What happens after I own this?"</p>
+                <ul class="insight-list">
+                    <li>Who runs the Facebook ads when the seller leaves?</li>
+                    <li>Where do you find writers who match the voice?</li>
+                    <li>How do you handle the first customer complaint?</li>
+                </ul>
+                <p style="margin-top: 24px;">You need someone who's done this 50+ times to look at YOUR deal and tell you what breaks in month 2.</p>
+            </div>
+
+            <a href="#pricing" class="cta-button">Join Monthly Deal Club</a>
+            <p class="scarcity">20 spots available • First call December 3rd, 7pm PST</p>
+        </section>
+    </div>
+
+    <!-- Social Proof Strip -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="social-proof-label">Trusted by buyers from</div>
+            <div class="social-proof-items">
+                <div class="social-proof-item">Flippa Community</div>
+                <div class="social-proof-item">Empire Flippers</div>
+                <div class="social-proof-item">Acquire.com</div>
+                <div class="social-proof-item">MicroAcquire</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- What You Get -->
+        <section class="what-you-get">
+            <h2 class="section-title">What you get:</h2>
+
+            <div class="deliverable">
+                <h3>Weekly Group Call (Every Tuesday, 7pm PST)</h3>
+                <p>Bring your deals. Get expert feedback before you wire money. See other members' deals analyzed in real-time. Learn what to look for, what to avoid, and how to negotiate better terms.</p>
+            </div>
+
+            <div class="deliverable">
+                <h3>Personal Deal Review (Once a month)</h3>
+                <p>I record a Loom walking through your specific deal. What to fix, what to walk away from, what questions to ask the seller. This alone is worth the monthly price.</p>
+            </div>
+
+            <div class="deliverable">
+                <h3>Live Deal Teardowns (2x per month)</h3>
+                <p>Real deals from the group. We go deep on what works and what doesn't. You'll learn more from seeing 10 deals analyzed than buying one yourself.</p>
+            </div>
+
+            <div class="deliverable">
+                <h3>Private Community</h3>
+                <p>Ask questions between calls. Share diligence documents. Get second opinions from people who are also in the trenches buying businesses right now.</p>
+            </div>
+
+            <div class="deliverable">
+                <h3>Monthly Expert Session</h3>
+                <p>Guest operators who've bought and scaled. Different business model each month. Real operators, not course sellers.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What past members say:</h2>
+
+            <!-- Featured Video Testimonial -->
+            <div class="video-testimonial">
+                <video controls poster="/testimonials/steve-poster.jpg">
+                    <source src="/testimonials/steve-testimonial.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-label">Video Testimonial - Steve A.</div>
+            </div>
+
+            <!-- Screenshot Testimonials -->
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-result">✓ Bought & sold first site successfully</div>
+                    <img src="/testimonials/Berto_2024.png" alt="Berto testimonial - bought and sold first site" loading="lazy">
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-result">✓ Course is underpriced</div>
+                    <img src="/testimonials/Testimonial10_28_2024.png" alt="Ricardo testimonial - expert guidance" loading="lazy">
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-result">✓ 5 stars out of 5</div>
+                    <img src="/testimonials/Sean_Cohort4_desktop.png" alt="Sean testimonial - changed investor mindset" loading="lazy">
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-result">✓ Super-knowledgeable, excellent support</div>
+                    <img src="/testimonials/Cohort4_feedback.png" alt="Tommy McGuire testimonial - CEO recommendation" loading="lazy">
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-result">✓ Purchased site & building media kit</div>
+                    <img src="/testimonials/Boughtsite_Desktop.png" alt="Dave Sanch testimonial - purchased waterproofgazebos.com" loading="lazy">
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-result">✓ Great feedback & community</div>
+                    <img src="/testimonials/Desktop_courseGREATfeedback.png" alt="Course feedback - great experience" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Your Guide -->
+    <section class="meet-guide">
+        <div class="container">
+            <div class="guide-content">
+                <div class="guide-photo">
+                    <img src="/james-camp.png" alt="James Camp - Your Deal Review Guide">
+                </div>
+                <h2>Meet James Camp</h2>
+                <ul class="guide-credentials">
+                    <li>Reviewed 50+ business acquisitions across content sites, SaaS, and e-commerce</li>
+                    <li>Personally bought and sold multiple online businesses</li>
+                    <li>Led 4+ cohorts teaching business buyers how to analyze and close deals</li>
+                    <li>Active buyer on Flippa, Empire Flippers, and Acquire.com</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Who This Is For -->
+        <section class="who-for">
+            <h2>This is for you if:</h2>
+            <ul>
+                <li>You're buying a business in the next 3-6 months (Q1 2025)</li>
+                <li>You're browsing Flippa, Empire Flippers, or Acquire.com regularly</li>
+                <li>You have the capital but want expert eyes before you commit</li>
+                <li>You're tired of analyzing deals alone and second-guessing yourself</li>
+                <li>You want to learn from other buyers' mistakes instead of making your own</li>
+            </ul>
+
+            <div class="not-for">
+                <h3>This is NOT for you if:</h3>
+                <p>You're "just browsing" with no plans to buy in Q1 2025. You're looking for a course or theory. You want someone to do the work for you. Save your money.</p>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing" id="pricing">
+            <h2 class="section-title">Choose your option:</h2>
+
+            <div class="pricing-options">
+                <div class="pricing-card">
+                    <h3>Monthly</h3>
+                    <div class="price">$197</div>
+                    <p class="price-detail">per month, cancel anytime</p>
+                    <ul>
+                        <li>All weekly calls</li>
+                        <li>Monthly personal review</li>
+                        <li>Live teardowns</li>
+                        <li>Private community</li>
+                        <li>Expert sessions</li>
+                    </ul>
+                    <!-- Replace with your $197/month plan ID -->
+                    <div data-whop-checkout-plan-id="plan_197MONTHLY"></div>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>3-Month Lock-In</h3>
+                    <div class="price">$525</div>
+                    <p class="price-detail">one payment, 3 months access (save $66)</p>
+                    <ul>
+                        <li>Everything in Monthly</li>
+                        <li><strong>+ 1:1 Buy Box Build Session</strong></li>
+                        <li>Define your exact criteria</li>
+                        <li>Stop wasting time on wrong deals</li>
+                        <li>Worth $500 alone</li>
+                    </ul>
+                    <!-- Replace with your $525/3-month plan ID -->
+                    <div data-whop-checkout-plan-id="plan_5253MONTH"></div>
+                </div>
+            </div>
+
+            <p class="scarcity">Only 20 spots available • 7 already taken</p>
+        </section>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Common questions:</h2>
+
+            <div class="faq-item">
+                <h3>What if I can't make the Tuesday calls?</h3>
+                <p>All calls are recorded. Most members watch async. But the real value is submitting YOUR deal for review—that happens whether you attend live or not.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>I'm not ready to buy yet. Can I join later?</h3>
+                <p>I'm not opening more spots until February at the earliest. If you're buying in Q1 2025, this is your window. If you're buying later, wait for the next cohort.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What types of businesses do you cover?</h3>
+                <p>Content sites, SaaS, e-commerce, newsletters, apps—anything that shows up on Flippa or Empire Flippers. I've reviewed 50+ deals across all these categories.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is this a course?</h3>
+                <p>No. There are no modules or videos to watch. This is expert feedback on YOUR specific deals in real-time. You learn by getting your deals reviewed and watching others get theirs reviewed.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What if I don't have a deal yet?</h3>
+                <p>Perfect. The Buy Box Build session (included in 3-month option) will help you define what you're looking for. Then you bring deals to the weekly calls and we'll tell you if they match your criteria.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I really cancel monthly anytime?</h3>
+                <p>Yes. No hoops. You're an adult. If it's not valuable, leave. But most members who leave do so because they bought their business and don't need ongoing reviews anymore.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Who else is in the group?</h3>
+                <p>Buyers and operators. People with capital who are actively looking to acquire in Q1 2025. No tire-kickers. No "gurus." Just people doing the work.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to stop analyzing alone?</h2>
+            <a href="#pricing" class="cta-button">Join Monthly Deal Club</a>
+            <p class="scarcity">20 spots available • First call December 3rd, 7pm PST</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Questions? Reply to any email from me or hit reply here: hi@nanoflips.com</p>
+            <p style="margin-top: 20px;">© 2024 Monthly Deal Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        // Load saved theme or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        updateIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+        }
+    </script>
+</body>
+</html>

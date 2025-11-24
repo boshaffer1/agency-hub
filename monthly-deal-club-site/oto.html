@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special One-Time Offer - 1:1 Growth Accelerator</title>
+    <meta name="description" content="Exclusive offer for Monthly Deal Club founding members">
+    <link rel="icon" type="image/png" href="https://d2saw6je89goi1.cloudfront.net/uploads/digital_asset/file/1176545/NF_favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
+    <style>
+        /* Theme Variables */
+        :root[data-theme="light"] {
+            --bg-primary: #fafafa;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666;
+            --border-color: #f0f0f0;
+            --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        :root[data-theme="dark"] {
+            --bg-primary: #000000;
+            --bg-secondary: rgba(255, 255, 255, 0.02);
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Urgent Header */
+        .urgent-header {
+            background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+            color: white;
+            text-align: center;
+            padding: 16px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(255, 68, 68, 0.3);
+        }
+
+        /* Main Content */
+        .oto-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .oto-header .emoji {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .oto-header h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .oto-header .subheadline {
+            font-size: 20px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Problem Section */
+        .problem {
+            background: var(--bg-card);
+            padding: 48px;
+            border-radius: 24px;
+            margin-bottom: 60px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .problem h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 32px;
+            margin-bottom: 24px;
+            font-weight: 900;
+        }
+
+        .problem ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .problem li {
+            padding: 12px 0 12px 32px;
+            font-size: 18px;
+            color: var(--text-secondary);
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .problem li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #ff4444;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .problem .stat {
+            background: rgba(255, 68, 68, 0.1);
+            padding: 24px;
+            border-radius: 16px;
+            margin-top: 24px;
+            font-size: 17px;
+            line-height: 1.8;
+            border-left: 4px solid #ff4444;
+        }
+
+        /* Offer Box */
+        .offer-box {
+            background: linear-gradient(135deg, rgba(0, 153, 255, 0.1) 0%, rgba(0, 102, 204, 0.1) 100%);
+            border: 2px solid #0099ff;
+            padding: 56px 48px;
+            border-radius: 32px;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .offer-box:before {
+            content: "ONE-TIME OFFER";
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%);
+            color: white;
+            padding: 8px 24px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 100px;
+            letter-spacing: 0.1em;
+        }
+
+        .offer-box h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 40px;
+            margin-bottom: 32px;
+            font-weight: 900;
+        }
+
+        /* What's Included */
+        .included {
+            margin: 40px 0;
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        .included-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .included-item:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: 700;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Pricing */
+        .pricing {
+            margin: 40px 0;
+        }
+
+        .price-strike {
+            font-size: 24px;
+            text-decoration: line-through;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .price-main {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 64px;
+            font-weight: 900;
+            color: #0099ff;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .price-detail {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .savings {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 32px;
+        }
+
+        /* One-Click Upsell Button */
+        #upsell-wrap {
+            text-align: center;
+            margin: 32px auto;
+            max-width: 720px;
+        }
+
+        .upsell-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #fff;
+            padding: 24px 48px;
+            font-size: 26px;
+            font-weight: 800;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: transform .15s ease, filter .2s ease, background .2s ease, box-shadow .2s ease;
+            box-shadow: 0 12px 32px rgba(16, 185, 129, 0.4);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            max-width: 100%;
+            white-space: normal;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .upsell-btn:hover {
+            transform: translateY(-4px);
+            filter: brightness(1.05);
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            box-shadow: 0 16px 40px rgba(16, 185, 129, 0.5);
+        }
+
+        .upsell-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn-label {
+            line-height: 1.1;
+        }
+
+        .btn-sub {
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.2;
+        }
+
+        .upsell-status {
+            margin-top: 16px;
+            min-height: 20px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .upsell-status.error {
+            color: #dc2626;
+            background: #fee2e2;
+            padding: 12px 20px;
+            display: inline-block;
+            border-radius: 8px;
+        }
+
+        .spinner {
+            margin-left: 10px;
+            border: 3px solid #fff;
+            border-top: 3px solid transparent;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            animation: spin .6s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .decline-link {
+            display: block;
+            width: 100%;
+            text-align: center;
+            color: var(--text-secondary);
+            padding: 16px;
+            text-decoration: none;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s;
+            margin-top: 24px;
+        }
+
+        .decline-link:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 480px) {
+            .upsell-btn {
+                width: 100%;
+                font-size: 20px;
+                padding: 20px 32px;
+                gap: 10px;
+            }
+            .btn-sub {
+                font-size: 13px;
+            }
+        }
+
+        /* Guarantee */
+        .guarantee {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .guarantee-badge {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px auto;
+            font-size: 32px;
+        }
+
+        .guarantee h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 24px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .guarantee p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 24px;
+            }
+
+            .oto-header h1 {
+                font-size: 32px;
+            }
+
+            .oto-header .subheadline {
+                font-size: 18px;
+            }
+
+            .problem {
+                padding: 32px 24px;
+            }
+
+            .problem h2 {
+                font-size: 24px;
+            }
+
+            .problem li {
+                font-size: 16px;
+            }
+
+            .offer-box {
+                padding: 40px 24px;
+            }
+
+            .offer-box h2 {
+                font-size: 28px;
+            }
+
+            .included-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-main {
+                font-size: 48px;
+            }
+
+            .cta-primary {
+                padding: 20px 40px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="urgent-header">
+        ⚠️ ONE-TIME OFFER - This page will not be shown again
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="oto-header">
+            <div class="emoji">🎉</div>
+            <h1>Welcome to Monthly Deal Club!</h1>
+            <p class="subheadline">You now have everything you need to find and analyze great deals.<br>But most buyers miss what happens NEXT...</p>
+        </div>
+
+        <!-- Problem -->
+        <div class="problem">
+            <h2>Here's what most buyers don't realize:</h2>
+            <ul>
+                <li>Buying the business is just step 1</li>
+                <li>Most buyers don't know how to increase traffic after purchase</li>
+                <li>They struggle to improve revenue and operations become overwhelming</li>
+                <li>The deal stagnates and they miss the 2x growth potential</li>
+            </ul>
+            <div class="stat">
+                <strong>The truth:</strong> The REAL money isn't in buying the business. It's in what you do with it in the first 12 months.
+            </div>
+        </div>
+
+        <!-- Offer -->
+        <div class="offer-box">
+            <h2>Add: 1:1 Growth Accelerator</h2>
+            <p style="font-size: 18px; margin-bottom: 32px; color: var(--text-secondary);">Get my personal help scaling YOUR business to 2x revenue in 12 months</p>
+
+            <div class="included">
+                <div class="included-grid">
+                    <div class="included-item">
+                        <span>2 personal 1:1 calls/month for 3 months</span>
+                    </div>
+                    <div class="included-item">
+                        <span>Unlimited email + video reviews</span>
+                    </div>
+                    <div class="included-item">
+                        <span>Complete GROW course materials</span>
+                    </div>
+                    <div class="included-item">
+                        <span>SEO strategies (keyword research, link building)</span>
+                    </div>
+                    <div class="included-item">
+                        <span>Traffic & monetization playbooks</span>
+                    </div>
+                    <div class="included-item">
+                        <span>Content strategies & hiring guides</span>
+                    </div>
+                    <div class="included-item">
+                        <span>8 recorded cohort lessons</span>
+                    </div>
+                    <div class="included-item">
+                        <span>My personal 2x revenue playbook</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing">
+                <div class="price-strike">Regular Price: $2,990</div>
+                <div class="price-main">$1,997</div>
+                <div class="price-detail">Or 3 payments of $697</div>
+                <div class="savings">Save $993 as a Founding Member</div>
+            </div>
+
+            <!-- One-Click Upsell Button -->
+            <div id="upsell-wrap">
+                <button id="upsell-btn" class="upsell-btn" type="button" aria-label="Add Growth Accelerator">
+                    <span class="btn-text">
+                        <span class="btn-label">YES - Add Growth Accelerator ($1,997)</span>
+                        <span class="btn-sub">One-click charge • Instant access</span>
+                    </span>
+                </button>
+                <div id="upsell-status" class="upsell-status" aria-live="polite"></div>
+            </div>
+
+            <a href="https://whop.com/nano-flips/nano-flips-deal-flow-club/" class="decline-link">No thanks, just the community</a>
+        </div>
+
+        <!-- Guarantee -->
+        <div class="guarantee">
+            <div class="guarantee-badge">🛡️</div>
+            <h3>This Offer Will Not Be Shown Again</h3>
+            <p>This exclusive founding member pricing is only available right now. Once you leave this page, you'll pay full price ($2,990) if you want to add it later.</p>
+        </div>
+    </div>
+
+    <script>
+        // Prevent back button from showing this page again
+        window.onload = function() {
+            if (window.history && window.history.pushState) {
+                window.history.pushState('forward', null, window.location.href);
+                window.onpopstate = function() {
+                    window.history.pushState('forward', null, window.location.href);
+                };
+            }
+        }
+    </script>
+
+    <script>
+        (() => {
+            // Configuration - REPLACE THESE VALUES
+            const WEBHOOK_URL = "YOUR_WHOP_WEBHOOK_URL"; // From Whop Automations
+            const THANK_YOU_URL = "https://whop.com/nano-flips/nano-flips-deal-flow-club/"; // Where to redirect after success
+            const COOKIE_NAME = "wd_pid";
+            const PAYMENT_ID_PARAM = "payment_id";
+
+            // Resolve payment ID from multiple sources
+            function resolvePaymentId() {
+                // 1. Check URL parameter
+                const urlParams = new URLSearchParams(window.location.search);
+                let paymentId = urlParams.get(PAYMENT_ID_PARAM);
+
+                if (paymentId) {
+                    storePaymentId(paymentId);
+                    return paymentId;
+                }
+
+                // 2. Check sessionStorage
+                paymentId = sessionStorage.getItem(COOKIE_NAME);
+                if (paymentId) return paymentId;
+
+                // 3. Check localStorage
+                paymentId = localStorage.getItem(COOKIE_NAME);
+                if (paymentId) return paymentId;
+
+                // 4. Check cookies
+                const cookies = document.cookie.split(';');
+                for (let cookie of cookies) {
+                    const [name, value] = cookie.trim().split('=');
+                    if (name === COOKIE_NAME) {
+                        return decodeURIComponent(value);
+                    }
+                }
+
+                // 5. Check referrer URL
+                if (document.referrer) {
+                    try {
+                        const referrerUrl = new URL(document.referrer);
+                        paymentId = referrerUrl.searchParams.get(PAYMENT_ID_PARAM);
+                        if (paymentId) {
+                            storePaymentId(paymentId);
+                            return paymentId;
+                        }
+                    } catch (e) {
+                        console.error('Error parsing referrer:', e);
+                    }
+                }
+
+                return null;
+            }
+
+            // Store payment ID in all available storage methods
+            function storePaymentId(paymentId) {
+                // sessionStorage
+                try {
+                    sessionStorage.setItem(COOKIE_NAME, paymentId);
+                } catch (e) {
+                    console.error('sessionStorage error:', e);
+                }
+
+                // localStorage
+                try {
+                    localStorage.setItem(COOKIE_NAME, paymentId);
+                } catch (e) {
+                    console.error('localStorage error:', e);
+                }
+
+                // Cookie (7 day expiry)
+                try {
+                    const expires = new Date();
+                    expires.setDate(expires.getDate() + 7);
+                    document.cookie = `${COOKIE_NAME}=${encodeURIComponent(paymentId)}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
+                } catch (e) {
+                    console.error('Cookie error:', e);
+                }
+            }
+
+            // Update status message
+            function updateStatus(message, isError = false) {
+                const statusEl = document.getElementById('upsell-status');
+                if (statusEl) {
+                    statusEl.textContent = message;
+                    statusEl.className = 'upsell-status' + (isError ? ' error' : '');
+                }
+            }
+
+            // Main upsell handler
+            async function handleUpsell() {
+                const btn = document.getElementById('upsell-btn');
+                const paymentId = resolvePaymentId();
+
+                if (!paymentId) {
+                    updateStatus('Error: No payment information found. Please contact support.', true);
+                    return;
+                }
+
+                // Disable button and show loading
+                btn.disabled = true;
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<span class="btn-text"><span class="btn-label">Processing...</span></span><span class="spinner"></span>';
+
+                try {
+                    // Call webhook to process upsell charge
+                    const response = await fetch(WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            payment_id: paymentId,
+                            timestamp: new Date().toISOString()
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Webhook failed: ${response.status} ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+
+                    if (result.success || response.status === 200) {
+                        // Success - redirect to thank you page
+                        updateStatus('Success! Redirecting...');
+                        setTimeout(() => {
+                            window.location.href = THANK_YOU_URL;
+                        }, 1000);
+                    } else {
+                        throw new Error(result.error || 'Payment failed');
+                    }
+
+                } catch (error) {
+                    console.error('Upsell error:', error);
+                    updateStatus('Payment failed. Please try again or contact support.', true);
+                    btn.disabled = false;
+                    btn.innerHTML = originalHTML;
+                }
+            }
+
+            // Attach event listener when DOM is ready
+            function attachWhenReady() {
+                const btn = document.getElementById('upsell-btn');
+                if (btn) {
+                    btn.addEventListener('click', handleUpsell);
+
+                    // Show warning if no payment ID found
+                    const paymentId = resolvePaymentId();
+                    if (!paymentId) {
+                        console.warn('No payment ID found. User may need to complete checkout first.');
+                    }
+                } else {
+                    setTimeout(attachWhenReady, 100);
+                }
+            }
+
+            // Initialize when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', attachWhenReady);
+            } else {
+                attachWhenReady();
+            }
+        })();
+    </script>
+</body>
+</html>
