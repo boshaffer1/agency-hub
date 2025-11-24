@@ -747,6 +747,204 @@
             min-height: 50px;
         }
 
+        /* Multi-Plan Selector Styles */
+        .wd-overlay {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 16px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: transparent;
+            color: var(--text-primary);
+            min-height: 100%;
+        }
+
+        .wd-modal {
+            width: 100%;
+            max-width: 800px;
+            background: var(--bg-card);
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+        }
+
+        .wd-plan-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            padding: 32px 32px 16px;
+            order: 1;
+        }
+
+        .wd-addon-section {
+            padding: 16px 32px;
+            order: 2;
+        }
+
+        .wd-addon-below {
+            order: 4;
+            padding: 16px 32px 32px;
+        }
+
+        .wd-plan-card {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 16px;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--bg-secondary);
+        }
+
+        .wd-plan-card:hover {
+            border-color: #0099ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 153, 255, 0.15);
+        }
+
+        .wd-plan-card input[type="radio"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+            position: relative;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .wd-plan-card input[type="radio"]:checked {
+            border-color: #0099ff;
+        }
+
+        .wd-plan-card input[type="radio"]:checked::after {
+            content: "";
+            position: absolute;
+            inset: 3px;
+            background: #0099ff;
+            border-radius: 50%;
+        }
+
+        .wd-plan-card:has(input[type="radio"]:checked) {
+            border-color: #0099ff;
+            background: rgba(0, 153, 255, 0.08);
+            box-shadow: 0 0 0 1px #0099ff inset;
+        }
+
+        .wd-plan-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        .wd-plan-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .wd-plan-price {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0099ff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .wd-addon-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .wd-addon-card {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 16px;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--bg-secondary);
+        }
+
+        .wd-addon-card:hover {
+            border-color: #10b981;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+        }
+
+        .wd-addon-checkbox {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 6px;
+            border: 2px solid var(--border-color);
+            position: relative;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .wd-addon-checkbox:checked {
+            border-color: #10b981;
+            background: #10b981;
+        }
+
+        .wd-addon-checkbox:checked::after {
+            content: "✓";
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .wd-addon-card:has(.wd-addon-checkbox:checked) {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.08);
+        }
+
+        .wd-addon-label {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 17px;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        .wd-addon-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .wd-addon-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: #10b981;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        #whop-checkout-wrapper {
+            padding: 0 32px 32px;
+            order: 3;
+        }
+
         .pricing-card {
             background: var(--bg-card);
             backdrop-filter: blur(20px);
@@ -1320,11 +1518,49 @@
                 </div>
             </div>
 
-            <!-- Checkout buttons -->
-            <div class="checkout-wrapper">
-                <div class="checkout-buttons">
-                    <div data-whop-checkout-plan-id="plan_hGiwfgDQ8NhFG" class="checkout-plan"></div>
-                    <div data-whop-checkout-plan-id="plan_G4q2wMMQu2ZRn" class="checkout-plan"></div>
+            <!-- Multi-Plan with Addons Embed -->
+            <div class="wd-overlay">
+                <div class="wd-modal" role="dialog" aria-label="Checkout with plan and addon options">
+
+                    <!-- PLAN OPTIONS -->
+                    <div class="wd-plan-options" role="radiogroup" aria-label="Choose your plan">
+                        <!-- Nano Flips Deal Flow Club -->
+                        <label class="wd-plan-card">
+                            <input type="radio" name="wd_plan" value="nanoflipsdealflowclub" checked />
+                            <div class="wd-plan-body">
+                                <div class="wd-plan-title">Monthly Membership</div>
+                                <div class="wd-plan-description">Cancel anytime • All weekly calls and deal reviews</div>
+                                <div class="wd-plan-price">$197/month</div>
+                            </div>
+                        </label>
+
+                        <!-- Nano Flips Deal Flow Club (3 Months Access + 1 on 1 Call) -->
+                        <label class="wd-plan-card">
+                            <input type="radio" name="wd_plan" value="nanoflipsdealflowclub3monthsaccess1on1call" />
+                            <div class="wd-plan-body">
+                                <div class="wd-plan-title">3-Month Lock-In + Buy Box Build</div>
+                                <div class="wd-plan-description">Save $66 • Includes 1:1 session to define your exact criteria</div>
+                                <div class="wd-plan-price">$525 one-time</div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Addon Section -->
+                    <div class="wd-addon-section wd-addon-above">
+                        <h4 class="wd-addon-title">Add Deal Advisory (Optional)</h4>
+                        <label class="wd-addon-card">
+                            <input type="checkbox" id="addon-toggle" class="wd-addon-checkbox" />
+                            <div class="wd-addon-body">
+                                <div class="wd-addon-label">1:1 Growth Accelerator</div>
+                                <div class="wd-addon-description">3-Month 1:1 Program with James Camp to 2x your business</div>
+                                <div class="wd-addon-price">+$2,497</div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- CHECKOUT EMBEDS -->
+                    <div id="whop-checkout-wrapper"></div>
+
                 </div>
             </div>
 
@@ -1470,6 +1706,115 @@
                 item.classList.toggle('active');
             });
         });
+
+        // Multi-Plan Checkout with Addons
+        (() => {
+            const LIVE_HOST = 'nanoflips.com';
+            const wrapper = document.getElementById('whop-checkout-wrapper');
+            const radios = Array.from(document.querySelectorAll('input[name="wd_plan"]'));
+            const addon = document.getElementById('addon-toggle');
+
+            const plans = [
+                {
+                    radioValue: 'nanoflipsdealflowclub',
+                    basePlanId: 'plan_hGiwfgDQ8NhFG',
+                    bundledPlanId: 'plan_KGbqPu9YdR44g'
+                },
+                {
+                    radioValue: 'nanoflipsdealflowclub3monthsaccess1on1call',
+                    basePlanId: 'plan_G4q2wMMQu2ZRn',
+                    bundledPlanId: 'plan_mys9vweQSbadU'
+                }
+            ];
+
+            function ensureLoader(callback) {
+                if (window.whopCheckoutLoader?.scan) {
+                    callback();
+                    return;
+                }
+
+                const existing = document.querySelector('script[src*="js.whop.com"]');
+                if (existing) {
+                    existing.addEventListener('load', callback, { once: true });
+                    return;
+                }
+
+                const script = document.createElement('script');
+                script.src = 'https://js.whop.com/static/checkout/loader.js';
+                script.async = true;
+                script.defer = true;
+                script.onload = callback;
+                script.onerror = () => {
+                    console.warn('Whop loader failed to load. Using fallback iframe.');
+                    callback();
+                };
+                document.head.appendChild(script);
+            }
+
+            function getPlanId() {
+                const sel = radios.find(r => r.checked)?.value || plans[0].radioValue;
+                const def = plans.find(p => p.radioValue === sel) || plans[0];
+                return (addon?.checked && def.bundledPlanId) ? def.bundledPlanId : def.basePlanId;
+            }
+
+            function mountCheckout(planId) {
+                const old = wrapper.querySelector('.whop-checkout-embed');
+                if (old) old.remove();
+
+                const mount = document.createElement('div');
+                mount.className = 'whop-checkout-embed';
+                mount.setAttribute('data-whop-checkout-plan-id', planId);
+                mount.setAttribute('data-whop-checkout-theme', 'system');
+                mount.setAttribute('data-whop-checkout-theme-accent-color', 'blue');
+                mount.setAttribute('data-whop-checkout-host', LIVE_HOST);
+
+                wrapper.appendChild(mount);
+
+                if (window.whopCheckoutLoader?.scan) {
+                    window.whopCheckoutLoader.scan();
+
+                    setTimeout(() => {
+                        if (!wrapper.querySelector('iframe')) {
+                            const u = new URL(`https://whop.com/embedded/checkout/${planId}/`);
+                            u.searchParams.set('theme', 'system');
+                            u.searchParams.set('theme.accentColor', 'blue');
+                            u.searchParams.set('h', LIVE_HOST);
+                            mount.innerHTML = `<iframe title="Secure checkout" src="${u}"
+                                style="width:100%;border:0;display:block;min-height:1200px"
+                                allow="payment; paymentRequest; clipboard-read; clipboard-write"
+                                sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads"></iframe>`;
+                        }
+
+                        setTimeout(() => {
+                            const iframe = mount.querySelector('iframe');
+                            if (!iframe || !iframe.contentWindow) {
+                                console.error('Whop Checkout blocked. Add whop.com to allowed domains.');
+                            }
+                        }, 2000);
+                    }, 600);
+                }
+            }
+
+            function render() {
+                mountCheckout(getPlanId());
+            }
+
+            function init() {
+                render();
+
+                ensureLoader(() => {
+                    if (window.whopCheckoutLoader?.scan) {
+                        window.whopCheckoutLoader.scan();
+                    }
+                });
+
+                radios.forEach(r => r.addEventListener('change', render));
+                addon?.addEventListener('change', render);
+            }
+
+            if (document.readyState !== 'loading') init();
+            else document.addEventListener('DOMContentLoaded', init);
+        })();
     </script>
 </body>
 </html>
