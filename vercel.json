@@ -2,5 +2,10 @@
   "framework": null,
   "buildCommand": "",
   "installCommand": "",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/the99sports", "destination": "/the99sports-landing.html" },
+    { "source": "/deal-club", "destination": "/monthly-deal-club-site/index.html" },
+    { "source": "/deal-club/:path*", "destination": "/monthly-deal-club-site/:path*" }
+  ]
 }
