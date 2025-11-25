@@ -553,26 +553,19 @@
             display: block;
         }
 
-        .testimonial-result {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 10px 20px;
-            border-radius: 100px;
-            font-size: 13px;
+        .testimonial-header {
+            padding: 20px 24px;
+            font-size: 15px;
             color: #0066cc;
             font-weight: 700;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-            z-index: 10;
-            border: 2px solid rgba(0, 153, 255, 0.3);
+            background: var(--bg-card);
+            border-bottom: 2px solid rgba(0, 153, 255, 0.2);
+            text-align: center;
         }
 
-        [data-theme="dark"] .testimonial-result {
-            background: rgba(17, 24, 39, 0.95);
+        [data-theme="dark"] .testimonial-header {
             color: #60a5fa;
-            border-color: rgba(96, 165, 250, 0.3);
+            border-bottom-color: rgba(96, 165, 250, 0.2);
         }
 
         /* Meet Your Guide */
@@ -945,13 +938,13 @@
         }
 
         .pricing-card.featured {
-            margin-top: 24px;
+            margin-top: 40px;
         }
 
         .pricing-card.featured:after {
             content: "BEST VALUE";
             position: absolute;
-            top: -12px;
+            top: -20px;
             left: 50%;
             transform: translateX(-50%);
             background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%);
@@ -962,7 +955,7 @@
             border-radius: 100px;
             letter-spacing: 0.1em;
             box-shadow: 0 4px 16px rgba(0, 153, 255, 0.4);
-            z-index: 1;
+            z-index: 10;
             white-space: nowrap;
         }
 
@@ -1228,11 +1221,9 @@
                 margin-bottom: 0;
             }
 
-            .testimonial-result {
-                font-size: 11px;
-                padding: 8px 16px;
-                top: 12px;
-                left: 12px;
+            .testimonial-header {
+                font-size: 13px;
+                padding: 16px 20px;
             }
 
             .meet-guide {
@@ -1407,32 +1398,32 @@
             <!-- Screenshot Testimonials -->
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <div class="testimonial-result">✓ Bought & sold first site successfully</div>
+                    <div class="testimonial-header">✓ Bought & sold first site successfully</div>
                     <img src="/testimonials/Berto_2024.png" alt="Berto testimonial - bought and sold first site" loading="lazy">
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="testimonial-result">✓ Course is underpriced</div>
+                    <div class="testimonial-header">✓ Course is underpriced</div>
                     <img src="/testimonials/Testimonial10_28_2024.png" alt="Ricardo testimonial - expert guidance" loading="lazy">
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="testimonial-result">✓ 5 stars out of 5</div>
+                    <div class="testimonial-header">✓ 5 stars out of 5</div>
                     <img src="/testimonials/Sean_Cohort4_desktop.png" alt="Sean testimonial - changed investor mindset" loading="lazy">
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="testimonial-result">✓ Super-knowledgeable, excellent support</div>
+                    <div class="testimonial-header">✓ Super-knowledgeable, excellent support</div>
                     <img src="/testimonials/Cohort4_feedback.png" alt="Tommy McGuire testimonial - CEO recommendation" loading="lazy">
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="testimonial-result">✓ Purchased site & building media kit</div>
+                    <div class="testimonial-header">✓ Purchased site & building media kit</div>
                     <img src="/testimonials/Boughtsite_Desktop.png" alt="Dave Sanch testimonial - purchased waterproofgazebos.com" loading="lazy">
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="testimonial-result">✓ Great feedback & community</div>
+                    <div class="testimonial-header">✓ Great feedback & community</div>
                     <img src="/testimonials/Desktop_courseGREATfeedback.png" alt="Course feedback - great experience" loading="lazy">
                 </div>
             </div>
