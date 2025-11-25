@@ -723,7 +723,19 @@
         }
 
         .pricing-options {
-            display: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto 60px auto;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-options {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                margin: 0 auto 40px auto;
+            }
         }
 
         .checkout-wrapper {
@@ -845,6 +857,42 @@
 
         #whop-checkout-wrapper{
             padding: 0 24px 24px;
+        }
+
+        @media (max-width: 768px) {
+            .wd-overlay{
+                padding: 8px;
+            }
+
+            .wd-modal{
+                max-width: 100%;
+            }
+
+            .wd-plan-options{
+                padding: 16px 16px 8px;
+                gap: 8px;
+            }
+
+            .wd-plan-card{
+                padding: 12px;
+                gap: 10px;
+            }
+
+            .wd-plan-title{
+                font-size: 14px;
+            }
+
+            .wd-plan-description{
+                font-size: 13px;
+            }
+
+            .wd-plan-price{
+                font-size: 16px;
+            }
+
+            #whop-checkout-wrapper{
+                padding: 0 16px 16px;
+            }
         }
 
         .pricing-card {
