@@ -1,0 +1,391 @@
+<!--
+SQUARESPACE CODE INJECTION GUIDE
+=================================
+
+STEP 1: Add this CSS to Settings > Advanced > Code Injection > HEADER
+-->
+
+<style>
+/* FP&A Certifications Page Styles */
+.fpaguy-cert-page {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.fpaguy-cert-page .hero-section {
+    padding: 40px 0 80px;
+    text-align: center;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.fpaguy-cert-page .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid hsl(214.3, 31.8%, 91.4%);
+    padding: 8px 16px;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(215.4, 16.3%, 46.9%);
+    margin-bottom: 24px;
+}
+
+.fpaguy-cert-page .badge-dot {
+    width: 6px;
+    height: 6px;
+    background: #0c4a6e;
+    border-radius: 50%;
+    animation: fpaguy-pulse 2s ease-in-out infinite;
+}
+
+@keyframes fpaguy-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.fpaguy-cert-page .hero-title {
+    font-size: clamp(32px, 5vw, 46.72px);
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 24px;
+    color: hsl(222.2, 47.4%, 11.2%);
+}
+
+.fpaguy-cert-page .hero-subtitle {
+    font-size: clamp(20px, 3vw, 34.432px);
+    line-height: 1.4;
+    font-weight: 500;
+    color: hsl(222.2, 47.4%, 11.2%);
+    max-width: 900px;
+    margin: 0 auto 48px;
+}
+
+.fpaguy-cert-page .discount-banner {
+    background: white;
+    border: 1px solid hsl(214.3, 31.8%, 91.4%);
+    border-radius: 0.5rem;
+    padding: 48px;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.fpaguy-cert-page .discount-banner h2 {
+    font-size: clamp(24px, 4vw, 34.432px);
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.fpaguy-cert-page .discount-codes {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 24px 0;
+}
+
+.fpaguy-cert-page .discount-code {
+    background: hsl(210, 40%, 96.1%);
+    border: 2px solid hsl(214.3, 31.8%, 91.4%);
+    padding: 12px 24px;
+    border-radius: 0.5rem;
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #0c4a6e;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.fpaguy-cert-page .discount-code:hover {
+    background: white;
+    border-color: #0c4a6e;
+    transform: translateY(-2px);
+}
+
+.fpaguy-cert-page .discount-note {
+    font-size: 0.875rem;
+    color: hsl(215.4, 16.3%, 46.9%);
+    text-align: center;
+    margin-top: 16px;
+}
+
+.fpaguy-cert-page .urgency-message {
+    font-size: 0.9375rem;
+    color: #0c4a6e;
+    font-weight: 600;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.fpaguy-cert-page .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin: 60px 0;
+}
+
+.fpaguy-cert-page .stat-card {
+    background: white;
+    border: 1px solid hsl(214.3, 31.8%, 91.4%);
+    border-radius: 0.5rem;
+    padding: 32px;
+    text-align: center;
+}
+
+.fpaguy-cert-page .stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #0c4a6e;
+    margin-bottom: 8px;
+}
+
+.fpaguy-cert-page .stat-label {
+    font-size: 0.9375rem;
+    color: hsl(215.4, 16.3%, 46.9%);
+    font-weight: 500;
+}
+
+.fpaguy-cert-page .trust-badges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin: 48px 0;
+}
+
+.fpaguy-cert-page .trust-badge {
+    background: white;
+    border: 1px solid hsl(214.3, 31.8%, 91.4%);
+    border-radius: 0.5rem;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.fpaguy-cert-page .trust-icon {
+    width: 48px;
+    height: 48px;
+    background: hsl(210, 40%, 96.1%);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.fpaguy-cert-page .trust-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.fpaguy-cert-page .trust-content p {
+    font-size: 0.875rem;
+    color: hsl(215.4, 16.3%, 46.9%);
+}
+
+.fpaguy-cert-page .section-title {
+    font-size: clamp(24px, 4vw, 34.432px);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.fpaguy-cert-page .table-wrapper {
+    overflow-x: auto;
+    margin-top: 48px;
+}
+
+.fpaguy-cert-page table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border: 1px solid hsl(214.3, 31.8%, 91.4%);
+    border-radius: 0.5rem;
+}
+
+.fpaguy-cert-page th,
+.fpaguy-cert-page td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid hsl(214.3, 31.8%, 91.4%);
+}
+
+.fpaguy-cert-page th {
+    background: hsl(210, 40%, 96.1%);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.fpaguy-cert-page .cert-name {
+    font-weight: 600;
+}
+
+.fpaguy-cert-page .cert-name small {
+    display: block;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: hsl(215.4, 16.3%, 46.9%);
+    margin-top: 4px;
+}
+
+.fpaguy-cert-page .price {
+    font-weight: 700;
+    color: #0c4a6e;
+}
+
+.fpaguy-cert-page .table-code {
+    font-family: 'Monaco', 'Courier New', monospace;
+    background: hsl(210, 40%, 96.1%);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: #0c4a6e;
+}
+
+.fpaguy-cert-page .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.fpaguy-cert-page .btn-primary {
+    background: #0c4a6e;
+    color: white;
+}
+
+.fpaguy-cert-page .btn-primary:hover {
+    background: #075985;
+    transform: translateY(-2px);
+}
+
+.fpaguy-cert-page .btn-secondary {
+    background: white;
+    color: #0c4a6e;
+    border: 2px solid #0c4a6e;
+}
+
+.fpaguy-cert-page .btn-secondary:hover {
+    background: hsl(210, 40%, 96.1%);
+}
+
+.fpaguy-cert-page .btn-small {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+}
+
+.fpaguy-cert-page .mini-faq {
+    background: white;
+    border: 1px solid hsl(214.3, 31.8%, 91.4%);
+    border-radius: 0.5rem;
+    padding: 48px;
+    margin: 60px auto;
+    max-width: 900px;
+}
+
+.fpaguy-cert-page .mini-faq-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.fpaguy-cert-page .mini-faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.fpaguy-cert-page .mini-faq-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.fpaguy-cert-page .check-icon {
+    color: #0c4a6e;
+    font-size: 1.25rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.fpaguy-cert-page .mini-faq-item strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.fpaguy-cert-page .mini-faq-item p {
+    color: hsl(215.4, 16.3%, 46.9%);
+    font-size: 0.9375rem;
+    margin: 0;
+}
+
+.fpaguy-cert-page .final-cta {
+    background: hsl(222.2, 47.4%, 11.2%);
+    color: white;
+    border-radius: 0.5rem;
+    padding: 80px 48px;
+    text-align: center;
+    margin: 60px 0;
+}
+
+.fpaguy-cert-page .final-cta .section-title {
+    color: white;
+}
+
+.fpaguy-cert-page .final-cta p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 32px;
+    font-size: 1.125rem;
+}
+
+.fpaguy-cert-page .cta-group {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .fpaguy-cert-page .discount-banner,
+    .fpaguy-cert-page .mini-faq {
+        padding: 32px 24px;
+    }
+
+    .fpaguy-cert-page .final-cta {
+        padding: 48px 24px;
+    }
+
+    .fpaguy-cert-page table {
+        font-size: 0.875rem;
+    }
+
+    .fpaguy-cert-page th,
+    .fpaguy-cert-page td {
+        padding: 12px 8px;
+    }
+}
+</style>
+
+<!--
+STEP 2: Create a new BLANK PAGE in Squarespace
+- Name it "FP&A Certifications"
+- Set URL to /certifications
+
+STEP 3: Add a CODE BLOCK to the page and paste the HTML below
+-->

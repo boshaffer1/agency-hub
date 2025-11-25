@@ -206,11 +206,36 @@
                 </div>
             </div>
 
-            <!-- Checkout buttons -->
-            <div class="checkout-wrapper">
-                <div class="checkout-buttons">
-                    <div data-whop-checkout-plan-id="plan_hGiwfgDQ8NhFG" class="checkout-plan"></div>
-                    <div data-whop-checkout-plan-id="plan_G4q2wMMQu2ZRn" class="checkout-plan"></div>
+            <!-- Multi-Bundle Checkout Embed -->
+            <div class="wd-overlay">
+                <div class="wd-modal" role="dialog" aria-label="Checkout with bundle options">
+
+                    <!-- BUNDLE OPTIONS -->
+                    <div class="wd-plan-options" role="radiogroup" aria-label="Choose your bundle">
+                        <!-- Nano Flips Deal Flow Club -->
+                        <label class="wd-plan-card">
+                            <input type="radio" name="wd_plan" value="plan_hGiwfgDQ8NhFG" checked data-plan-id="plan_hGiwfgDQ8NhFG" />
+                            <div class="wd-plan-body">
+                                <div class="wd-plan-title">Nano Flips Deal Flow Club</div>
+                                <div class="wd-plan-description">Join a Private Deal Flow Network for Micro-Acquisition Entrepreneurs</div>
+                                <div class="wd-plan-price">$197</div>
+                            </div>
+                        </label>
+
+                        <!-- Nano Flips Deal Flow Club (3 Months Access + 1 on 1 Call) -->
+                        <label class="wd-plan-card">
+                            <input type="radio" name="wd_plan" value="plan_G4q2wMMQu2ZRn" data-plan-id="plan_G4q2wMMQu2ZRn" />
+                            <div class="wd-plan-body">
+                                <div class="wd-plan-title">Nano Flips Deal Flow Club (3 Months Access + 1 on 1 Call)</div>
+                                <div class="wd-plan-description">Join a Private Deal Flow Network for Micro-Acquisition Entrepreneurs.</div>
+                                <div class="wd-plan-price">$525</div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- CHECKOUT EMBEDS -->
+                    <div id="whop-checkout-wrapper"></div>
+
                 </div>
             </div>
 

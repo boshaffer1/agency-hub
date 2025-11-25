@@ -42,4 +42,102 @@
                 item.classList.toggle('active');
             });
         });
+
+        // Multi-Bundle Checkout
+        (() => {
+            const LIVE_HOST = 'nanoflips.com';
+            const wrapper = document.getElementById('whop-checkout-wrapper');
+            const radios = Array.from(document.querySelectorAll('input[name="wd_plan"]'));
+
+            const plans = [
+                'plan_hGiwfgDQ8NhFG',
+                'plan_G4q2wMMQu2ZRn'
+            ];
+
+            function ensureLoader(callback) {
+                if (window.whopCheckoutLoader?.scan) {
+                    callback();
+                    return;
+                }
+
+                const existing = document.querySelector('script[src*="js.whop.com"]');
+                if (existing) {
+                    existing.addEventListener('load', callback, { once: true });
+                    return;
+                }
+
+                const script = document.createElement('script');
+                script.src = 'https://js.whop.com/static/checkout/loader.js';
+                script.async = true;
+                script.defer = true;
+                script.onload = callback;
+                script.onerror = () => {
+                    console.warn('Whop loader failed to load. Using fallback iframe.');
+                    callback();
+                };
+                document.head.appendChild(script);
+            }
+
+            function getPlanId() {
+                const checked = document.querySelector('input[name="wd_plan"]:checked');
+                return checked?.value || plans[0];
+            }
+
+            function mountCheckout(planId) {
+                const old = wrapper.querySelector('.whop-checkout-embed');
+                if (old) old.remove();
+
+                const mount = document.createElement('div');
+                mount.className = 'whop-checkout-embed';
+                mount.setAttribute('data-whop-checkout-plan-id', planId);
+                mount.setAttribute('data-whop-checkout-theme', 'system');
+                mount.setAttribute('data-whop-checkout-theme-accent-color', 'blue');
+                mount.setAttribute('data-whop-checkout-host', LIVE_HOST);
+
+                wrapper.appendChild(mount);
+
+                if (window.whopCheckoutLoader?.scan) {
+                    window.whopCheckoutLoader.scan();
+
+                    setTimeout(() => {
+                        if (!mount.querySelector('iframe')) {
+                            const u = new URL(`https://whop.com/embedded/checkout/${planId}/`);
+                            u.searchParams.set('theme', 'system');
+                            u.searchParams.set('theme.accentColor', 'blue');
+                            u.searchParams.set('h', LIVE_HOST);
+                            mount.innerHTML = `<iframe title="Secure checkout" src="${u}"
+                                style="width:100%;border:0;display:block;min-height:1200px"
+                                allow="payment; paymentRequest; clipboard-read; clipboard-write"
+                                sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads"></iframe>`;
+                        }
+
+                        setTimeout(() => {
+                            const iframe = mount.querySelector('iframe');
+                            if (!iframe || !iframe.contentWindow) {
+                                console.error('🚨 Whop Checkout blocked. Add whop.com to allowed domains in your builder settings.');
+                            }
+                        }, 2000);
+                    }, 600);
+                }
+            }
+
+            function render() {
+                mountCheckout(getPlanId());
+            }
+
+            function init() {
+                render();
+
+                ensureLoader(() => {
+                    if (window.whopCheckoutLoader?.scan) {
+                        window.whopCheckoutLoader.scan();
+                    }
+                });
+
+                radios.forEach(r => r.addEventListener('change', render));
+            }
+
+            if (document.readyState !== 'loading') init();
+            else document.addEventListener('DOMContentLoaded', init);
+        })();
     </script>

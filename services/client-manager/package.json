@@ -1,0 +1,27 @@
+{
+  "name": "@agency-hub/client-manager",
+  "version": "1.0.0",
+  "description": "Client management system for agency hub",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/cli.js"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.11",
+    "lowdb": "^6.1.1",
+    "dayjs": "^1.11.10",
+    "uuid": "^9.0.1",
+    "cli-table3": "^0.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "@types/uuid": "^9.0.6",
+    "@types/inquirer": "^9.0.6",
+    "tsx": "^3.14.0",
+    "typescript": "^5.2.2"
+  }
+}

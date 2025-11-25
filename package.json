@@ -1,0 +1,33 @@
+{
+  "name": "agency-hub",
+  "version": "1.0.0",
+  "description": "Digital Marketing Agency Management System - Vibe Marketing Approach",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "session": "node services/session-manager/cli.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "eslint": "^8.51.0",
+    "prettier": "^3.0.3",
+    "turbo": "^1.10.16",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "docx": "^9.5.1",
+    "marked": "^17.0.0"
+  }
+}

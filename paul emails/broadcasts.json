@@ -1,0 +1,254 @@
+{
+    "broadcasts": [
+        {
+            "id": 13323626,
+            "created_at": "2023-11-08T10:38:07.000Z",
+            "subject": "Welcome to The Modern Finance Playbook Newsletter"
+        },
+        {
+            "id": 13352047,
+            "created_at": "2023-11-10T17:55:27.000Z",
+            "subject": "New Broadcast"
+        },
+        {
+            "id": 13536501,
+            "created_at": "2023-11-28T01:15:43.000Z",
+            "subject": "Welcome to The Modern Finance Newsletter"
+        },
+        {
+            "id": 13552820,
+            "created_at": "2023-11-29T12:14:58.000Z",
+            "subject": "The Modern Finance Playbook Volume 1"
+        },
+        {
+            "id": 13687645,
+            "created_at": "2023-12-12T23:08:35.000Z",
+            "subject": "The Modern Finance Playbook Volume II"
+        },
+        {
+            "id": 13806068,
+            "created_at": "2023-12-26T16:35:10.000Z",
+            "subject": "The Modern Finance Playbook Newsletter Volume 3"
+        },
+        {
+            "id": 13831214,
+            "created_at": "2023-12-29T16:26:13.000Z",
+            "subject": "Exclusive Offer: Special Price on FP&A Course until Jan 1, 2024!"
+        },
+        {
+            "id": 13852136,
+            "created_at": "2024-01-01T18:36:06.000Z",
+            "subject": "Transform your Finance Career with Power Query Training for Finance Professionals"
+        },
+        {
+            "id": 13931015,
+            "created_at": "2024-01-09T10:11:47.000Z",
+            "subject": "The Modern Finance Playbook Volume 4"
+        },
+        {
+            "id": 14018731,
+            "created_at": "2024-01-17T13:21:34.000Z",
+            "subject": "Reminder:  Free FP&A and Business Partnering Webinar"
+        },
+        {
+            "id": 14037861,
+            "created_at": "2024-01-19T00:17:47.000Z",
+            "subject": "Thank you for Attending Today's Webinar"
+        },
+        {
+            "id": 14080991,
+            "created_at": "2024-01-23T13:02:53.000Z",
+            "subject": "The Modern Finance Playbook Volume 5"
+        },
+        {
+            "id": 14246650,
+            "created_at": "2024-02-07T12:11:21.000Z",
+            "subject": "The Modern Finance Playbook Volume 6"
+        },
+        {
+            "id": 14394593,
+            "created_at": "2024-02-21T12:57:03.000Z",
+            "subject": "The Modern Finance Playbook Volume 7"
+        },
+        {
+            "id": 14401219,
+            "created_at": "2024-02-21T22:50:00.000Z",
+            "subject": "Corrected LInks Modern Finance Playbook Volume 7 "
+        },
+        {
+            "id": 14401452,
+            "created_at": "2024-02-21T23:13:45.000Z",
+            "subject": "Resending: Corrected LInks Modern Finance Playbook Volume 7 "
+        },
+        {
+            "id": 14466776,
+            "created_at": "2024-02-28T11:10:27.000Z",
+            "subject": "Final Reminder: \"The Finance Analytics Evolution\" Webinar Tomorrow!"
+        },
+        {
+            "id": 14468302,
+            "created_at": "2024-02-28T13:54:02.000Z",
+            "subject": "Resending: Final Reminder: \"The Finance Analytics Evolution\" Webinar Tomorrow!"
+        },
+        {
+            "id": 14545215,
+            "created_at": "2024-03-06T12:27:07.000Z",
+            "subject": "The Modern Finance Playbook Volume 8"
+        },
+        {
+            "id": 14595720,
+            "created_at": "2024-03-11T14:33:03.000Z",
+            "subject": "The Modern Finance Playbook. Are you interested in continuing to receive our newsletter?"
+        },
+        {
+            "id": 14692237,
+            "created_at": "2024-03-20T13:32:17.000Z",
+            "subject": "The Modern Finance Playbook Volume 9"
+        },
+        {
+            "id": 14830933,
+            "created_at": "2024-04-02T21:47:50.000Z",
+            "subject": "The Modern Finance Playbook Volume 10 "
+        },
+        {
+            "id": 14860223,
+            "created_at": "2024-04-05T12:29:16.000Z",
+            "subject": "FP&A Tomorrow Episode 1: Strategies for Effective Partnership Between Product and FP&A"
+        },
+        {
+            "id": 14863685,
+            "created_at": "2024-04-05T17:21:07.000Z",
+            "subject": "Become an FP&A rockstar!"
+        },
+        {
+            "id": 14920422,
+            "created_at": "2024-04-11T13:43:29.000Z",
+            "subject": "FP&A Tomorrow Episode 2 with Carl Seidman"
+        },
+        {
+            "id": 14946201,
+            "created_at": "2024-04-14T14:06:14.000Z",
+            "subject": "Reminder: Join Us for \"Budgeting Brilliance: Best Practices for Financial Foresight\" Webinar Tomorrow!"
+        },
+        {
+            "id": 14979398,
+            "created_at": "2024-04-17T13:02:48.000Z",
+            "subject": "The Modern Finance Playbook Volume 11"
+        },
+        {
+            "id": 14991751,
+            "created_at": "2024-04-18T13:52:51.000Z",
+            "subject": "FP&A Tomorrow: Achieving FP&A Excellence in Rapidly Expanding Enterprises with Richard Tame"
+        },
+        {
+            "id": 15063854,
+            "created_at": "2024-04-25T13:59:59.000Z",
+            "subject": "FP&A Tomorrow Episode 4 - Win my new Excel Course for FP&A Professionals"
+        },
+        {
+            "id": 15125038,
+            "created_at": "2024-05-01T13:47:24.000Z",
+            "subject": "The Modern Finance Playbook Volume 12"
+        },
+        {
+            "id": 15147712,
+            "created_at": "2024-05-03T11:21:12.000Z",
+            "subject": "FP&A Tomorrow: Episode 6"
+        },
+        {
+            "id": 15183266,
+            "created_at": "2024-05-07T08:19:54.000Z",
+            "subject": "Financial Modeler's Corner: Episode 26"
+        },
+        {
+            "id": 15197370,
+            "created_at": "2024-05-08T12:11:02.000Z",
+            "subject": "Reminder for Today's Webinar - Excel Excellence: Unleashing the Potential of Dynamic Arrays "
+        },
+        {
+            "id": 15204666,
+            "created_at": "2024-05-08T22:54:24.000Z",
+            "subject": "FP&A Tomorrow: Episode 7"
+        },
+        {
+            "id": 15251758,
+            "created_at": "2024-05-13T23:29:23.000Z",
+            "subject": "Future Finance: Sasha Orloff"
+        },
+        {
+            "id": 15268865,
+            "created_at": "2024-05-15T13:04:34.000Z",
+            "subject": "Finance Weekly: Inspiration, Events, Tips & More - Accelerate Your Finance Career!"
+        },
+        {
+            "id": 15280183,
+            "created_at": "2024-05-16T12:09:32.000Z",
+            "subject": "FP&A Tomorrow: Julian Castelli"
+        },
+        {
+            "id": 15326290,
+            "created_at": "2024-05-21T12:14:36.000Z",
+            "subject": "Financial Modeler's Corner: Episode 27"
+        },
+        {
+            "id": 15334065,
+            "created_at": "2024-05-22T00:43:23.000Z",
+            "subject": "FP&A Tomorrow: Episode 9"
+        },
+        {
+            "id": 15338276,
+            "created_at": "2024-05-22T12:19:14.000Z",
+            "subject": "Limited Time Offer: $100 Discount on Our FP&A Best Practice Course!"
+        },
+        {
+            "id": 15395028,
+            "created_at": "2024-05-28T12:40:36.000Z",
+            "subject": "Future Finance: Episode 2"
+        },
+        {
+            "id": 15407997,
+            "created_at": "2024-05-29T12:58:40.000Z",
+            "subject": "Modern Finance Playbook: Your Roadmap to Success - Exclusive Tips & Opportunities"
+        },
+        {
+            "id": 15419414,
+            "created_at": "2024-05-30T11:42:15.000Z",
+            "subject": "FP&A Tomorrow: Episode 10"
+        },
+        {
+            "id": 15469110,
+            "created_at": "2024-06-04T11:17:00.000Z",
+            "subject": "Financial Modeler's Corner: Episode 28"
+        },
+        {
+            "id": 15489682,
+            "created_at": "2024-06-06T00:00:45.000Z",
+            "subject": "FP&A Tomorrow: Episode 11"
+        },
+        {
+            "id": 15527613,
+            "created_at": "2024-06-10T11:23:57.000Z",
+            "subject": "Your Blueprint for Financial Abundance in the Modern Era"
+        },
+        {
+            "id": 15540898,
+            "created_at": "2024-06-11T12:11:11.000Z",
+            "subject": "Financial Modeler's Corner: Episode 29"
+        },
+        {
+            "id": 15541264,
+            "created_at": "2024-06-11T12:39:13.000Z",
+            "subject": "Future Finance: Episode 3"
+        },
+        {
+            "id": 15564660,
+            "created_at": "2024-06-13T12:30:38.000Z",
+            "subject": "FP&A Tomorrow: Episode 12"
+        },
+        {
+            "id": 15633934,
+            "created_at": "2024-06-20T11:25:36.000Z",
+            "subject": "FP&A Tomorrow: Episode 13"
+        }
+    ]
+}

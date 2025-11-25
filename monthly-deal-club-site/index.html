@@ -744,51 +744,38 @@
         }
 
         /* Multi-Plan Selector Styles */
-        :root {
+        :root{
             --wd-accent: #3b82f6;
             --wd-border: #e5e7eb;
             --wd-bg: #ffffff;
             --wd-text: #111827;
         }
 
-        .wd-overlay {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 0;
+        .wd-overlay{
+            display: grid;
+            place-items: center;
+            padding: 16px;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: transparent;
+            background: #f9fafb;
             color: var(--wd-text);
         }
 
-        .wd-modal {
+        .wd-modal{
             width: 100%;
+            max-width: 600px;
             background: var(--wd-bg);
             border-radius: 12px;
             box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column;
         }
 
-        .wd-plan-options {
+        .wd-plan-options{
             display: grid;
             grid-template-columns: 1fr;
             gap: 10px;
             padding: 24px 24px 12px;
-            order: 1;
         }
 
-        .wd-addon-section {
-            padding: 24px 24px 12px;
-            order: 2;
-        }
-
-        .wd-addon-below {
-            order: 4;
-            padding: 12px 24px 24px;
-        }
-
-        .wd-plan-card {
+        .wd-plan-card{
             display: grid;
             grid-template-columns: auto 1fr;
             gap: 12px;
@@ -800,11 +787,11 @@
             transition: all 0.2s ease;
         }
 
-        .wd-plan-card:hover {
+        .wd-plan-card:hover{
             border-color: var(--wd-accent);
         }
 
-        .wd-plan-card input[type="radio"] {
+        .wd-plan-card input[type="radio"]{
             appearance: none;
             width: 18px;
             height: 18px;
@@ -814,11 +801,11 @@
             transition: all 0.2s ease;
         }
 
-        .wd-plan-card input[type="radio"]:checked {
+        .wd-plan-card input[type="radio"]:checked{
             border-color: var(--wd-accent);
         }
 
-        .wd-plan-card input[type="radio"]:checked::after {
+        .wd-plan-card input[type="radio"]:checked::after{
             content: "";
             position: absolute;
             inset: 3px;
@@ -826,104 +813,38 @@
             border-radius: 50%;
         }
 
-        .wd-plan-card:has(input[type="radio"]:checked) {
+        .wd-plan-card:has(input[type="radio"]:checked){
             border-color: var(--wd-accent);
             box-shadow: 0 0 0 1px var(--wd-accent) inset;
         }
 
-        .wd-plan-title {
+        .wd-plan-title{
             font-weight: 600;
             font-size: 16px;
             margin-bottom: 4px;
         }
 
-        .wd-plan-description {
+        .wd-plan-description{
             font-size: 14px;
             color: #6b7280;
             margin-bottom: 4px;
         }
 
-        .wd-plan-price {
+        .wd-plan-addons{
+            font-size: 12px;
+            color: var(--wd-accent);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .wd-plan-price{
             font-size: 18px;
             font-weight: 700;
             color: var(--wd-accent);
         }
 
-        .wd-addon-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .wd-addon-card {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 12px;
-            align-items: center;
-            padding: 16px;
-            border: 2px solid var(--wd-border);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .wd-addon-card:hover {
-            border-color: var(--wd-accent);
-        }
-
-        .wd-addon-checkbox {
-            appearance: none;
-            width: 18px;
-            height: 18px;
-            border-radius: 4px;
-            border: 2px solid var(--wd-border);
-            position: relative;
-            transition: all 0.2s ease;
-        }
-
-        .wd-addon-checkbox:checked {
-            border-color: var(--wd-accent);
-            background: var(--wd-accent);
-        }
-
-        .wd-addon-checkbox:checked::after {
-            content: "✓";
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .wd-addon-card:has(.wd-addon-checkbox:checked) {
-            border-color: var(--wd-accent);
-            background: color-mix(in srgb, var(--wd-accent) 10%, transparent);
-        }
-
-        .wd-addon-label {
-            font-weight: 600;
-            font-size: 16px;
-            margin-bottom: 4px;
-        }
-
-        .wd-addon-description {
-            font-size: 14px;
-            color: #6b7280;
-            margin-bottom: 4px;
-        }
-
-        .wd-addon-price {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--wd-accent);
-        }
-
-        #whop-checkout-wrapper {
+        #whop-checkout-wrapper{
             padding: 0 24px 24px;
-            order: 3;
         }
 
         .pricing-card {
@@ -1499,15 +1420,15 @@
                 </div>
             </div>
 
-            <!-- Multi-Plan with Addons Embed -->
+            <!-- Multi-Bundle Checkout Embed -->
             <div class="wd-overlay">
-                <div class="wd-modal" role="dialog" aria-label="Checkout with plan and addon options">
+                <div class="wd-modal" role="dialog" aria-label="Checkout with bundle options">
 
-                    <!-- PLAN OPTIONS -->
-                    <div class="wd-plan-options" role="radiogroup" aria-label="Choose your plan">
+                    <!-- BUNDLE OPTIONS -->
+                    <div class="wd-plan-options" role="radiogroup" aria-label="Choose your bundle">
                         <!-- Nano Flips Deal Flow Club -->
                         <label class="wd-plan-card">
-                            <input type="radio" name="wd_plan" value="nanoflipsdealflowclub" checked />
+                            <input type="radio" name="wd_plan" value="plan_hGiwfgDQ8NhFG" checked data-plan-id="plan_hGiwfgDQ8NhFG" />
                             <div class="wd-plan-body">
                                 <div class="wd-plan-title">Nano Flips Deal Flow Club</div>
                                 <div class="wd-plan-description">Join a Private Deal Flow Network for Micro-Acquisition Entrepreneurs</div>
@@ -1517,24 +1438,11 @@
 
                         <!-- Nano Flips Deal Flow Club (3 Months Access + 1 on 1 Call) -->
                         <label class="wd-plan-card">
-                            <input type="radio" name="wd_plan" value="nanoflipsdealflowclub3monthsaccess1on1call" />
+                            <input type="radio" name="wd_plan" value="plan_G4q2wMMQu2ZRn" data-plan-id="plan_G4q2wMMQu2ZRn" />
                             <div class="wd-plan-body">
                                 <div class="wd-plan-title">Nano Flips Deal Flow Club (3 Months Access + 1 on 1 Call)</div>
                                 <div class="wd-plan-description">Join a Private Deal Flow Network for Micro-Acquisition Entrepreneurs.</div>
                                 <div class="wd-plan-price">$525</div>
-                            </div>
-                        </label>
-                    </div>
-
-                    <!-- Addon Section -->
-                    <div class="wd-addon-section wd-addon-above">
-                        <h4 class="wd-addon-title">Add Extra Features</h4>
-                        <label class="wd-addon-card">
-                            <input type="checkbox" id="addon-toggle" class="wd-addon-checkbox" />
-                            <div class="wd-addon-body">
-                                <div class="wd-addon-label">Deal Advisory</div>
-                                <div class="wd-addon-description">3-Month 1:1 Program with James Camp</div>
-                                <div class="wd-addon-price">+2497</div>
                             </div>
                         </label>
                     </div>
@@ -1688,24 +1596,15 @@
             });
         });
 
-        // Multi-Plan Checkout with Addons
+        // Multi-Bundle Checkout
         (() => {
             const LIVE_HOST = 'nanoflips.com';
             const wrapper = document.getElementById('whop-checkout-wrapper');
             const radios = Array.from(document.querySelectorAll('input[name="wd_plan"]'));
-            const addon = document.getElementById('addon-toggle');
 
             const plans = [
-                {
-                    radioValue: 'nanoflipsdealflowclub',
-                    basePlanId: 'plan_hGiwfgDQ8NhFG',
-                    bundledPlanId: 'plan_KGbqPu9YdR44g'
-                },
-                {
-                    radioValue: 'nanoflipsdealflowclub3monthsaccess1on1call',
-                    basePlanId: 'plan_G4q2wMMQu2ZRn',
-                    bundledPlanId: 'plan_mys9vweQSbadU'
-                }
+                'plan_hGiwfgDQ8NhFG',
+                'plan_G4q2wMMQu2ZRn'
             ];
 
             function ensureLoader(callback) {
@@ -1733,9 +1632,8 @@
             }
 
             function getPlanId() {
-                const sel = radios.find(r => r.checked)?.value || plans[0].radioValue;
-                const def = plans.find(p => p.radioValue === sel) || plans[0];
-                return (addon?.checked && def.bundledPlanId) ? def.bundledPlanId : def.basePlanId;
+                const checked = document.querySelector('input[name="wd_plan"]:checked');
+                return checked?.value || plans[0];
             }
 
             function mountCheckout(planId) {
@@ -1755,7 +1653,7 @@
                     window.whopCheckoutLoader.scan();
 
                     setTimeout(() => {
-                        if (!wrapper.querySelector('iframe')) {
+                        if (!mount.querySelector('iframe')) {
                             const u = new URL(`https://whop.com/embedded/checkout/${planId}/`);
                             u.searchParams.set('theme', 'system');
                             u.searchParams.set('theme.accentColor', 'blue');
@@ -1769,7 +1667,7 @@
                         setTimeout(() => {
                             const iframe = mount.querySelector('iframe');
                             if (!iframe || !iframe.contentWindow) {
-                                console.error('Whop Checkout blocked. Add whop.com to allowed domains.');
+                                console.error('🚨 Whop Checkout blocked. Add whop.com to allowed domains in your builder settings.');
                             }
                         }, 2000);
                     }, 600);
@@ -1790,7 +1688,6 @@
                 });
 
                 radios.forEach(r => r.addEventListener('change', render));
-                addon?.addEventListener('change', render);
             }
 
             if (document.readyState !== 'loading') init();

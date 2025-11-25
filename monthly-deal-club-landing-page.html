@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Deal Club | Stop Researching. Start Buying Businesses.</title>
+    <meta name="description" content="The monthly community where serious business buyers get deal reviews, expert guidance, and a network of peers—without the $10K price tag. Only 20 founding member spots at $197/month.">
+    <link rel="icon" type="image/png" href="https://d2saw6je89goi1.cloudfront.net/uploads/digital_asset/file/1176545/NF_favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Theme Variables */
+        :root {
+            --accent: #0099ff;
+            --accent-dark: #0066cc;
+            --accent-glow: rgba(0, 153, 255, 0.4);
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+        }
+
+        :root[data-theme="dark"] {
+            --bg-primary: #000000;
+            --bg-secondary: rgba(255, 255, 255, 0.02);
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-card-hover: rgba(255, 255, 255, 0.05);
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-tertiary: #666666;
+            --border: rgba(255, 255, 255, 0.1);
+            --border-hover: rgba(255, 255, 255, 0.2);
+            --glow: rgba(0, 153, 255, 0.15);
+        }
+
+        :root[data-theme="light"] {
+            --bg-primary: #fafafa;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f5f5f5;
+            --text-primary: #1a1a1a;
+            --text-secondary: #555555;
+            --text-tertiary: #888888;
+            --border: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(0, 0, 0, 0.15);
+            --glow: rgba(0, 153, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.4s ease, color 0.4s ease;
+            padding-bottom: 80px;
+        }
+
+        /* Navigation */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--accent-glow);
+        }
+
+        /* Sticky Bottom CTA (Mobile) */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .sticky-cta-text {
+            font-size: 13px;
+        }
+
+        .sticky-cta-text strong {
+            display: block;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .sticky-cta-text span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .sticky-cta-btn {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            padding: 14px 24px;
+            text-decoration: none;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 700;
+            white-space: nowrap;
+            box-shadow: 0 4px 20px var(--accent-glow);
+            transition: all 0.2s ease;
+        }
+
+        .sticky-cta-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .container-wide {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 0 60px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, var(--glow) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 28px;
+            letter-spacing: 0.02em;
+        }
+
+        .badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #ef4444;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.9); }
+        }
+
+        .hero h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(38px, 7vw, 68px);
+            line-height: 1.08;
+            margin-bottom: 24px;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            position: relative;
+        }
+
+        .hero .subhead {
+            font-size: 19px;
+            color: var(--text-secondary);
+            max-width: 620px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+
+        /* Social Proof Stats */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .hero-stat-label {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* CTA Buttons */
+        .cta-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            padding: 20px 48px;
+            text-decoration: none;
+            border-radius: 100px;
+            font-size: 17px;
+            font-weight: 700;
+            transition: all 0.25s ease;
+            box-shadow: 0 12px 40px var(--accent-glow);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0, 153, 255, 0.5);
+        }
+
+        .scarcity-text {
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        /* Risk Reversal Badge */
+        .risk-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--success);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+
+        /* Hero CTA (Above Fold) */
+        .hero-cta-wrapper {
+            margin: 32px 0 24px;
+        }
+
+        .cta-hero {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            padding: 20px 56px;
+            text-decoration: none;
+            border-radius: 16px;
+            transition: all 0.25s ease;
+            box-shadow: 0 12px 40px var(--accent-glow), 0 0 0 1px rgba(255,255,255,0.1) inset;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .cta-hero:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 153, 255, 0.5), 0 0 0 1px rgba(255,255,255,0.2) inset;
+        }
+
+        .cta-hero-text {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+        }
+
+        .cta-hero-price {
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .hero-cta-note {
+            margin-top: 12px;
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        /* Countdown Timer */
+        .countdown-wrapper {
+            margin: 32px 0;
+        }
+
+        .countdown-label {
+            font-size: 14px;
+            color: var(--danger);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .countdown-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+
+        .countdown-unit {
+            font-size: 11px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 6px;
+        }
+
+        .countdown-expired {
+            color: var(--danger);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .countdown {
+                gap: 8px;
+            }
+
+            .countdown-item {
+                padding: 12px 14px;
+                min-width: 60px;
+            }
+
+            .countdown-number {
+                font-size: 24px;
+            }
+
+            .countdown-unit {
+                font-size: 9px;
+            }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(28px, 5vw, 44px);
+            margin-bottom: 28px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+        }
+
+        h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Video Testimonials Section */
+        .video-section {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 80px 0;
+        }
+
+        .video-section h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .video-section-subtitle {
+            color: var(--text-secondary);
+            font-size: 18px;
+            margin-bottom: 48px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .video-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 153, 255, 0.4);
+            box-shadow: 0 24px 64px rgba(0, 153, 255, 0.2);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-top: 56.25%;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            cursor: pointer;
+        }
+
+        .video-wrapper::before {
+            content: '▶';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 72px;
+            height: 72px;
+            background: rgba(0, 153, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 153, 255, 0.4);
+            padding-left: 4px;
+        }
+
+        .video-wrapper:hover::before {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: rgba(0, 153, 255, 1);
+        }
+
+        .video-wrapper.playing::before {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
+        }
+
+        .video-info {
+            padding: 24px 28px;
+            border-top: 1px solid var(--border);
+        }
+
+        .video-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .video-title {
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        .video-quote {
+            font-size: 15px;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: 12px;
+            line-height: 1.5;
+        }
+
+        /* Screenshot Testimonials */
+        .screenshot-section {
+            background: var(--bg-secondary);
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .screenshot-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 153, 255, 0.3);
+            box-shadow: 0 16px 48px rgba(0, 153, 255, 0.1);
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Plain Talk Box */
+        .plain-talk {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent);
+            padding: 28px 32px;
+            margin: 32px 0;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .plain-talk-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .plain-talk p {
+            margin: 0;
+            color: var(--text-secondary);
+        }
+
+        /* Social Proof Bar */
+        .social-proof {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 48px 0;
+        }
+
+        .social-proof-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-tertiary);
+            text-align: center;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        .social-proof-items {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .social-proof-item {
+            color: var(--text-tertiary);
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .social-proof-item:hover {
+            opacity: 1;
+        }
+
+        /* Deliverables Grid */
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 48px;
+        }
+
+        .deliverable-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .deliverable-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 153, 255, 0.3);
+            box-shadow: 0 12px 40px rgba(0, 153, 255, 0.1);
+        }
+
+        .deliverable-icon {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .deliverable-card h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .deliverable-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Text Testimonials */
+        .testimonials-section {
+            background: var(--bg-secondary);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 153, 255, 0.3);
+        }
+
+        .testimonial-result {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--success);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .testimonial-quote {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .testimonial-title {
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            max-width: 860px;
+            margin: 48px auto 0;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: left;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 153, 255, 0.4);
+            box-shadow: 0 24px 60px rgba(0, 153, 255, 0.2);
+        }
+
+        .pricing-card.featured {
+            border-color: rgba(0, 153, 255, 0.5);
+            background: linear-gradient(180deg, rgba(0, 153, 255, 0.08) 0%, var(--bg-card) 100%);
+        }
+
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        .pricing-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-tertiary);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .pricing-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .pricing-price {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .pricing-amount {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 52px;
+            font-weight: 900;
+            color: var(--text-primary);
+            letter-spacing: -0.03em;
+        }
+
+        .pricing-period {
+            font-size: 16px;
+            color: var(--text-tertiary);
+        }
+
+        .pricing-original {
+            font-size: 16px;
+            color: var(--text-tertiary);
+            text-decoration: line-through;
+            margin-bottom: 20px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            padding: 16px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            text-align: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 8px 24px var(--accent-glow);
+        }
+
+        .pricing-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 153, 255, 0.5);
+        }
+
+        .pricing-guarantee {
+            text-align: center;
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        /* Who For Section */
+        .who-for-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 48px;
+            margin: 60px 0;
+        }
+
+        .for-list, .not-list {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .for-list li, .not-list li {
+            padding: 12px 0 12px 32px;
+            font-size: 16px;
+            color: var(--text-secondary);
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .for-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .not-list li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: var(--danger);
+            font-weight: 700;
+        }
+
+        .not-for-section {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .not-for-section h3 {
+            color: var(--danger);
+        }
+
+        /* About Section */
+        .about-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 32px 0;
+        }
+
+        .about-card-with-photo {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        .about-photo {
+            flex-shrink: 0;
+        }
+
+        .about-photo img {
+            width: 160px;
+            height: 160px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 2px solid var(--border);
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .about-card-with-photo {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .about-photo img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        .case-studies {
+            margin: 24px 0;
+            list-style: none;
+        }
+
+        .case-studies li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+        }
+
+        .case-studies li::before {
+            content: '→ ';
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .case-studies strong {
+            color: var(--accent);
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: var(--bg-secondary);
+        }
+
+        .faq-item {
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* Risk Reversal Section */
+        .guarantee-section {
+            text-align: center;
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, transparent 100%);
+            border-top: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .guarantee-box {
+            background: var(--bg-card);
+            border: 2px solid rgba(16, 185, 129, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .guarantee-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .guarantee-box h3 {
+            color: var(--success);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1200px;
+            height: 1200px;
+            background: radial-gradient(circle, var(--glow) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(32px, 6vw, 52px);
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 48px 0;
+            border-top: 1px solid var(--border);
+            background: var(--bg-secondary);
+        }
+
+        .footer p {
+            color: var(--text-tertiary);
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshot-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container, .container-wide {
+                padding: 0 20px;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 60px 0 40px;
+            }
+
+            .hero-stats {
+                gap: 24px;
+            }
+
+            .hero-stat-number {
+                font-size: 24px;
+            }
+
+            .glass-card, .who-for-card {
+                padding: 28px 20px;
+            }
+
+            .pricing-card {
+                padding: 32px 24px;
+            }
+
+            .pricing-amount {
+                font-size: 40px;
+            }
+
+            .social-proof-items {
+                gap: 24px;
+            }
+
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sticky-cta {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .sticky-cta-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Hide sticky CTA on desktop */
+        @media (min-width: 769px) {
+            .sticky-cta {
+                display: none;
+            }
+
+            body {
+                padding-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container container-wide">
+            <div class="nav-logo">Monthly Deal Club</div>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span id="themeIcon">☀️</span>
+                </button>
+                <a href="https://whop.com/checkout/plan_hGiwfgDQ8NhFG" class="nav-cta" target="_blank">Join Now →</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta">
+        <div class="sticky-cta-text">
+            <strong>$197/month</strong>
+            <span>Only 20 spots left</span>
+        </div>
+        <a href="https://whop.com/checkout/plan_hGiwfgDQ8NhFG" class="sticky-cta-btn" target="_blank">Join Now →</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <span class="badge">Only 20 Founding Member Spots</span>
+            <h1>Stop Researching.<br>Start Buying Businesses.</h1>
+            <p class="subhead">The monthly community where serious business buyers get deal reviews, expert guidance, and a network of peers—without the $10K price tag.</p>
+
+            <!-- Primary CTA Above Fold -->
+            <div class="hero-cta-wrapper">
+                <a href="https://whop.com/checkout/plan_hGiwfgDQ8NhFG" class="cta-hero" target="_blank">
+                    <span class="cta-hero-text">Join Monthly Deal Club</span>
+                    <span class="cta-hero-price">$197/month</span>
+                </a>
+                <p class="hero-cta-note">Founding member pricing • Cancel anytime</p>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-wrapper">
+                <div class="countdown-label">Founding Member Pricing Ends In:</div>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-unit">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-unit">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-unit">Mins</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-unit">Secs</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Proof Stats -->
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">25+</div>
+                    <div class="hero-stat-label">Deals Closed</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">100+</div>
+                    <div class="hero-stat-label">Deals Reviewed</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">5,500+</div>
+                    <div class="hero-stat-label">Subscribers</div>
+                </div>
+            </div>
+
+            <a href="https://whop.com/checkout/plan_hGiwfgDQ8NhFG" class="cta-primary" target="_blank">Claim Your Founding Member Spot →</a>
+            <p class="scarcity-text">20 spots at $197/month • Then $297</p>
+            <div class="risk-badge">✓ Cancel anytime • No contracts</div>
+        </div>
+    </section>
+
+    <!-- Video Testimonials (Highest Trust) -->
+    <section class="video-section">
+        <div class="container-wide">
+            <h2 style="text-align: center;">Hear From Real Members</h2>
+            <p class="video-section-subtitle" style="text-align: center;">People who joined, did the work, and got results.</p>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-wrapper" onclick="this.querySelector('video').play(); this.classList.add('playing');">
+                        <video controls preload="metadata" poster="monthly-deal-club-site/testimonials/Sean_Cohort4_desktop.png">
+                            <source src="monthly-deal-club-site/testimonials/sean-testimonial.mp4" type="video/mp4">
+                            Your browser does not support video.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-name">Sean Mert</div>
+                        <div class="video-title">Cohort 4 Member</div>
+                        <p class="video-quote">"5 stars out of 5. James teaches you how to think like an investor."</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-wrapper" onclick="this.querySelector('video').play(); this.classList.add('playing');">
+                        <video controls preload="metadata">
+                            <source src="monthly-deal-club-site/testimonials/steve-testimonial.mp4" type="video/mp4">
+                            Your browser does not support video.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-name">Steve</div>
+                        <div class="video-title">Course Member</div>
+                        <p class="video-quote">"The community and guidance made all the difference in my first acquisition."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <section class="social-proof">
+        <div class="container-wide">
+            <div class="social-proof-label">Trusted by buyers from</div>
+            <div class="social-proof-items">
+                <span class="social-proof-item">Flippa Community</span>
+                <span class="social-proof-item">Empire Flippers</span>
+                <span class="social-proof-item">Acquire.com</span>
+                <span class="social-proof-item">MicroAcquire</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Hook -->
+    <section>
+        <div class="container">
+            <h2>Let me guess...</h2>
+            <p>You've been researching business acquisitions for months. Maybe years.</p>
+            <p>You've read <em>Buy Then Build</em>. You've watched every Codie Sanchez video. You've got 47 browser tabs of Flippa listings saved.</p>
+            <p>But you haven't bought anything.</p>
+            <p>Not because you're not smart enough. Not because you don't have the money.</p>
+            <p>Because you don't have anyone in your corner telling you:</p>
+            <p><strong>"This deal is solid. Make the offer."</strong></p>
+            <p>Or:</p>
+            <p><strong>"Walk away. The customer concentration will kill you."</strong></p>
+
+            <div class="plain-talk">
+                <div class="plain-talk-label">Plain Talk</div>
+                <p>Analysis paralysis is real. I've seen smart people spend 2+ years "researching" while others with half their knowledge are out there closing deals. The difference? They had someone to check their work before signing anything.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mid-page CTA -->
+    <section style="text-align: center; padding: 40px 0;">
+        <div class="container">
+            <a href="https://whop.com/checkout/plan_hGiwfgDQ8NhFG" class="cta-primary" target="_blank">Get Expert Deal Reviews →</a>
+            <p class="scarcity-text">Only 20 founding member spots</p>
+        </div>
+    </section>
+
+    <!-- The Problem -->
+    <section>
+        <div class="container">
+            <h2>Here's the problem with your current options:</h2>
+            <p><strong>The expensive programs ($8K-$15K)</strong> lock you in before you know if it's right for you. That's Acquisition Lab, Contrarian Thinking, EPIC Network—all fine, but you're betting five figures before you've reviewed a single deal with them.</p>
+            <p><strong>The free communities</strong> are full of people who've never closed a deal giving advice. It's the blind leading the blind on Reddit and Twitter.</p>
+            <p><strong>And doing it alone?</strong> That's how you end up buying a lemon and spending two years digging out of a hole.</p>
+            <p>I've seen it happen. Hell, I've <em>done</em> it. I tried to flip a house once and nearly lost my shirt. Thought I was smart. Didn't have anyone to tell me I was about to make a $40K mistake.</p>
+        </div>
+    </section>
+
+    <!-- The Solution -->
+    <section>
+        <div class="container">
+            <h2>There's a better way.</h2>
+            <p>What if you could get:</p>
+            <ul class="for-list">
+                <li><strong>Weekly access</strong> to someone who's done 100+ deals reviewing YOUR opportunities</li>
+                <li><strong>A small group</strong> of 20 serious buyers (not 5,000 randos) all actively closing deals</li>
+                <li><strong>Personal feedback</strong> on the specific listings you're looking at</li>
+                <li><strong>Expert sessions</strong> with lenders, lawyers, and operators who actually do this</li>
+            </ul>
+            <p>...without dropping $10K upfront or signing a 12-month commitment?</p>
+            <p>That's the <strong>Monthly Deal Club</strong>.</p>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section>
+        <div class="container-wide">
+            <div class="container">
+                <h2>Here's exactly what you get:</h2>
+            </div>
+            <div class="deliverables-grid container">
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">📞</div>
+                    <h4>Weekly Group Calls (4x/month)</h4>
+                    <p>Live sessions for Q&A, deal strategy, and buyer coaching. Miss one? Replays available.</p>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">🔍</div>
+                    <h4>Live Deal Reviews (2x/month)</h4>
+                    <p>Submit active listings for live teardown. Real numbers, real risks, real opportunities.</p>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">🎬</div>
+                    <h4>Personal Loom Review (1x/month)</h4>
+                    <p>Submit one deal you're serious about. I record a personalized video breakdown.</p>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">🎤</div>
+                    <h4>Monthly Expert Session</h4>
+                    <p>Guest speakers from lending, legal, and operations. Live AMA format.</p>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">📚</div>
+                    <h4>Monthly Training Drop</h4>
+                    <p>Tactical guides on evaluating deals, structuring earnouts, spotting red flags.</p>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">💬</div>
+                    <h4>Private Community</h4>
+                    <p>Share deals, ask questions, connect with peers. I engage several times per week.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshot Testimonials (Authenticity) -->
+    <section class="screenshot-section">
+        <div class="container-wide">
+            <h2 style="text-align: center;">Real feedback from real members:</h2>
+            <div class="screenshot-grid">
+                <div class="screenshot-card">
+                    <img src="monthly-deal-club-site/testimonials/Berto_2024.png" alt="Berto testimonial" loading="lazy">
+                </div>
+                <div class="screenshot-card">
+                    <img src="monthly-deal-club-site/testimonials/Cohort4_feedback.png" alt="Cohort 4 feedback" loading="lazy">
+                </div>
+                <div class="screenshot-card">
+                    <img src="monthly-deal-club-site/testimonials/Testimonial10_28_2024.png" alt="Ricardo testimonial" loading="lazy">
+                </div>
+                <div class="screenshot-card">
+                    <img src="monthly-deal-club-site/testimonials/Desktop_courseGREATfeedback.png" alt="Course feedback" loading="lazy">
+                </div>
+                <div class="screenshot-card">
+                    <img src="monthly-deal-club-site/testimonials/Sean_Cohort4_desktop.png" alt="Sean testimonial" loading="lazy">
+                </div>
+                <div class="screenshot-card">
+                    <img src="monthly-deal-club-site/testimonials/Boughtsite_Desktop.png" alt="Bought site testimonial" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Text Testimonials -->
+    <section class="testimonials-section">
+        <div class="container-wide">
+            <h2 style="text-align: center;">What members are saying:</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-result">✓ Bought and sold first site</div>
+                    <p class="testimonial-quote">"Joining the Nanoflips cohort was a transformative experience. With minimal website knowledge, I learned as I went, thanks to James's patient guidance. I bought and sold my first site successfully."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-name">Berto J.</div>
+                        <div class="testimonial-title">First-time buyer</div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-result">✓ 5 stars out of 5</div>
+                    <p class="testimonial-quote">"James's course changes your mindset, so you start think like an investor. James teaches you how to buy even a small website for $1,000. That changes things inside you. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-name">Sean Mert</div>
+                        <div class="testimonial-title">Cohort 4 member</div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-result">✓ "The course is underpriced"</div>
+                    <p class="testimonial-quote">"I was skeptical at first. In our first call, James settled all my concerns. Right away it's noticeable he has expertise and your best interest in mind. Honestly, I would say the course is underpriced."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-name">Ricardo Sánchez</div>
+                        <div class="testimonial-title">Course member</div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-result">✓ CEO recommends</div>
+                    <p class="testimonial-quote">"I highly recommend Nano Flips to anyone looking into the world of digital real estate. James is super-knowledgeable, the resources and community support are excellent."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-name">Tommy McGuire</div>
+                        <div class="testimonial-title">CEO, Modern McGuire Productions</div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-result">✓ "Real money to be made"</div>
+                    <p class="testimonial-quote">"I came into this course thinking it would be a nice lil side hustle. But I had a mindset shift. This is not a game anymore. There's real money to be made. Thanks James Camp!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-name">Freddie Champagne</div>
+                        <div class="testimonial-title">Content site investor</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2>Founding Member Pricing</h2>
+            <p style="max-width: 560px; margin: 0 auto;">Normally $297/month. But for the first 20 founding members? <strong>$197/month locked in forever.</strong></p>
+        </div>
+        <div class="pricing-grid container-wide">
+            <div class="pricing-card">
+                <div class="pricing-label">Monthly</div>
+                <div class="pricing-name">Founding Member</div>
+                <div class="pricing-price">
+                    <span class="pricing-amount">$197</span>
+                    <span class="pricing-period">/month</span>
+                </div>
+                <div class="pricing-original">Regular price: $297/month</div>
+                <ul class="pricing-features">
+                    <li>All weekly calls (4x/month)</li>
+                    <li>Monthly personal Loom review</li>
+                    <li>Live deal teardowns</li>
+                    <li>Private community access</li>
+                    <li>Expert sessions</li>
+                    <li>Resource vault</li>
+                    <li><strong>Cancel anytime</strong></li>
+                </ul>
+                <a href="https://whop.com/checkout/plan_hGiwfgDQ8NhFG" class="pricing-cta" target="_blank">Join as Founding Member →</a>
+                <p class="pricing-guarantee">✓ Cancel anytime, no contracts</p>
+            </div>
+            <div class="pricing-card featured">
+                <div class="pricing-label">Best Value</div>
+                <div class="pricing-name">3-Month Lock-In</div>
+                <div class="pricing-price">
+                    <span class="pricing-amount">$525</span>
+                    <span class="pricing-period">one-time</span>
+                </div>
+                <div class="pricing-original">$175/month effective rate</div>
+                <ul class="pricing-features">
+                    <li>Everything in Monthly</li>
+                    <li><strong>+ 1:1 Buy Box Build Session</strong></li>
+                    <li>Define your exact criteria</li>
+                    <li>Your budget & capital plan</li>
+                    <li>Deal flow strategy</li>
+                    <li>Worth $500 alone</li>
+                </ul>
+                <a href="https://whop.com/checkout/plan_G4q2wMMQu2ZRn" class="pricing-cta" target="_blank">Lock In 3 Months →</a>
+                <p class="pricing-guarantee">✓ Save $66 + get 1:1 session</p>
+            </div>
+        </div>
+        <p class="scarcity-text" style="text-align: center; margin-top: 28px;">Only 20 spots at $197/month. Then it goes to $297.</p>
+    </section>
+
+    <!-- Risk Reversal / Guarantee -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-box">
+                <div class="guarantee-icon">🛡️</div>
+                <h3>Zero-Risk Guarantee</h3>
+                <p style="margin: 16px 0 0 0;">Monthly means monthly. <strong>Cancel anytime</strong>—no 12-month lock-in, no cancellation fees, no questions asked. If it's not working for you after month one, leave. This forces me to deliver value every single month or you're gone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is For -->
+    <section>
+        <div class="container">
+            <div class="who-for-card">
+                <h2>This is for you if:</h2>
+                <ul class="for-list">
+                    <li>You're actively looking at deals right now (Flippa, BizBuySell, brokers, off-market)</li>
+                    <li>You have $10K-$100K+ available for an acquisition</li>
+                    <li>You've been researching for 6+ months but haven't pulled the trigger</li>
+                    <li>You want someone experienced to check your work before you sign anything</li>
+                    <li>You're tired of doing this alone and want a network of peers</li>
+                </ul>
+
+                <div class="not-for-section">
+                    <h3>This is NOT for you if:</h3>
+                    <ul class="not-list">
+                        <li>You're looking for a "get rich quick" scheme</li>
+                        <li>You want to be spoon-fed every step (this requires work)</li>
+                        <li>You have zero capital to invest in a business</li>
+                        <li>You're not willing to actually make offers and close deals</li>
+                        <li>You just want to "learn more" without taking action</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about-section">
+        <div class="container">
+            <h2>Who am I to teach this?</h2>
+            <div class="about-card about-card-with-photo">
+                <div class="about-photo">
+                    <img src="monthly-deal-club-site/james-camp.png" alt="James Camp" loading="lazy">
+                </div>
+                <div class="about-content">
+                    <p><strong>I'm James Camp.</strong></p>
+                    <p>I've been buying and selling online businesses for 15+ years. Had an 8-figure exit in 2020 from a portfolio of sites we built and acquired. Before that, I was making $2,000/month doing growth hacking work while bouncing at nightclubs.</p>
+                    <p>I've mentored at Google Launchpad. Consulted for McKinsey and Lionsgate. But honestly? The stuff that changed my life was buying cash-flowing businesses that let me work from anywhere.</p>
+                    <p style="margin-bottom: 0;">I've also made mistakes. Tried to flip a house and nearly lost my shirt. Bought sites that tanked. Made offers I shouldn't have. That's exactly why I know what red flags to look for—and I want to help you avoid the same mistakes.</p>
+                </div>
+            </div>
+
+            <p>My newsletter Nano Flips has broken down deals like:</p>
+            <ul class="case-studies">
+                <li>A motorcycle site flipped for <strong>$20K+ profit</strong></li>
+                <li>A diving site that did <strong>$40K+</strong></li>
+                <li>A gardening website that returned <strong>$97K+ in 12 months</strong></li>
+                <li>A puppy site that generated <strong>$85K+</strong></li>
+            </ul>
+            <p>Folks in the last group I coached closed over <strong>25 cash-flowing acquisitions within 8 weeks</strong>. Not theoretical. Real deals, real closings, real cash flow.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Questions you probably have:</h2>
+
+            <div class="faq-item">
+                <h4>What if I don't have enough money to buy a business?</h4>
+                <p>You'd be surprised. I've seen great deals done with $5K. The dog frisbee site I covered went from $500 to $3,600 valuation. Start small. Buy one property that pays for your weekly date nights.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Is this just another course I won't finish?</h4>
+                <p>No. This is not a course. There are no 47 modules to watch. It's live deal reviews, weekly calls, and a community. You show up, you submit deals, you get feedback. The value is in doing, not watching.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>I don't have time. I work full-time.</h4>
+                <p>Most members do. The calls are 2-4 hours/week total, and they're all recorded. The community is async—pop in when you can. This is designed for busy people with real jobs.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What if I can learn this on my own?</h4>
+                <p>You can. But how many deals have you closed? The information is out there. What's missing is someone to tell you "yes, this one" or "no, walk away" before you wire $50K to a stranger.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Can I cancel anytime?</h4>
+                <p><strong>Yes.</strong> Monthly means monthly. No 12-month lock-in. No cancellation fees. If it's not working for you, leave. This forces me to deliver value every single month or you're gone.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What's the difference between this and Acquisition Lab?</h4>
+                <p>Price and access. Those programs are $8K-$15K upfront. Monthly Deal Club is $197/month—you can test the waters, see if it fits. Plus, you get personal Loom reviews on YOUR deals, not just group content.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Why only 20 founding members?</h4>
+                <p>Because I want to keep it small and high-quality. If I have 500 people, I can't review everyone's deals personally. At 20, this is intimate. Everyone knows each other. Everyone gets attention.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to stop researching<br>and start buying?</h2>
+            <a href="https://whop.com/checkout/plan_hGiwfgDQ8NhFG" class="cta-primary" target="_blank">Claim Your Founding Member Spot →</a>
+            <p class="scarcity-text">Only 20 spots at $197/month. Then $297. No exceptions.</p>
+            <div class="risk-badge">✓ Cancel anytime • No contracts</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><strong>Monthly Deal Club</strong> by James Camp</p>
+            <p>Questions? Email james@nanoflips.com</p>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+        updateIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const current = html.getAttribute('data-theme');
+            const next = current === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            updateIcon(next);
+        });
+
+        function updateIcon(theme) {
+            themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+        }
+
+        // Countdown Timer - December 2nd, 2024 11:59:59 PM ET
+        const deadline = new Date('2024-12-03T04:59:59Z').getTime(); // Dec 2 11:59:59 PM ET = Dec 3 4:59:59 AM UTC
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = deadline - now;
+
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                document.querySelector('.countdown-label').textContent = 'Founding Member Pricing Has Ended!';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

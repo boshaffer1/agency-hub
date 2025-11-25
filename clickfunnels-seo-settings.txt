@@ -1,0 +1,80 @@
+====================================
+CLICKFUNNELS SEO SETTINGS
+====================================
+
+Go to: Page Settings → SEO Metadata
+
+Copy/paste these exactly:
+
+====================================
+PAGE TITLE (SEO)
+====================================
+Monthly Deal Club - Expert Deal Review Before You Buy a Business | Business Acquisition Community
+
+====================================
+META DESCRIPTION
+====================================
+Get expert feedback on business acquisitions before you wire money. Weekly deal reviews, live teardowns, and a community of active buyers. 15 spots only. First call December 3rd, 2024.
+
+====================================
+META KEYWORDS
+====================================
+business acquisition, buying a business, deal review, business due diligence, flippa, empire flippers, acquire.com, business buying community, deal analysis
+
+====================================
+PAGE URL SLUG
+====================================
+monthly-deal-club
+
+====================================
+OPEN GRAPH TITLE
+====================================
+Monthly Deal Club - Expert Deal Review Before You Buy a Business
+
+====================================
+OPEN GRAPH DESCRIPTION
+====================================
+Stop analyzing deals alone. Get expert feedback on your business acquisitions before you wire $50K+. Weekly calls, personal deal reviews, and a community of active buyers.
+
+====================================
+TWITTER TITLE
+====================================
+Monthly Deal Club - Expert Deal Review Before You Buy a Business
+
+====================================
+TWITTER DESCRIPTION
+====================================
+Stop analyzing deals alone. Get expert feedback on your business acquisitions before you wire $50K+. 15 spots only.
+
+====================================
+TWITTER CARD TYPE
+====================================
+Summary Large Image
+
+====================================
+IMAGES NEEDED
+====================================
+
+1. OPEN GRAPH IMAGE: 1200x630px
+   Upload to: Page Settings → Social → OG Image
+
+2. TWITTER IMAGE: 1200x600px
+   Upload to: Page Settings → Social → Twitter Image
+
+Create these in Canva using this text:
+- Headline: "Stop Analyzing Deals Alone"
+- Subtext: "Expert Deal Review for Business Buyers"
+- Add your photo/logo
+
+====================================
+BEFORE YOU SAVE
+====================================
+
+Replace these in ALL fields above:
+- yourdomain.com → Your actual domain
+- @yourhandle → Your Twitter handle
+- /in/yourprofile → Your LinkedIn profile
+
+Email already updated to: hi@nanoflips.com
+
+====================================

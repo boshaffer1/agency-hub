@@ -1,0 +1,147 @@
+<!--
+====================================
+CLICKFUNNELS HEAD TRACKING CODE
+====================================
+
+INSTRUCTIONS:
+1. In ClickFunnels, go to your page settings
+2. Click "Tracking Code"
+3. Paste this ENTIRE code into the "Head Tracking Code" section
+4. Update all instances of "yourdomain.com" with your actual domain
+5. Save
+
+This adds:
+- Product Schema (shows pricing in Google)
+- FAQ Schema (featured snippets)
+- Organization Schema (knowledge panel)
+====================================
+-->
+
+<!-- Schema.org Product Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Monthly Deal Club",
+  "description": "Expert deal review and community for people buying businesses. Weekly group calls, personal deal reviews, live teardowns, and private community access.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Monthly Deal Club"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Monthly Membership",
+      "price": "195",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2025-12-31",
+      "availability": "https://schema.org/LimitedAvailability",
+      "url": "https://yourdomain.com/monthly-deal-club",
+      "seller": {
+        "@type": "Person",
+        "name": "James Camp"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "3-Month Membership with Buy Box Build Session",
+      "price": "525",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2025-12-31",
+      "availability": "https://schema.org/LimitedAvailability",
+      "url": "https://yourdomain.com/monthly-deal-club"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "12"
+  }
+}
+</script>
+
+<!-- Schema.org FAQ Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What if I can't make the Tuesday calls?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All calls are recorded. Most members watch async. But the real value is submitting YOUR deal for review—that happens whether you attend live or not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I'm not ready to buy yet. Can I join later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I'm not opening more spots until February at the earliest. If you're buying in Q1 2025, this is your window. If you're buying later, wait for the next cohort."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of businesses do you cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Content sites, SaaS, e-commerce, newsletters, apps—anything that shows up on Flippa or Empire Flippers. I've reviewed 50+ deals across all these categories."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this a course?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. There are no modules or videos to watch. This is expert feedback on YOUR specific deals in real-time. You learn by getting your deals reviewed and watching others get theirs reviewed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I don't have a deal yet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Perfect. The Buy Box Build session (included in 3-month option) will help you define what you're looking for. Then you bring deals to the weekly calls and we'll tell you if they match your criteria."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I really cancel monthly anytime?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. No hoops. You're an adult. If it's not valuable, leave. But most members who leave do so because they bought their business and don't need ongoing reviews anymore."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who else is in the group?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Buyers and operators. People with capital who are actively looking to acquire in Q1 2025. No tire-kickers. No gurus. Just people doing the work."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Schema.org Organization Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Monthly Deal Club",
+  "url": "https://yourdomain.com",
+  "logo": "https://yourdomain.com/images/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hi@nanoflips.com",
+    "contactType": "Customer Service"
+  },
+  "sameAs": [
+    "https://twitter.com/yourhandle",
+    "https://linkedin.com/in/yourprofile"
+  ]
+}
+</script>

@@ -1,0 +1,51 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Testing
+coverage
+.nyc_output
+
+# Next.js
+.next/
+out/
+build
+
+# Production
+dist
+build
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.production.local
+.env.development.local
+.env.test.local
+
+# Turbo
+.turbo
+
+# Vercel
+.vercel
+
+# Typescript
+*.tsbuildinfo
+
+# Session data
+sessions/
+.session-cache/
+
+# Client data (sensitive)
+client-data/
+*.encrypted

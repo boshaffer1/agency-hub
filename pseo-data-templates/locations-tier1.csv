@@ -1,0 +1,51 @@
+city_slug,city_name,state_code,state_name,population,metro_population,business_count,top_industries,startup_ecosystem,data_tier,median_income,cost_of_living_index
+san-francisco,San Francisco,CA,California,873965,4749008,87400,"SaaS, Fintech, AI, Biotech","Hub: 3,500+ startups, $50B+ annual funding, 30+ unicorns",1,119495,205
+new-york,New York,NY,New York,8336817,19768458,950000,"Fintech, Media, Fashion, Real Estate Tech","Hub: 9,000+ startups, $40B+ funding, 50+ unicorns",1,70663,187
+los-angeles,Los Angeles,CA,California,3979576,13200998,420000,"Entertainment, E-commerce, Aerospace, Fashion","Growing: 4,000+ startups, $15B+ funding, 20+ unicorns",1,69695,173
+austin,Austin,TX,Texas,978908,2352426,58000,"SaaS, Hardware, Consumer Tech, Gaming","Hub: 5,000+ startups, $5B+ funding, 10+ unicorns, Tesla HQ",1,78965,119
+seattle,Seattle,WA,Washington,749256,4018762,92000,"SaaS, Cloud, E-commerce, Biotech","Hub: 3,200+ startups, $8B+ funding, Amazon & Microsoft HQ",1,102486,172
+boston,Boston,MA,Massachusetts,692600,4941632,87000,"Biotech, Healthcare, EdTech, Robotics","Hub: 4,500+ startups, $20B+ funding, 15+ unicorns, MIT ecosystem",1,89212,169
+denver,Denver,CO,Colorado,715522,2963821,68000,"SaaS, Aerospace, Cannabis, Outdoor Gear","Growing: 2,800+ startups, $4B+ funding, 8 unicorns",1,78177,128
+atlanta,Atlanta,GA,Georgia,498715,6089815,71000,"Fintech, Logistics, SaaS, Healthcare","Emerging: 2,000+ startups, $3B+ funding, Home Depot HQ",1,64179,107
+miami,Miami,FL,Florida,442241,6138333,67000,"Fintech, Real Estate Tech, Healthcare, Hospitality","Emerging: 1,500+ startups, $5B+ funding, Growing crypto hub",1,53027,118
+chicago,Chicago,IL,Illinois,2746388,9458539,228000,"Fintech, Food & Bev, Logistics, Manufacturing","Established: 3,500+ startups, $5B+ funding, 10+ unicorns",1,65781,112
+portland,Portland,OR,Oregon,652503,2512859,52000,"SaaS, Outdoor Gear, Food & Bev, Manufacturing","Growing: 1,800+ startups, $2B+ funding, Intel presence",1,74890,137
+san-diego,San Diego,CA,California,1423851,3298634,72000,"Biotech, Wireless, Defense, Healthcare","Strong: 2,200+ startups, $4B+ funding, Qualcomm HQ",1,89457,161
+washington-dc,Washington,DC,District of Columbia,689545,6385162,83000,"Cybersecurity, Gov Tech, Defense, Professional Services","Strong: 2,800+ startups, $3B+ funding, Government contractors",1,92266,152
+philadelphia,Philadelphia,PA,Pennsylvania,1603797,6245051,135000,"Healthcare, Biotech, Fintech, Education","Established: 1,500+ startups, $2B+ funding, Comcast HQ",1,52649,113
+phoenix,Phoenix,AZ,Arizona,1680992,4946145,89000,"Semiconductor, Aerospace, Healthcare, Real Estate","Growing: 1,200+ startups, $1.5B+ funding, Intel fabs",1,66957,110
+dallas,Dallas,TX,Texas,1343573,7637387,167000,"Telecommunications, Fintech, Energy, Real Estate","Strong: 2,500+ startups, $3B+ funding, 8 unicorns",1,60359,107
+houston,Houston,TX,Texas,2304580,7122240,185000,"Energy, Healthcare, Aerospace, Manufacturing","Established: 1,800+ startups, $2B+ funding, Energy capital",1,58538,99
+minneapolis,Minneapolis,MN,Minnesota,429954,3690261,78000,"Healthcare, Fintech, Food & Bev, Manufacturing","Strong: 1,500+ startups, $2B+ funding, Target & Best Buy HQ",1,70915,118
+nashville,Nashville,TN,Tennessee,689447,1989519,48000,"Healthcare, Music Tech, Logistics, Hospitality","Emerging: 800+ startups, $1B+ funding, Healthcare hub",1,64034,105
+salt-lake-city,Salt Lake City,UT,Utah,200567,1257936,32000,"SaaS, Hardware, E-commerce, Outdoor Gear","Strong: 2,000+ startups, $3B+ funding, Silicon Slopes",1,65313,114
+raleigh,Raleigh,NC,North Carolina,474069,1413982,38000,"SaaS, Biotech, Pharma, Hardware","Research Triangle: 1,200+ startups, $2B+ funding, Research hub",1,73271,108
+columbus,Columbus,OH,Ohio,905748,2138926,52000,"Fintech, Logistics, Food & Bev, Healthcare","Growing: 800+ startups, $800M+ funding, Low cost of living",1,59567,98
+charlotte,Charlotte,NC,North Carolina,885708,2660329,68000,"Fintech, Healthcare, Energy, Professional Services","Financial hub: 900+ startups, $1.5B+ funding, Banking center",1,66144,106
+detroit,Detroit,MI,Michigan,639111,4365205,58000,"Automotive, Manufacturing, Mobility Tech, AI","Revival: 1,200+ startups, $1B+ funding, Mobility innovation",1,52611,94
+san-jose,San Jose,CA,California,1026908,1952872,52000,"SaaS, Hardware, Semiconductor, AI","Silicon Valley core: 2,500+ startups, $30B+ funding",1,130890,214
+pittsburgh,Pittsburgh,PA,Pennsylvania,302971,2370930,42000,"Robotics, AI, Healthcare, Manufacturing","Tech hub: 1,000+ startups, $1.5B+ funding, CMU ecosystem",1,56313,101
+baltimore,Baltimore,MD,Maryland,585708,2844510,52000,"Biotech, Cybersecurity, Healthcare, Defense","Johns Hopkins hub: 600+ startups, $800M+ funding",1,58268,109
+las-vegas,Las Vegas,NV,Nevada,641903,2227053,38000,"Hospitality, Gaming, Cannabis, Real Estate","Emerging: 400+ startups, $500M+ funding, No state income tax",1,60365,110
+indianapolis,Indianapolis,IN,Indiana,887642,2111040,48000,"Healthcare, Logistics, Manufacturing, SaaS","Growing: 600+ startups, $600M+ funding, Salesforce hub",1,59596,95
+milwaukee,Milwaukee,WI,Wisconsin,577222,1574731,38000,"Manufacturing, Food & Bev, Healthcare, Fintech","Established: 400+ startups, $400M+ funding, Manufacturing base",1,52191,99
+kansas-city,Kansas City,MO,Missouri,508090,2192035,48000,"Logistics, Healthcare, Agtech, Fintech","Emerging: 500+ startups, $500M+ funding, Google Fiber city",1,61658,97
+tampa,Tampa,FL,Florida,399700,3219514,72000,"Healthcare, Fintech, Insurance, Defense","Growing: 800+ startups, $1B+ funding, MacDill AFB",1,58263,105
+new-orleans,New Orleans,LA,Louisiana,383997,1270530,28000,"Hospitality, Energy, Healthcare, Food & Bev","Recovery: 300+ startups, $200M+ funding, Tourism hub",1,45594,103
+cincinnati,Cincinnati,OH,Ohio,309317,2232907,48000,"Consumer Goods, Manufacturing, Healthcare, Fintech","Established: 500+ startups, $400M+ funding, P&G HQ",1,62987,97
+cleveland,Cleveland,OH,Ohio,372624,2048449,42000,"Healthcare, Manufacturing, Biotech, Finance","Revival: 600+ startups, $500M+ funding, Cleveland Clinic",1,53253,93
+sacramento,Sacramento,CA,California,524943,2397382,42000,"Government, Healthcare, Agtech, Clean Energy","Growing: 600+ startups, $600M+ funding, State capital",1,68694,134
+omaha,Omaha,NE,Nebraska,486051,967604,28000,"Fintech, Insurance, Agtech, Logistics","Financial hub: 400+ startups, $300M+ funding, Berkshire HQ",1,62213,96
+louisville,Louisville,KY,Kentucky,617638,1297310,32000,"Logistics, Healthcare, Manufacturing, Bourbon","UPS hub: 300+ startups, $200M+ funding, Logistics capital",1,55000,94
+memphis,Memphis,TN,Tennessee,633104,1346045,28000,"Logistics, Healthcare, Manufacturing, Music","FedEx hub: 250+ startups, $150M+ funding, Distribution center",1,46328,92
+richmond,Richmond,VA,Virginia,230436,1291900,32000,"Finance, Healthcare, Gov Tech, Manufacturing","Capital: 400+ startups, $300M+ funding, Fortune 500 presence",1,59133,102
+oklahoma-city,Oklahoma City,OK,Oklahoma,687725,1425695,32000,"Energy, Aerospace, Agriculture, Healthcare","Emerging: 300+ startups, $200M+ funding, Energy sector",1,57936,91
+st-louis,St. Louis,MO,Missouri,301578,2806207,52000,"Biotech, Agtech, Manufacturing, Healthcare","Ag hub: 600+ startups, $400M+ funding, Bayer Crop Science",1,54478,95
+jacksonville,Jacksonville,FL,Florida,949611,1559514,42000,"Logistics, Financial Services, Healthcare, Defense","Port city: 400+ startups, $300M+ funding, Navy presence",1,58218,99
+tucson,Tucson,AZ,Arizona,548073,1043433,22000,"Aerospace, Defense, Optics, Healthcare","Research: 300+ startups, $200M+ funding, University of Arizona",1,52545,103
+fresno,Fresno,CA,California,542107,1008654,18000,"Agriculture, Logistics, Healthcare, Food Processing","Ag center: 150+ startups, $100M+ funding, Central Valley",1,52564,106
+albuquerque,Albuquerque,NM,New Mexico,564559,916528,22000,"Aerospace, Defense, Biotech, Clean Energy","Research: 250+ startups, $200M+ funding, Sandia Labs",1,53125,98
+buffalo,Buffalo,NY,New York,278349,1166902,28000,"Healthcare, Manufacturing, Education, Finance","Revival: 300+ startups, $200M+ funding, Medical corridor",1,50888,95
+el-paso,El Paso,TX,Texas,678815,844818,18000,"Manufacturing, Logistics, Defense, Healthcare","Border city: 200+ startups, $100M+ funding, Fort Bliss",1,48208,88
+boise,Boise,ID,Idaho,235684,764718,18000,"SaaS, Manufacturing, Agriculture, Healthcare","Tech hub: 500+ startups, $400M+ funding, Micron presence",1,63292,109
+madison,Madison,WI,Wisconsin,269840,664865,18000,"Biotech, SaaS, Healthcare, Agriculture","Research: 400+ startups, $300M+ funding, UW-Madison",1,71644,113
