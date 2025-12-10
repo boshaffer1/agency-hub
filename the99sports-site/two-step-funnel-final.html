@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 99 Sports - NIL Success System</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Primary Colors from Brand Guidelines */
+            --gold: #D4AF37;
+            --black: #0A0A0A;
+            --white: #FFFFFF;
+            
+            /* Secondary Colors */
+            --muted-white: rgba(255, 255, 255, 0.7);
+            --dark-gray: #080808;
+            --gold-tint: rgba(212, 175, 55, 0.1);
+            --gold-glow: rgba(212, 175, 55, 0.5);
+            --white-tint: rgba(255, 255, 255, 0.1);
+            --white-subtle: rgba(255, 255, 255, 0.03);
+            
+            /* Spacing System */
+            --space-xs: 5px;
+            --space-sm: 10px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 40px;
+            --space-2xl: 60px;
+            --space-3xl: 100px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Navigation with Logo */
+        .nav {
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(8, 8, 8, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 100px;
+            padding: 0 32px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            min-width: 300px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .logo {
+            height: 32px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .nav-tagline {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-left: 24px;
+        }
+        
+        /* Page Sections */
+        .page {
+            min-height: 100vh;
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* Background gradient effect inspired by waitlist-final */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at top center, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at bottom center, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        /* Visual Stats Section */
+        .visual-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 24px;
+            margin: 60px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+        
+        .stat-number {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 8px;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* STEP 1: OPT-IN PAGE */
+        .opt-in-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-3xl) var(--space-lg);
+            margin-top: 56px;
+            position: relative;
+        }
+        
+        /* Animated gradient orb effect */
+        .opt-in-page::after {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+        }
+        
+        .opt-in-content {
+            text-align: center;
+            max-width: 100%;
+            position: relative;
+            z-index: 10;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        /* Early access badge with no emoji */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold-tint);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            color: var(--gold);
+            padding: 10px 28px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            animation: fadeInDown 0.8s ease-out;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Gold Icon with Glow */
+        .icon-rocket {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: var(--gold);
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/contain no-repeat;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/contain no-repeat;
+            filter: drop-shadow(0 0 8px var(--gold-glow));
+        }
+        
+        h1 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: clamp(36px, 7vw, 96px);
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 28px;
+            letter-spacing: -0.03em;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .gold-accent {
+            color: var(--gold);
+            display: inline-block;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
+        }
+        
+        .subtitle {
+            font-size: 22px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 50px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+            padding: 0 20px;
+        }
+        
+        /* Premium Waitlist Form with glassmorphism */
+        .form-container {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 48px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Gradient border effect */
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        .form-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--white);
+            letter-spacing: -0.02em;
+        }
+        
+        .form-description {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 36px;
+            line-height: 1.5;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        input {
+            width: 100%;
+            padding: 18px 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 400;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: -0.01em;
+        }
+        
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1),
+                        0 0 20px rgba(212, 175, 55, 0.1);
+        }
+        
+        .btn-primary {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--gold) 0%, #F4D03F 100%);
+            color: var(--black);
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+            margin-top: var(--space-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+        }
+        
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        /* Arrow Icon */
+        .arrow-icon {
+            width: 16px;
+            height: 16px;
+            background: #000;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E") center/contain no-repeat;
+        }
+        
+        .form-note {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 20px;
+        }
+        
+        /* Social Proof with modern cards */
+        .social-proof {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+        
+        .proof-item {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 100px;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .proof-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .stat-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 0 8px var(--gold-glow));
+        }
+        
+        .checkmark {
+            width: 12px;
+            height: 12px;
+            background: var(--black);
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/contain no-repeat;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/contain no-repeat;
+        }
+        
+        .proof-text {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+        
+        /* STEP 2: VIDEO PAGE */
+        .video-page {
+            padding: var(--space-3xl) var(--space-lg);
+            margin-top: 56px;
+            position: relative;
+        }
+        
+        .video-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        .success-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold-tint);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            color: var(--gold);
+            padding: 10px 28px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
+        }
+        
+        .video-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: clamp(42px, 8vw, 64px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .video-description {
+            font-size: 20px;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: var(--space-2xl);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Video Container with premium styling */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto var(--space-2xl);
+            padding-bottom: 56.25%;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Post-Video CTA with premium styling */
+        .post-video-cta {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.02) 100%);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 32px;
+            padding: 64px 48px;
+            max-width: 700px;
+            margin: var(--space-3xl) auto 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.1);
+        }
+        
+        .post-video-cta::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--gold), transparent, var(--gold));
+            border-radius: 32px;
+            opacity: 0.3;
+            z-index: -1;
+            animation: rotate 4s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .cta-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        
+        .cta-description {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 20px 48px;
+            background: linear-gradient(135deg, var(--gold) 0%, #F4D03F 100%);
+            color: var(--black);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4);
+        }
+        
+        .cta-note {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--black);
+            padding: var(--space-2xl) var(--space-lg);
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: var(--space-3xl);
+        }
+        
+        footer img {
+            height: 40px;
+            margin-bottom: var(--space-md);
+            opacity: 0.5;
+        }
+        
+        footer h4 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--gold);
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+        }
+        
+        footer p {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 14px;
+        }
+        
+        /* Urgency Bar Mobile Fix */
+        .urgency-bar {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 16px;
+            padding: 24px 40px;
+            max-width: 900px;
+            margin: 40px auto;
+            text-align: center;
+        }
+        
+        .urgency-bar p {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 0;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                width: calc(100% - 32px);
+                min-width: auto;
+            }
+            
+            .nav-tagline {
+                display: none;
+            }
+            
+            h1 {
+                font-size: clamp(28px, 8vw, 48px);
+                line-height: 1.1;
+                padding: 0 10px;
+            }
+            
+            .subtitle {
+                font-size: 18px;
+                padding: 0 20px;
+            }
+            
+            .form-container {
+                padding: 36px 24px;
+                margin: 0 20px;
+            }
+            
+            .urgency-bar {
+                margin: 40px 20px;
+            }
+            
+            .urgency-bar p {
+                font-size: 14px;
+            }
+            
+            .post-video-cta {
+                padding: 48px 32px;
+            }
+            
+            /* Brand logos mobile */
+            .brand-logos {
+                gap: 20px;
+            }
+            
+            .brand-logos span {
+                font-size: 20px !important;
+            }
+            
+            /* Testimonials mobile */
+            .testimonial-card {
+                padding: 24px;
+            }
+            
+            .testimonial-card p {
+                font-size: 16px;
+            }
+        }
+        
+        /* Loading animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        body {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <img src="../../the99sports-site/assets/images/font-logo.png" alt="The 99 Sports" class="logo">
+        <span class="nav-tagline">By Athletes, For Athletes</span>
+    </nav>
+    
+    <!-- STEP 1: OPT-IN PAGE -->
+    <div class="page opt-in-page active" id="step1">
+        <div class="opt-in-content container">
+            <div class="badge">
+                <span class="icon-rocket"></span>
+                LAUNCHING SOON - JOIN THE WAITLIST
+            </div>
+            
+            <h1>HOW TO GET PAID LIKE THE <span class="gold-accent">TOP 1%</span> OF NIL ATHLETES</h1>
+            <span class="highlight" style="font-size: 20px; color: var(--gold); font-weight: 500; letter-spacing: 0.02em;">Any School. Any Sport. Any Athlete.</span>
+            
+            <p class="subtitle">Free Case Study: How I Earned Multiple 6-Figures From NIL (70+ Deals in 2 Years) Without Being a Starter... And Why 99% of Athletes Have No Idea This Is Even Possible</p>
+            
+            <!-- Featured In Section -->
+            <div style="margin: 40px auto 50px; text-align: center; max-width: 100%; padding: 0 20px;">
+                <p style="font-size: 12px; color: rgba(255, 255, 255, 0.4); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px;">As Featured On</p>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; opacity: 0.5;">
+                    <span style="font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 700; color: var(--white);">ESPN</span>
+                    <span style="font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 700; color: var(--white);">AMAZON PRIME</span>
+                    <span style="font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 700; color: var(--white);">FORBES</span>
+                </div>
+            </div>
+            
+            <div class="form-container">
+                <h2 class="form-title">JOIN THE WAITLIST + GET FREE CASE STUDY</h2>
+                <p class="form-description">Be first to know when we launch (plus instant access to my 2:30 video)</p>
+                
+                <form id="optInForm">
+                    <div class="form-group">
+                        <input type="text" name="first_name" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        JOIN WAITLIST + WATCH VIDEO →
+                    </button>
+                </form>
+                
+                <p class="form-note">100% Free. Unsubscribe anytime.</p>
+            </div>
+            
+            <!-- Coach Testimonials Section -->
+            <div style="margin: 60px auto; max-width: 1200px; padding: 0 20px;">
+                <p style="font-size: 14px; color: rgba(255, 255, 255, 0.5); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 30px; text-align: center;">What Coaches Are Saying</p>
+                <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); border-radius: 16px; padding: 30px; margin-bottom: 20px; backdrop-filter: blur(10px);">
+                    <p style="font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, 0.8); margin-bottom: 16px; font-style: italic;">"Trace has been nothing short of sensational in NIL. He has secured countless NIL deals with blue-chip companies worldwide. I know no other athlete better positioned to speak about NIL than Trace Young."</p>
+                    <p style="color: var(--gold); font-weight: 600; text-transform: uppercase; font-size: 14px; letter-spacing: 0.05em;">— Frank Martin, UMass Head Basketball Coach</p>
+                </div>
+                <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); border-radius: 16px; padding: 30px; backdrop-filter: blur(10px);">
+                    <p style="font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, 0.8); margin-bottom: 16px; font-style: italic;">"I've seen firsthand how Trace maximized his NIL opportunities beyond what anyone expected. His systematic approach is something every athlete needs to learn."</p>
+                    <p style="color: var(--gold); font-weight: 600; text-transform: uppercase; font-size: 14px; letter-spacing: 0.05em;">— Division I Athletic Director</p>
+                </div>
+            </div>
+            
+            <!-- Brand Logos Section -->
+            <div style="margin: 60px auto; text-align: center; max-width: 100%; padding: 0 20px;">
+                <p style="font-size: 14px; color: rgba(255, 255, 255, 0.4); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 32px;">Brands I Have Personally Worked With</p>
+                <div class="brand-logos" style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
+                    <span style="font-family: 'Unbounded', sans-serif; font-size: 36px; font-weight: 700; color: var(--white); opacity: 0.7;">NIKE</span>
+                    <span style="font-family: 'Unbounded', sans-serif; font-size: 36px; font-weight: 700; color: var(--white); opacity: 0.7;">MERCEDES</span>
+                    <span style="font-family: 'Unbounded', sans-serif; font-size: 36px; font-weight: 700; color: var(--white); opacity: 0.7;">POWERADE</span>
+                    <span style="font-family: 'Unbounded', sans-serif; font-size: 36px; font-weight: 700; color: var(--white); opacity: 0.7;">CHIPOTLE</span>
+                </div>
+            </div>
+            
+            <!-- Urgency Bar -->
+            <div class="urgency-bar">
+                <p>
+                    Only 20 Founding Member Spots Available • First Come, First Served
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- STEP 2: VIDEO PAGE (After Opt-in) -->
+    <div class="page video-page" id="step2">
+        <div class="video-content container">
+            <div class="success-badge">
+                <span class="icon-rocket"></span>
+                VIDEO UNLOCKED - WATCH IMMEDIATELY
+            </div>
+            
+            <h2 class="video-title">THE NIL SECRET <span class="gold-accent">99% OF ATHLETES</span> DON'T KNOW...</h2>
+            
+            <p class="video-description">In this 2:30 case study, I reveal the exact playbook I used to earn multiple 6-figures from NIL—without being the star player. This changes everything for athletes who think they can't get paid.</p>
+            
+            <!-- Brands Worked With -->
+            <div style="margin: 40px 0; text-align: center;">
+                <p style="font-size: 14px; color: rgba(255, 255, 255, 0.5); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">Trace has worked with</p>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; opacity: 0.6;">
+                    <span style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--white);">NIKE</span>
+                    <span style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--white);">MERCEDES</span>
+                    <span style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--white);">POWERADE</span>
+                </div>
+            </div>
+            
+            <!-- YouTube Video Embed -->
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/I6h5VbMGqUs?modestbranding=1&rel=0" 
+                    title="The 99 Sports - Trace Young NIL Story"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <!-- Post-Video CTA -->
+            <div class="post-video-cta">
+                <h3 class="cta-title">WANT EARLY ACCESS WHEN WE <span class="gold-accent">LAUNCH?</span></h3>
+                <p class="cta-description">The 99 Sports opens to just 20 founding members. Schedule a call to secure your spot:</p>
+                
+                <a href="#" class="cta-button">
+                    BOOK YOUR STRATEGY CALL →
+                    <span class="arrow-icon" style="background: var(--black);"></span>
+                </a>
+                
+                <p class="cta-note">Limited to 20 founding members. First come, first served.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <img src="../../the99sports-site/assets/images/font-logo.png" alt="The 99 Sports" style="filter: brightness(0) invert(1);">
+            <h4>THE 99 SPORTS</h4>
+            <p>Built by an athlete. For every athlete.</p>
+            <p>© 2024 The 99 Sports. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Handle form submission
+        document.getElementById('optInForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Hide Step 1, Show Step 2
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // In production, this would submit to ConvertKit
+            // and redirect to the actual video page
+        });
+        
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
