@@ -59,28 +59,28 @@
             background: rgba(8, 8, 8, 0.8);
             backdrop-filter: blur(20px);
             border-radius: 100px;
-            padding: 0 32px;
-            height: 56px;
+            padding: 0 40px;
+            height: 64px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 1000;
-            min-width: 300px;
+            min-width: 400px;
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
         
         .logo {
-            height: 32px;
+            height: 40px;
             filter: brightness(0) invert(1);
         }
         
         .nav-tagline {
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 0.1em;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
             color: var(--gold);
-            margin-left: 24px;
+            margin-left: 32px;
         }
         
         /* Page Sections */
@@ -349,8 +349,9 @@
         }
         
         .btn-primary {
-            width: 100%;
-            padding: 20px;
+            width: auto;
+            display: inline-flex;
+            padding: 16px 40px;
             background: linear-gradient(135deg, var(--gold) 0%, #F4D03F 100%);
             color: var(--black);
             border: none;
@@ -365,7 +366,6 @@
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
             margin-top: var(--space-lg);
-            display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
@@ -579,6 +579,11 @@
             100% { transform: rotate(360deg); }
         }
         
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+        
         .cta-title {
             font-family: 'Unbounded', sans-serif;
             font-size: 42px;
@@ -739,80 +744,296 @@
         body {
             animation: fadeIn 1s ease-out;
         }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: #0A0A0A;
+            border-radius: 24px;
+            padding: 48px 40px;
+            max-width: 540px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            animation: slideUp 0.4s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+        
+        .close-modal::before,
+        .close-modal::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 2px;
+            background: var(--white);
+        }
+        
+        .close-modal::before {
+            transform: rotate(45deg);
+        }
+        
+        .close-modal::after {
+            transform: rotate(-45deg);
+        }
+        
+        .modal-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            line-height: 1.3;
+            color: #FFFFFF;
+            text-align: left;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 8px;
+            font-weight: 400;
+            text-align: left;
+        }
+        
+        .modal-form {
+            margin-top: 0;
+        }
+        
+        .modal-form .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .modal-form input {
+            width: 100%;
+            padding: 14px 16px;
+            background: #1A1A1A;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: #FFFFFF;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-form input:focus {
+            outline: none;
+            border-color: #4A9FFF;
+            box-shadow: 0 0 0 2px rgba(74, 159, 255, 0.2);
+        }
+        
+        .modal-form input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .phone-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .country-select {
+            position: absolute;
+            left: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.7);
+            pointer-events: none;
+        }
+        
+        .country-flag {
+            font-size: 20px;
+        }
+        
+        .country-code {
+            font-size: 16px;
+        }
+        
+        .phone-input-wrapper input {
+            padding-left: 100px;
+        }
+        
+        .sms-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 24px 0;
+        }
+        
+        .sms-consent input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        
+        .sms-consent-text {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.5;
+        }
+        
+        .modal-form .btn-submit {
+            width: 100%;
+            padding: 16px 32px;
+            background: #333333;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+        
+        .modal-form .btn-submit:hover {
+            background: #444444;
+        }
+        
+        .modal-form .btn-submit:active {
+            background: #222222;
+        }
+        
+        @media (max-width: 600px) {
+            .modal-content {
+                padding: 32px 24px;
+                width: 95%;
+            }
+            
+            .modal-title {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="nav">
         <img src="../../the99sports-site/assets/images/font-logo.png" alt="The 99 Sports" class="logo">
-        <span class="nav-tagline">By Athletes, For Athletes</span>
+        <span class="nav-tagline">Launching Soon - Join The Waitlist</span>
     </nav>
     
     <!-- STEP 1: OPT-IN PAGE -->
     <div class="page opt-in-page active" id="step1">
         <div class="opt-in-content container">
-            <div class="badge">
-                <span class="icon-rocket"></span>
-                LAUNCHING SOON - JOIN THE WAITLIST
+            <!-- Two Column Hero Layout -->
+            <div style="display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                <!-- Left Column - Copy & CTA -->
+                <div style="flex: 1; min-width: 320px;">
+                    <p style="color: var(--gold); font-size: 14px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 16px; animation: fadeInUp 0.4s ease-out;">
+                        ▸ ATTENTION ATHLETES
+                    </p>
+                    
+                    <h1 style="text-align: left; font-size: clamp(32px, 4.5vw, 52px); line-height: 1.1; margin-bottom: 20px; animation: fadeInUp 0.5s ease-out 0.1s both;">
+                        HOW TO GET PAID LIKE THE <span class="gold-accent">TOP 1%</span> OF NIL ATHLETES
+                    </h1>
+                    
+                    <p style="font-size: 20px; color: rgba(255, 255, 255, 0.8); margin: 24px 0; text-align: left; line-height: 1.5; animation: fadeInUp 0.6s ease-out 0.2s both;">
+                        Free Case Study: How I Earned <span style="color: var(--gold); font-weight: 600;">Multiple 6-Figures</span> From NIL Without Starting a Single Game
+                    </p>
+                    
+                    <!-- Quick Stats -->
+                    <div style="display: flex; gap: 24px; margin: 24px 0; animation: fadeInUp 0.7s ease-out 0.3s both;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="color: var(--gold); font-size: 24px;">✓</span>
+                            <span style="color: rgba(255, 255, 255, 0.7); font-size: 14px;">70+ Brand Deals</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="color: var(--gold); font-size: 24px;">✓</span>
+                            <span style="color: rgba(255, 255, 255, 0.7); font-size: 14px;">Fortune 500 Partners</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="color: var(--gold); font-size: 24px;">✓</span>
+                            <span style="color: rgba(255, 255, 255, 0.7); font-size: 14px;">ESPN Top Earner</span>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <div style="margin: 32px 0; animation: fadeInUp 0.8s ease-out 0.4s both;">
+                        <button class="btn-primary open-modal" onclick="openModal()" style="font-size: 18px; padding: 18px 44px; box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);">
+                            GET FREE CASE STUDY →
+                            <span class="btn-icon"></span>
+                        </button>
+                        
+                        <p style="font-size: 14px; color: rgba(255, 255, 255, 0.5); margin-top: 16px;">
+                            🔒 Join 500+ athletes on the waitlist • 100% Free
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Hero Image -->
+                <div style="flex: 0 0 420px; min-width: 300px; position: relative; animation: fadeInUp 0.8s ease-out 0.5s both;">
+                    <!-- Glow Effect Behind Image -->
+                    <div style="position: absolute; inset: -40px; background: radial-gradient(circle at center, rgba(212, 175, 55, 0.15), transparent 70%); filter: blur(80px); pointer-events: none;"></div>
+                    
+                    <img src="/Users/boshaffer/Downloads/website photos_videos/IMG_9120.JPG" 
+                         alt="Trace Young - 70+ NIL Deals with Nike, Under Armour, Amazon and more" 
+                         style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 40px 120px rgba(0, 0, 0, 0.9); border: 2px solid rgba(212, 175, 55, 0.25); position: relative; z-index: 1; transform: perspective(1000px) rotateY(-5deg);">
+                </div>
             </div>
             
-            <h1>HOW TO GET PAID LIKE THE <span class="gold-accent">TOP 1%</span> OF NIL ATHLETES</h1>
-            <span class="highlight" style="font-size: 20px; color: var(--gold); font-weight: 500; letter-spacing: 0.02em;">Any School. Any Sport. Any Athlete.</span>
-            
-            <p class="subtitle">Free Case Study: How I Earned Multiple 6-Figures From NIL (70+ Deals in 2 Years) Without Being a Starter... And Why 99% of Athletes Have No Idea This Is Even Possible</p>
-            
-            <!-- Featured In Section -->
-            <div style="margin: 40px auto 50px; text-align: center; max-width: 100%; padding: 0 20px;">
+            <!-- Featured In Section - Below Hero -->
+            <div style="margin: 80px auto 40px; text-align: center; max-width: 100%; padding: 0 20px;">
                 <p style="font-size: 12px; color: rgba(255, 255, 255, 0.4); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px;">As Featured On</p>
                 <div style="display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; opacity: 0.5;">
-                    <span style="font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 700; color: var(--white);">ESPN</span>
-                    <span style="font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 700; color: var(--white);">AMAZON PRIME</span>
-                    <span style="font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 700; color: var(--white);">FORBES</span>
+                    <span style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: var(--white);">ESPN</span>
+                    <span style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: var(--white);">AMAZON PRIME</span>
+                    <span style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: var(--white);">FORBES</span>
                 </div>
             </div>
             
-            <div class="form-container">
-                <h2 class="form-title">JOIN THE WAITLIST + GET FREE CASE STUDY</h2>
-                <p class="form-description">Be first to know when we launch (plus instant access to my 2:30 video)</p>
-                
-                <form id="optInForm">
-                    <div class="form-group">
-                        <input type="text" name="first_name" placeholder="First Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Email Address" required>
-                    </div>
-                    <button type="submit" class="btn-primary">
-                        JOIN WAITLIST + WATCH VIDEO →
-                    </button>
-                </form>
-                
-                <p class="form-note">100% Free. Unsubscribe anytime.</p>
-            </div>
             
-            <!-- Coach Testimonials Section -->
-            <div style="margin: 60px auto; max-width: 1200px; padding: 0 20px;">
-                <p style="font-size: 14px; color: rgba(255, 255, 255, 0.5); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 30px; text-align: center;">What Coaches Are Saying</p>
-                <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); border-radius: 16px; padding: 30px; margin-bottom: 20px; backdrop-filter: blur(10px);">
-                    <p style="font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, 0.8); margin-bottom: 16px; font-style: italic;">"Trace has been nothing short of sensational in NIL. He has secured countless NIL deals with blue-chip companies worldwide. I know no other athlete better positioned to speak about NIL than Trace Young."</p>
-                    <p style="color: var(--gold); font-weight: 600; text-transform: uppercase; font-size: 14px; letter-spacing: 0.05em;">— Frank Martin, UMass Head Basketball Coach</p>
-                </div>
-                <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); border-radius: 16px; padding: 30px; backdrop-filter: blur(10px);">
-                    <p style="font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, 0.8); margin-bottom: 16px; font-style: italic;">"I've seen firsthand how Trace maximized his NIL opportunities beyond what anyone expected. His systematic approach is something every athlete needs to learn."</p>
-                    <p style="color: var(--gold); font-weight: 600; text-transform: uppercase; font-size: 14px; letter-spacing: 0.05em;">— Division I Athletic Director</p>
-                </div>
-            </div>
-            
-            <!-- Brand Logos Section -->
-            <div style="margin: 60px auto; text-align: center; max-width: 100%; padding: 0 20px;">
-                <p style="font-size: 14px; color: rgba(255, 255, 255, 0.4); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 32px;">Brands I Have Personally Worked With</p>
-                <div class="brand-logos" style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
-                    <span style="font-family: 'Unbounded', sans-serif; font-size: 36px; font-weight: 700; color: var(--white); opacity: 0.7;">NIKE</span>
-                    <span style="font-family: 'Unbounded', sans-serif; font-size: 36px; font-weight: 700; color: var(--white); opacity: 0.7;">MERCEDES</span>
-                    <span style="font-family: 'Unbounded', sans-serif; font-size: 36px; font-weight: 700; color: var(--white); opacity: 0.7;">POWERADE</span>
-                    <span style="font-family: 'Unbounded', sans-serif; font-size: 36px; font-weight: 700; color: var(--white); opacity: 0.7;">CHIPOTLE</span>
-                </div>
-            </div>
             
             <!-- Urgency Bar -->
             <div class="urgency-bar">
@@ -824,74 +1045,138 @@
     </div>
     
     <!-- STEP 2: VIDEO PAGE (After Opt-in) -->
-    <div class="page video-page" id="step2">
-        <div class="video-content container">
-            <div class="success-badge">
-                <span class="icon-rocket"></span>
-                VIDEO UNLOCKED - WATCH IMMEDIATELY
-            </div>
-            
-            <h2 class="video-title">THE NIL SECRET <span class="gold-accent">99% OF ATHLETES</span> DON'T KNOW...</h2>
-            
-            <p class="video-description">In this 2:30 case study, I reveal the exact playbook I used to earn multiple 6-figures from NIL—without being the star player. This changes everything for athletes who think they can't get paid.</p>
-            
-            <!-- Brands Worked With -->
-            <div style="margin: 40px 0; text-align: center;">
-                <p style="font-size: 14px; color: rgba(255, 255, 255, 0.5); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">Trace has worked with</p>
-                <div style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; opacity: 0.6;">
-                    <span style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--white);">NIKE</span>
-                    <span style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--white);">MERCEDES</span>
-                    <span style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--white);">POWERADE</span>
+    <div class="page video-page" id="step2" style="background: #0A0A0A; min-height: 100vh; padding-top: 80px;">
+        <div class="video-content" style="max-width: 1000px; width: 100%; margin: 0 auto; padding: 0 20px;">
+            <!-- Success Badge -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                <div class="success-badge" style="display: inline-block; animation: pulse 2s ease-in-out infinite; padding: 10px 24px; font-size: 12px;">
+                    <span style="display: inline-block; width: 16px; height: 16px; background: var(--gold); border-radius: 50%; filter: drop-shadow(0 0 8px var(--gold-glow)); margin-right: 8px; vertical-align: middle;"></span>
+                    CONGRATULATIONS - YOU'RE ON THE WAITLIST!
                 </div>
             </div>
             
-            <!-- YouTube Video Embed -->
-            <div class="video-container">
+            <!-- Waitlist Confirmation -->
+            <div style="text-align: center; margin-bottom: 32px;">
+                <h2 style="font-family: 'Unbounded', sans-serif; font-size: clamp(32px, 4vw, 42px); margin-bottom: 16px; color: var(--white);">
+                    Congrats, You're On The Waitlist
+                </h2>
+                <p style="font-size: 17px; color: rgba(255, 255, 255, 0.8); line-height: 1.6; max-width: 700px; margin: 0 auto 16px;">
+                    You'll get <strong style="color: var(--gold);">exclusive updates</strong> about our launch.
+                </p>
+                <p style="font-size: 16px; color: rgba(255, 255, 255, 0.7); line-height: 1.7; max-width: 650px; margin: 0 auto 24px;">
+                    Over the next week, you'll be getting emails from me on my journey (for those that don't know me), why I started this, and how you're going to be at a <span style="color: var(--gold); font-weight: 600;">massive advantage</span> compared to other athletes.
+                </p>
+                <p style="font-size: 16px; color: rgba(255, 255, 255, 0.7); margin-bottom: 24px;">
+                    In the meantime, watch this quick case study to see exactly how I landed 70+ brand deals:
+                </p>
+            </div>
+            
+            <!-- Video Title -->
+            <h3 style="text-align: center; font-size: clamp(24px, 3vw, 30px); margin: 0 auto 8px; color: var(--gold); font-family: 'Unbounded', sans-serif;">
+                The NIL Blueprint That Changed Everything
+            </h3>
+            
+            <!-- Video Description -->
+            <p style="text-align: center; font-size: 14px; color: rgba(255, 255, 255, 0.6); margin-bottom: 20px;">
+                2-minute case study reveals my exact system
+            </p>
+            
+            <!-- YouTube Video Embed with Gold Glow -->
+            <div class="video-container" id="videoContainer" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 0 60px rgba(212, 175, 55, 0.4), 0 20px 60px rgba(0, 0, 0, 0.8); border: 2px solid rgba(212, 175, 55, 0.3);">
                 <iframe 
-                    src="https://www.youtube.com/embed/I6h5VbMGqUs?modestbranding=1&rel=0" 
-                    title="The 99 Sports - Trace Young NIL Story"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
+                    id="youtubeVideo"
+                    width="100%" 
+                    height="100%"
+                    src="https://www.youtube.com/embed/I6h5VbMGqUs?rel=0&enablejsapi=1" 
+                    title="The 99 Sports - NIL Success Blueprint"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
                 </iframe>
             </div>
             
-            <!-- Post-Video CTA -->
-            <div class="post-video-cta">
-                <h3 class="cta-title">WANT EARLY ACCESS WHEN WE <span class="gold-accent">LAUNCH?</span></h3>
-                <p class="cta-description">The 99 Sports opens to just 20 founding members. Schedule a call to secure your spot:</p>
+            <!-- Play Button CTA -->
+            <div style="text-align: center; margin-top: 24px; margin-bottom: 32px;">
+                <button onclick="playVideo()" style="
+                    background: linear-gradient(135deg, var(--gold) 0%, #F4D03F 100%);
+                    color: var(--black);
+                    border: none;
+                    padding: 14px 32px;
+                    border-radius: 10px;
+                    font-size: 15px;
+                    font-weight: 700;
+                    letter-spacing: 0.02em;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    box-shadow: 0 6px 24px rgba(212, 175, 55, 0.4);
+                    transition: all 0.3s ease;
+                ">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    WATCH THE FREE CASE STUDY
+                </button>
+            </div>
+            
+            <!-- Story Section -->
+            <div style="max-width: 800px; margin: 48px auto; padding: 0 20px;">
+                <div style="border-left: 3px solid var(--gold); padding-left: 24px; margin-bottom: 32px;">
+                    <h3 style="font-family: 'Unbounded', sans-serif; font-size: 24px; margin-bottom: 16px; color: var(--white);">
+                        My Journey from Bench Player to NIL Leader
+                    </h3>
+                    <p style="font-size: 16px; line-height: 1.7; color: rgba(255, 255, 255, 0.8); margin-bottom: 16px;">
+                        When I arrived at LSU, I wasn't the star athlete. I wasn't getting the playing time. But I refused to let that define my college experience or my earning potential.
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.7; color: rgba(255, 255, 255, 0.8); margin-bottom: 16px;">
+                        While others focused only on the field, I built a personal brand that attracted <span style="color: var(--gold); font-weight: 600;">70+ major brands</span> including Nike, Under Armour, and Amazon. I discovered a system that any athlete can use - regardless of playing time, sport, or school size.
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.7; color: rgba(255, 255, 255, 0.8);">
+                        Now I'm sharing everything I learned with the next generation of athletes who understand that NIL is about more than just being a starter.
+                    </p>
+                </div>
                 
-                <a href="#" class="cta-button">
-                    BOOK YOUR STRATEGY CALL →
-                    <span class="arrow-icon" style="background: var(--black);"></span>
-                </a>
-                
-                <p class="cta-note">Limited to 20 founding members. First come, first served.</p>
+                <!-- Email Reminder Box -->
+                <div style="background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 12px; padding: 24px; text-align: center;">
+                    <div style="display: inline-block; margin-bottom: 12px;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--gold), #F4D03F); border-radius: 50%; display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.5));">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A0A0A">
+                                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="#0A0A0A" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h4 style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 8px; color: var(--gold);">
+                        Check Your Email!
+                    </h4>
+                    <p style="font-size: 14px; color: rgba(255, 255, 255, 0.7); line-height: 1.5;">
+                        I'll be sending you exclusive NIL strategies, brand partnership tips, and early access to The 99 Sports launch.<br>
+                        <strong style="color: rgba(255, 255, 255, 0.9);">Make sure to whitelist our emails so you don't miss anything!</strong>
+                    </p>
+                </div>
             </div>
         </div>
-        
-        <footer>
-            <img src="../../the99sports-site/assets/images/font-logo.png" alt="The 99 Sports" style="filter: brightness(0) invert(1);">
-            <h4>THE 99 SPORTS</h4>
-            <p>Built by an athlete. For every athlete.</p>
-            <p>© 2024 The 99 Sports. All rights reserved.</p>
-        </footer>
     </div>
     
     <script>
-        // Handle form submission
-        document.getElementById('optInForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Play video function
+        function playVideo() {
+            const iframe = document.getElementById('youtubeVideo');
+            const currentSrc = iframe.src;
             
-            // Hide Step 1, Show Step 2
-            document.getElementById('step1').classList.remove('active');
-            document.getElementById('step2').classList.add('active');
+            // Add autoplay parameter if not already there
+            if (!currentSrc.includes('autoplay=1')) {
+                iframe.src = currentSrc + '&autoplay=1';
+            }
             
-            // Scroll to top
-            window.scrollTo(0, 0);
-            
-            // In production, this would submit to ConvertKit
-            // and redirect to the actual video page
-        });
+            // Scroll to video
+            document.getElementById('videoContainer').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
         
         // Smooth scroll behavior
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -901,6 +1186,110 @@
                     behavior: 'smooth'
                 });
             });
+        });
+    </script>
+    
+    <!-- Modal Popup -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()"></span>
+            
+            <h2 class="modal-title">Unlock The NIL Success Blueprint:</h2>
+            
+            <form id="modalForm" class="modal-form">
+                <div class="form-group">
+                    <label class="form-label">Name</label>
+                    <input type="text" name="first_name" placeholder="Your Name Here" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" name="email" placeholder="Your Best Email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <div class="phone-input-wrapper">
+                        <div class="country-select">
+                            <span class="country-flag">🇺🇸</span>
+                            <span class="country-code">+1</span>
+                        </div>
+                        <input type="tel" name="phone" placeholder="(XXX) XXX-XXXX">
+                    </div>
+                </div>
+                
+                <div class="sms-consent">
+                    <input type="checkbox" id="sms-consent" name="sms_consent">
+                    <label for="sms-consent" class="sms-consent-text">
+                        Sms Consent<br>
+                        By checking this box, I agree to receive SMS messages from The 99 Sports LLC about program updates, reminders, and promotional offers. Message & data rates may apply. Reply STOP to opt out at any time. Consent is not a condition of purchase.
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn-submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Modal Functions
+        function openModal() {
+            document.getElementById('modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+        
+        // Handle modal form submission
+        document.getElementById('modalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const firstName = formData.get('first_name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            
+            console.log('Form submitted:', { firstName, email, phone });
+            
+            // Close modal
+            closeModal();
+            
+            // Show the video page
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+            
+            // Smooth scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+            // Here you would normally send the data to your backend
+            // Example:
+            // fetch('/api/waitlist', {
+            //     method: 'POST',
+            //     body: JSON.stringify({ firstName, email, phone }),
+            //     headers: { 'Content-Type': 'application/json' }
+            // });
         });
     </script>
 </body>
