@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The 99 Sports - NIL Success System</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/font-logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/font-logo.png">
+    <link rel="apple-touch-icon" href="assets/images/font-logo.png">
+    <link rel="shortcut icon" href="assets/images/font-logo.png">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1218,29 +1224,10 @@
             
             <!-- Waitlist Confirmation -->
             <div style="text-align: center; margin-bottom: 32px;">
-                <h2 style="font-family: 'Unbounded', sans-serif; font-size: clamp(32px, 4vw, 42px); margin-bottom: 16px; color: var(--white);">
+                <h2 style="font-family: 'Unbounded', sans-serif; font-size: clamp(32px, 4vw, 42px); margin-bottom: 32px; color: var(--white);">
                     Congrats, You're On The Waitlist
                 </h2>
-                <p style="font-size: 17px; color: rgba(255, 255, 255, 0.8); line-height: 1.6; max-width: 700px; margin: 0 auto 16px;">
-                    You'll get exclusive updates about our launch.
-                </p>
-                <p style="font-size: 16px; color: rgba(255, 255, 255, 0.7); line-height: 1.7; max-width: 650px; margin: 0 auto 24px;">
-                    Over the next week, you'll be getting emails from me on my journey (for those that don't know me), why I started this, and how you're going to be at a massive advantage compared to other athletes.
-                </p>
-                <p style="font-size: 16px; color: rgba(255, 255, 255, 0.7); margin-bottom: 24px;">
-                    In the meantime, watch this quick case study to see exactly how I landed 70+ brand deals:
-                </p>
             </div>
-            
-            <!-- Video Title -->
-            <h3 style="text-align: center; font-size: clamp(24px, 3vw, 30px); margin: 0 auto 8px; color: var(--gold); font-family: 'Unbounded', sans-serif;">
-                The NIL Blueprint That Changed Everything
-            </h3>
-            
-            <!-- Video Description -->
-            <p style="text-align: center; font-size: 14px; color: rgba(255, 255, 255, 0.6); margin-bottom: 20px;">
-                2-minute case study reveals my exact system
-            </p>
             
             <!-- YouTube Video Embed with Gold Glow -->
             <div class="video-container" id="videoContainer" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 0 60px rgba(212, 175, 55, 0.4), 0 20px 60px rgba(0, 0, 0, 0.8); border: 2px solid rgba(212, 175, 55, 0.3);">
@@ -1425,7 +1412,15 @@
             const firstName = formData.get('first_name');
             const email = formData.get('email');
             const phone = formData.get('phone');
-            const smsConsent = formData.get('sms_consent') ? 'true' : 'false';
+            const smsConsent = formData.get('sms_consent') ? true : false;
+            
+            // Debug logging
+            console.log('Form submission data:', {
+                firstName,
+                email,
+                phone,
+                smsConsent
+            });
             
             // Show loading state
             const submitBtn = e.target.querySelector('.btn-submit');
@@ -1447,10 +1442,15 @@
                 params.append('source', 'the99sports-funnel');
                 params.append('timestamp', new Date().toISOString());
                 
-                await fetch(ZAPIER_WEBHOOK_URL, {
+                console.log('Sending to Zapier:', params.toString());
+                
+                const response = await fetch(ZAPIER_WEBHOOK_URL, {
                     method: 'POST',
+                    mode: 'no-cors', // Add no-cors mode for Zapier webhooks
                     body: params
                 });
+                
+                console.log('Zapier webhook sent successfully');
                 
                 // OPTION 2: ConvertKit Direct (if you want to switch later)
                 /*
