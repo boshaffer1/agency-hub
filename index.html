@@ -92,11 +92,11 @@
         /* Page Sections */
         .page {
             min-height: 100vh;
-            display: none;
+            display: none !important;
         }
         
         .page.active {
-            display: block;
+            display: block !important;
         }
         
         /* Background gradient effect inspired by waitlist-final */
@@ -1146,18 +1146,18 @@
         <span class="nav-tagline">Launching Soon - Join The Waitlist</span>
     </nav>
     
+    <!-- Background Video (Outside of pages for independent control) -->
+    <div id="backgroundVideoContainer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1;">
+        <video id="bgVideo" autoplay muted loop playsinline preload="auto" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; opacity: 0.6;">
+            <!-- Video sources will be dynamically loaded based on device -->
+            Your browser does not support the video tag.
+        </video>
+        <!-- Dark overlay for better text readability -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(10, 10, 10, 0.6) 0%, rgba(10, 10, 10, 0.85) 100%);"></div>
+    </div>
+    
     <!-- STEP 1: OPT-IN PAGE -->
     <div class="page opt-in-page active" id="step1">
-        <!-- Background Video -->
-        <div id="backgroundVideoContainer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1;">
-            <video id="bgVideo" autoplay muted loop playsinline preload="auto" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; opacity: 0.6;">
-                <!-- Video sources will be dynamically loaded based on device -->
-                Your browser does not support the video tag.
-            </video>
-            <!-- Dark overlay for better text readability -->
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(10, 10, 10, 0.6) 0%, rgba(10, 10, 10, 0.85) 100%);"></div>
-        </div>
-        
         <div class="opt-in-content container" style="position: relative; z-index: 1;">
             <!-- Single Column Hero Layout for Better Mobile -->
             <div style="max-width: 800px; margin: 0 auto; padding: 80px 20px 40px; text-align: center;">
