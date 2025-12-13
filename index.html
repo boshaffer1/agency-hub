@@ -1149,7 +1149,7 @@
     <!-- STEP 1: OPT-IN PAGE -->
     <div class="page opt-in-page active" id="step1">
         <!-- Background Video -->
-        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1;">
+        <div id="backgroundVideoContainer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1;">
             <video id="bgVideo" autoplay muted loop playsinline preload="auto" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; opacity: 0.6;">
                 <!-- Video sources will be dynamically loaded based on device -->
                 Your browser does not support the video tag.
@@ -1224,9 +1224,18 @@
             
             <!-- Waitlist Confirmation -->
             <div style="text-align: center; margin-bottom: 32px;">
-                <h2 style="font-family: 'Unbounded', sans-serif; font-size: clamp(32px, 4vw, 42px); margin-bottom: 32px; color: var(--white);">
+                <h2 style="font-family: 'Unbounded', sans-serif; font-size: clamp(32px, 4vw, 42px); margin-bottom: 16px; color: var(--white);">
                     Congrats, You're On The Waitlist
                 </h2>
+                <p style="font-size: 17px; color: rgba(255, 255, 255, 0.8); line-height: 1.6; max-width: 700px; margin: 0 auto 16px;">
+                    You'll get exclusive updates about our launch.
+                </p>
+                <p style="font-size: 16px; color: rgba(255, 255, 255, 0.7); line-height: 1.7; max-width: 650px; margin: 0 auto 24px;">
+                    Over the next week, you'll be getting emails from me on my journey (for those that don't know me), why I started this, and how you're going to be at a massive advantage compared to other athletes.
+                </p>
+                <p style="font-size: 16px; color: rgba(255, 255, 255, 0.7); margin-bottom: 24px;">
+                    In the meantime, watch this quick case study to see exactly how I landed 70+ brand deals:
+                </p>
             </div>
             
             <!-- YouTube Video Embed with Gold Glow -->
@@ -1494,8 +1503,9 @@
                 closeModal();
                 document.getElementById('step1').classList.remove('active');
                 document.getElementById('step2').classList.add('active');
-                // Hide navigation on video page
+                // Hide navigation and background video on video page
                 document.querySelector('.nav').style.display = 'none';
+                document.getElementById('backgroundVideoContainer').style.display = 'none';
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 
             } catch (error) {
@@ -1504,8 +1514,9 @@
                 closeModal();
                 document.getElementById('step1').classList.remove('active');
                 document.getElementById('step2').classList.add('active');
-                // Hide navigation on video page
+                // Hide navigation and background video on video page
                 document.querySelector('.nav').style.display = 'none';
+                document.getElementById('backgroundVideoContainer').style.display = 'none';
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } finally {
                 submitBtn.textContent = originalText;
