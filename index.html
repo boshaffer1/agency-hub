@@ -677,61 +677,207 @@
             margin: 0;
         }
         
-        /* Mobile Responsive */
+        /* Mobile Responsive - Simplified for new layout */
         @media (max-width: 768px) {
+            /* Navigation */
             .nav {
                 width: calc(100% - 32px);
                 min-width: auto;
+                padding: 16px 20px;
             }
             
             .nav-tagline {
                 display: none;
             }
             
-            h1 {
-                font-size: clamp(28px, 8vw, 48px);
-                line-height: 1.1;
-                padding: 0 10px;
+            /* Fix the main hero container */
+            .opt-in-content {
+                padding: 0 !important;
             }
             
-            .subtitle {
-                font-size: 18px;
+            /* Hero content padding adjustment */
+            .opt-in-content > div {
+                padding: 60px 16px 40px !important;
+            }
+            
+            /* Quick stats - stack vertically on very small screens */
+            @media (max-width: 480px) {
+                .opt-in-content div[style*="flex-wrap: wrap"] {
+                    flex-direction: column !important;
+                    gap: 12px !important;
+                }
+            }
+            
+            /* Headlines */
+            h1 {
+                font-size: 32px !important;
+                line-height: 1.2 !important;
+                text-align: center !important;
+                padding: 0 !important;
+                margin-bottom: 20px !important;
+            }
+            
+            /* All paragraph text in hero */
+            .opt-in-content p[style*="font-size: 20px"] {
+                font-size: 17px !important;
+                text-align: center !important;
+                padding: 0 10px !important;
+            }
+            
+            .opt-in-content p[style*="font-size: 14px"] {
+                font-size: 13px !important;
+                text-align: center !important;
+            }
+            
+            /* Form Container */
+            .form-container {
+                padding: 32px 20px;
+                margin: 0 10px;
+                border-radius: 16px;
+            }
+            
+            .cta-section {
+                padding: 32px 20px;
+                margin: 0 10px;
+                border-radius: 16px;
+            }
+            
+            /* Buttons */
+            .btn-primary {
+                font-size: 16px !important;
+                padding: 16px 28px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 20px auto !important;
+                display: block !important;
+            }
+            
+            /* Stats Grid */
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin: 40px auto;
                 padding: 0 20px;
             }
             
-            .form-container {
-                padding: 36px 24px;
-                margin: 0 20px;
+            .stat-card {
+                padding: 20px;
             }
             
+            /* Video Page Mobile */
+            .video-page {
+                padding-top: 40px !important;
+            }
+            
+            .video-content {
+                padding: 0 16px !important;
+            }
+            
+            .video-content h2 {
+                font-size: 28px !important;
+                line-height: 1.3;
+                padding: 0 10px;
+            }
+            
+            .video-content p {
+                font-size: 15px;
+                line-height: 1.6;
+                padding: 0 10px;
+            }
+            
+            /* Video Container */
+            .video-container {
+                border-radius: 12px;
+                margin-bottom: 24px;
+            }
+            
+            /* Success Badge */
+            .success-badge {
+                font-size: 10px !important;
+                padding: 8px 16px;
+            }
+            
+            /* Featured In section */
+            .opt-in-content > div[style*="margin: 80px"] {
+                margin: 40px auto 20px !important;
+            }
+            
+            /* Brand logos container */
+            .opt-in-content div[style*="display: flex"][style*="gap: 48px"] {
+                gap: 20px !important;
+            }
+            
+            .opt-in-content span[style*="font-size: 20px"] {
+                font-size: 14px !important;
+            }
+            
+            /* Urgency Bar */
             .urgency-bar {
-                margin: 40px 20px;
+                margin: 30px 10px;
+                padding: 16px 20px;
+                border-radius: 12px;
             }
             
             .urgency-bar p {
-                font-size: 14px;
+                font-size: 13px;
             }
             
+            /* Post Video CTA */
             .post-video-cta {
-                padding: 48px 32px;
+                padding: 40px 24px;
+                margin: 40px 10px 20px;
+                border-radius: 20px;
             }
             
-            /* Brand logos mobile */
-            .brand-logos {
-                gap: 20px;
+            .post-video-cta h3 {
+                font-size: 24px;
             }
             
-            .brand-logos span {
-                font-size: 20px !important;
+            .post-video-cta p {
+                font-size: 15px;
+            }
+        }
+        
+        /* Extra Small Devices */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px !important;
             }
             
-            /* Testimonials mobile */
-            .testimonial-card {
-                padding: 24px;
-            }
-            
-            .testimonial-card p {
+            .subtitle {
                 font-size: 16px;
+            }
+            
+            /* Smaller image on very small screens */
+            .opt-in-content img {
+                max-width: 260px;
+                margin: 0 auto 16px;
+            }
+            
+            .form-container {
+                padding: 28px 16px;
+            }
+            
+            .cta-section {
+                padding: 28px 16px;
+            }
+            
+            .btn-primary {
+                font-size: 15px;
+                padding: 14px 24px;
+            }
+            
+            .video-content h2 {
+                font-size: 24px !important;
+            }
+            
+            .stats-grid {
+                gap: 12px;
+            }
+            
+            /* Adjust stats for very small screens */
+            .stats-grid > div {
+                font-size: 13px;
             }
         }
         
@@ -945,13 +1091,43 @@
             background: #222222;
         }
         
+        /* Modal Mobile Optimization */
         @media (max-width: 600px) {
             .modal-content {
-                padding: 32px 24px;
+                padding: 32px 20px;
                 width: 95%;
+                max-height: 85vh;
+                border-radius: 20px;
             }
             
             .modal-title {
+                font-size: 22px;
+                line-height: 1.3;
+            }
+            
+            .modal-form input {
+                font-size: 16px; /* Prevents iOS zoom */
+                padding: 12px 14px;
+            }
+            
+            .modal-form .form-group {
+                margin-bottom: 20px;
+            }
+            
+            .phone-input-wrapper input {
+                padding-left: 90px;
+            }
+            
+            .modal-form .btn-submit {
+                font-size: 16px;
+                padding: 14px 24px;
+            }
+            
+            .close-btn {
+                width: 32px;
+                height: 32px;
+                top: 16px;
+                right: 16px;
                 font-size: 24px;
             }
         }
@@ -966,72 +1142,63 @@
     
     <!-- STEP 1: OPT-IN PAGE -->
     <div class="page opt-in-page active" id="step1">
-        <div class="opt-in-content container">
-            <!-- Two Column Hero Layout -->
-            <div style="display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-                <!-- Left Column - Copy & CTA -->
-                <div style="flex: 1; min-width: 320px;">
-                    <p style="color: var(--gold); font-size: 14px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 16px; animation: fadeInUp 0.4s ease-out;">
-                        ▸ ATTENTION ATHLETES
-                    </p>
-                    
-                    <h1 style="text-align: left; font-size: clamp(32px, 4.5vw, 52px); line-height: 1.1; margin-bottom: 20px; animation: fadeInUp 0.5s ease-out 0.1s both;">
-                        HOW TO GET PAID LIKE THE <span class="gold-accent">TOP 1%</span> OF NIL ATHLETES
-                    </h1>
-                    
-                    <p style="font-size: 20px; color: rgba(255, 255, 255, 0.8); margin: 24px 0; text-align: left; line-height: 1.5; animation: fadeInUp 0.6s ease-out 0.2s both;">
-                        Free Case Study: How I Earned <span style="color: var(--gold); font-weight: 600;">Multiple 6-Figures</span> From NIL Without Starting a Single Game
-                    </p>
-                    
-                    <!-- Quick Stats -->
-                    <div style="display: flex; gap: 24px; margin: 24px 0; animation: fadeInUp 0.7s ease-out 0.3s both;">
-                        <div style="display: flex; align-items: center; gap: 8px;">
-                            <span style="color: var(--gold); font-size: 24px;">✓</span>
-                            <span style="color: rgba(255, 255, 255, 0.7); font-size: 14px;">70+ Brand Deals</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 8px;">
-                            <span style="color: var(--gold); font-size: 24px;">✓</span>
-                            <span style="color: rgba(255, 255, 255, 0.7); font-size: 14px;">Fortune 500 Partners</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 8px;">
-                            <span style="color: var(--gold); font-size: 24px;">✓</span>
-                            <span style="color: rgba(255, 255, 255, 0.7); font-size: 14px;">ESPN Top Earner</span>
-                        </div>
+        <!-- Background Video -->
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1;">
+            <video id="bgVideo" autoplay muted loop playsinline preload="auto" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; opacity: 0.6;">
+                <!-- Video sources will be dynamically loaded based on device -->
+                Your browser does not support the video tag.
+            </video>
+            <!-- Dark overlay for better text readability -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(10, 10, 10, 0.6) 0%, rgba(10, 10, 10, 0.85) 100%);"></div>
+        </div>
+        
+        <div class="opt-in-content container" style="position: relative; z-index: 1;">
+            <!-- Single Column Hero Layout for Better Mobile -->
+            <div style="max-width: 800px; margin: 0 auto; padding: 80px 20px 40px; text-align: center;">
+                <!-- Badge -->
+                <p style="color: var(--gold); font-size: 14px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; animation: fadeInUp 0.4s ease-out;">
+                    ▸ ATTENTION ATHLETES
+                </p>
+                
+                <!-- Main Headline -->
+                <h1 style="font-size: clamp(36px, 5vw, 64px); line-height: 1.1; margin-bottom: 24px; animation: fadeInUp 0.5s ease-out 0.1s both;">
+                    How I earned multiple 6 figures from NIL without being a <span class="gold-accent">top athlete</span>
+                </h1>
+                
+                <!-- Subheadline -->
+                <p style="font-size: clamp(18px, 2.5vw, 24px); color: rgba(255, 255, 255, 0.9); margin: 0 auto 32px; max-width: 600px; line-height: 1.5; animation: fadeInUp 0.6s ease-out 0.2s both;">
+                    Free Case Study: How I Earned <span style="color: var(--gold); font-weight: 600;">Multiple 6-Figures</span> From NIL Without Starting a Single Game
+                </p>
+                
+                <!-- Quick Stats - Vertical on Mobile -->
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 32px 0; animation: fadeInUp 0.7s ease-out 0.3s both;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="color: var(--gold); font-size: 24px;">✓</span>
+                        <span style="color: rgba(255, 255, 255, 0.9); font-size: 16px;">70+ brand deals</span>
                     </div>
-                    
-                    <!-- CTA Button -->
-                    <div style="margin: 32px 0; animation: fadeInUp 0.8s ease-out 0.4s both;">
-                        <button class="btn-primary open-modal" onclick="openModal()" style="font-size: 18px; padding: 18px 44px; box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);">
-                            GET FREE CASE STUDY →
-                            <span class="btn-icon"></span>
-                        </button>
-                        
-                        <p style="font-size: 14px; color: rgba(255, 255, 255, 0.5); margin-top: 16px;">
-                            🔒 Join 500+ athletes on the waitlist • 100% Free
-                        </p>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="color: var(--gold); font-size: 24px;">✓</span>
+                        <span style="color: rgba(255, 255, 255, 0.9); font-size: 16px;">Top NIL earner in the world (per ESPN)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="color: var(--gold); font-size: 24px;">✓</span>
+                        <span style="color: rgba(255, 255, 255, 0.9); font-size: 16px;">Starred in Amazon Prime's 'The Money Game'</span>
                     </div>
                 </div>
                 
-                <!-- Right Column - Hero Image -->
-                <div style="flex: 0 0 420px; min-width: 300px; position: relative; animation: fadeInUp 0.8s ease-out 0.5s both;">
-                    <!-- Glow Effect Behind Image -->
-                    <div style="position: absolute; inset: -40px; background: radial-gradient(circle at center, rgba(212, 175, 55, 0.15), transparent 70%); filter: blur(80px); pointer-events: none;"></div>
+                <!-- CTA Button -->
+                <div style="margin: 40px 0; animation: fadeInUp 0.8s ease-out 0.4s both;">
+                    <button class="btn-primary open-modal" onclick="openModal()" style="font-size: clamp(16px, 2vw, 20px); padding: 18px 44px; box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4); max-width: 400px; width: 100%;">
+                        GET FREE CASE STUDY →
+                        <span class="btn-icon"></span>
+                    </button>
                     
-                    <img src="assets/images/IMG_9120.JPG" 
-                         alt="Trace Young - 70+ NIL Deals with Nike, Under Armour, Amazon and more" 
-                         style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 40px 120px rgba(0, 0, 0, 0.9); border: 2px solid rgba(212, 175, 55, 0.25); position: relative; z-index: 1; transform: perspective(1000px) rotateY(-5deg);">
+                    <p style="font-size: 14px; color: rgba(255, 255, 255, 0.7); margin-top: 16px;">
+                        🔒 Join 500+ athletes on the waitlist • 100% Free
+                    </p>
                 </div>
             </div>
             
-            <!-- Featured In Section - Below Hero -->
-            <div style="margin: 80px auto 40px; text-align: center; max-width: 100%; padding: 0 20px;">
-                <p style="font-size: 12px; color: rgba(255, 255, 255, 0.4); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px;">As Featured On</p>
-                <div style="display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; opacity: 0.5;">
-                    <span style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: var(--white);">ESPN</span>
-                    <span style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: var(--white);">AMAZON PRIME</span>
-                    <span style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: var(--white);">FORBES</span>
-                </div>
-            </div>
             
             
             
@@ -1039,7 +1206,7 @@
     </div>
     
     <!-- STEP 2: VIDEO PAGE (After Opt-in) -->
-    <div class="page video-page" id="step2" style="background: #0A0A0A; min-height: 100vh; padding-top: 80px;">
+    <div class="page video-page" id="step2" style="background: #0A0A0A; min-height: 100vh; padding-top: 40px;">
         <div class="video-content" style="max-width: 1000px; width: 100%; margin: 0 auto; padding: 0 20px;">
             <!-- Success Badge -->
             <div style="text-align: center; margin-bottom: 20px;">
@@ -1089,36 +1256,69 @@
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
                 </iframe>
             </div>
-            
-            <!-- Play Button CTA -->
-            <div style="text-align: center; margin-top: 24px; margin-bottom: 32px;">
-                <button onclick="playVideo()" style="
-                    background: linear-gradient(135deg, var(--gold) 0%, #F4D03F 100%);
-                    color: var(--black);
-                    border: none;
-                    padding: 14px 32px;
-                    border-radius: 10px;
-                    font-size: 15px;
-                    font-weight: 700;
-                    letter-spacing: 0.02em;
-                    text-transform: uppercase;
-                    cursor: pointer;
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 10px;
-                    box-shadow: 0 6px 24px rgba(212, 175, 55, 0.4);
-                    transition: all 0.3s ease;
-                ">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                    WATCH THE FREE CASE STUDY
-                </button>
-            </div>
         </div>
     </div>
     
     <script>
+        // Load appropriate video based on device type
+        function loadBackgroundVideo() {
+            const video = document.getElementById('bgVideo');
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+            
+            // Clear existing sources
+            video.innerHTML = '';
+            
+            if (isMobile) {
+                // Load Powerade video for mobile
+                const sourceWebM = document.createElement('source');
+                sourceWebM.src = 'assets/videos/powerade-mobile-web.mp4';
+                sourceWebM.type = 'video/mp4';
+                video.appendChild(sourceWebM);
+                
+                const sourceMP4 = document.createElement('source');
+                sourceMP4.src = 'assets/videos/powerade-mobile.mp4';
+                sourceMP4.type = 'video/mp4';
+                video.appendChild(sourceMP4);
+                
+                const sourceMOV = document.createElement('source');
+                sourceMOV.src = 'assets/videos/powerade-mobile.mov';
+                sourceMOV.type = 'video/quicktime';
+                video.appendChild(sourceMOV);
+            } else {
+                // Load Business Clips video for desktop
+                const sourceWebM = document.createElement('source');
+                sourceWebM.src = 'assets/videos/business-clips-web.mp4';
+                sourceWebM.type = 'video/mp4';
+                video.appendChild(sourceWebM);
+                
+                const sourceMP4 = document.createElement('source');
+                sourceMP4.src = 'assets/videos/business-clips.mp4';
+                sourceMP4.type = 'video/mp4';
+                video.appendChild(sourceMP4);
+                
+                const sourceMOV = document.createElement('source');
+                sourceMOV.src = 'assets/videos/business-clips.mov';
+                sourceMOV.type = 'video/quicktime';
+                video.appendChild(sourceMOV);
+            }
+            
+            // Add fallback text
+            video.appendChild(document.createTextNode('Your browser does not support the video tag.'));
+            
+            // Force video load
+            video.load();
+        }
+        
+        // Load video on page load
+        window.addEventListener('DOMContentLoaded', loadBackgroundVideo);
+        
+        // Reload video on window resize (in case user switches between mobile/desktop view)
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(loadBackgroundVideo, 250);
+        });
+        
         // Play video function
         function playVideo() {
             const iframe = document.getElementById('youtubeVideo');
@@ -1218,36 +1418,99 @@
         });
         
         // Handle modal form submission
-        document.getElementById('modalForm').addEventListener('submit', function(e) {
+        document.getElementById('modalForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const formData = new FormData(e.target);
             const firstName = formData.get('first_name');
             const email = formData.get('email');
             const phone = formData.get('phone');
+            const smsConsent = formData.get('sms_consent') ? 'true' : 'false';
             
-            console.log('Form submitted:', { firstName, email, phone });
+            // Show loading state
+            const submitBtn = e.target.querySelector('.btn-submit');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
             
-            // Close modal
-            closeModal();
-            
-            // Show the video page
-            document.getElementById('step1').classList.remove('active');
-            document.getElementById('step2').classList.add('active');
-            
-            // Smooth scroll to top
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-            
-            // Here you would normally send the data to your backend
-            // Example:
-            // fetch('/api/waitlist', {
-            //     method: 'POST',
-            //     body: JSON.stringify({ firstName, email, phone }),
-            //     headers: { 'Content-Type': 'application/json' }
-            // });
+            try {
+                // ZAPIER WEBHOOK - Connected to ConvertKit
+                // Sending as form data for better Zapier compatibility
+                const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/24186094/ufcjcta/';
+                
+                // Create form data (Zapier handles this better than JSON)
+                const params = new URLSearchParams();
+                params.append('first_name', firstName);
+                params.append('email', email);
+                params.append('phone', phone);
+                params.append('sms_consent', smsConsent ? 'yes' : 'no');
+                params.append('source', 'the99sports-funnel');
+                params.append('timestamp', new Date().toISOString());
+                
+                await fetch(ZAPIER_WEBHOOK_URL, {
+                    method: 'POST',
+                    body: params
+                });
+                
+                // OPTION 2: ConvertKit Direct (if you want to switch later)
+                /*
+                const CONVERTKIT_FORM_ID = 'YOUR_FORM_ID_HERE';
+                const CONVERTKIT_API_KEY = 'YOUR_PUBLIC_KEY_HERE';
+                
+                await fetch(`https://api.convertkit.com/v3/forms/${CONVERTKIT_FORM_ID}/subscribe`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        api_key: CONVERTKIT_API_KEY,
+                        email: email,
+                        first_name: firstName,
+                        fields: {
+                            phone: phone,
+                            sms_consent: smsConsent
+                        }
+                    })
+                });
+                */
+                
+                // OPTION 3: Your own backend endpoint
+                /*
+                await fetch('/api/waitlist', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        first_name: firstName,
+                        email: email,
+                        phone: phone,
+                        sms_consent: smsConsent
+                    })
+                });
+                */
+                
+                // Success - show video page
+                closeModal();
+                document.getElementById('step1').classList.remove('active');
+                document.getElementById('step2').classList.add('active');
+                // Hide navigation on video page
+                document.querySelector('.nav').style.display = 'none';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+            } catch (error) {
+                console.error('Submission error:', error);
+                // Still show video page even if submission fails
+                closeModal();
+                document.getElementById('step1').classList.remove('active');
+                document.getElementById('step2').classList.add('active');
+                // Hide navigation on video page
+                document.querySelector('.nav').style.display = 'none';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
         });
     </script>
 </body>
