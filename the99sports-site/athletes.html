@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Athletes | The 99 Sports - Build Your NIL Brand</title>
+    <meta name="description" content="Join The 99 Sports and learn how to build an NIL brand that outlasts your career. Built by an athlete, for every athlete.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #D4AF37;
+            --black: #0A0A0A;
+            --dark-gray: #080808;
+            --white: #FFFFFF;
+            --muted-white: rgba(255, 255, 255, 0.7);
+            --gold-tint: rgba(212, 175, 55, 0.1);
+            --white-tint: rgba(255, 255, 255, 0.1);
+            --white-subtle: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(8, 8, 8, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 100px;
+            padding: 0 8px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            min-width: fit-content;
+        }
+
+        nav a {
+            color: var(--muted-white);
+            text-decoration: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        nav a.active {
+            color: var(--white);
+            background: var(--white-tint);
+            border-radius: 100px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 80px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--black) 0%, var(--dark-gray) 100%);
+        }
+
+        h1 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+
+        .gold-text {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--muted-white);
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--dark-gray);
+            padding: 40px 0;
+            border-top: 1px solid var(--white-subtle);
+            border-bottom: 1px solid var(--white-subtle);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--muted-white);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 8px;
+        }
+
+        /* Opt-in Section */
+        .optin-section {
+            padding: 80px 0;
+            background: var(--black);
+        }
+
+        .optin-card {
+            background: var(--white-subtle);
+            border-radius: 24px;
+            padding: 60px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .optin-card h2 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .optin-description {
+            font-size: 18px;
+            color: var(--muted-white);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .optin-form {
+            display: flex;
+            gap: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .optin-form input[type="email"] {
+            flex: 1;
+            min-width: 250px;
+            padding: 0 24px;
+            height: 52px;
+            background: var(--white-tint);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 100px;
+            color: var(--white);
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .optin-form input[type="email"]:focus {
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .optin-form input[type="email"]::placeholder {
+            color: var(--muted-white);
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--black);
+            padding: 0 32px;
+            height: 52px;
+            border: none;
+            border-radius: 100px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .btn-primary:hover {
+            background: #E4BF47;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--white-tint);
+            color: var(--white);
+            padding: 0 28px;
+            height: 48px;
+            border: none;
+            border-radius: 100px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--dark-gray);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: var(--white-subtle);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gold-tint);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--gold);
+            font-size: 24px;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .benefit-card p {
+            color: var(--muted-white);
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 80px 0;
+            background: var(--black);
+        }
+
+        .process-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--black);
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .step-content p {
+            color: var(--muted-white);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            padding: 80px 0;
+            background: var(--dark-gray);
+        }
+
+        .testimonial-card {
+            background: var(--white-subtle);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 24px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .author-info p {
+            color: var(--muted-white);
+            font-size: 14px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            color: var(--muted-white);
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--white-subtle);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: var(--muted-white);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-socials a:hover svg {
+            color: var(--gold);
+        }
+
+        .footer-copy {
+            color: var(--muted-white);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 48px;
+            }
+
+            .section-header h2,
+            .optin-card h2,
+            .cta-section h2 {
+                font-size: 32px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .optin-form {
+                flex-direction: column;
+            }
+
+            .optin-form input[type="email"] {
+                width: 100%;
+            }
+
+            nav {
+                width: calc(100% - 32px);
+                overflow-x: auto;
+            }
+
+            .testimonial-text {
+                font-size: 18px;
+            }
+
+            .hero {
+                padding: 120px 0 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/athletes" class="active">For Athletes</a>
+        <a href="/programs">For Programs</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>90% of College Athletes Will <span class="gold-text">Never See a Dime</span> From NIL</h1>
+            <p class="hero-subtitle">Not because they lack talent. Not because they don't have followers.<br>Because of three lies they tell themselves.</p>
+        </div>
+    </section>
+
+    <!-- Three Lies Section -->
+    <section class="three-lies-section" style="background: var(--dark-gray); padding: 80px 0;">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="display: flex; flex-direction: column; gap: 40px;">
+                    <div class="lie-card" style="background: var(--white-subtle); border-radius: 20px; padding: 30px; border-left: 4px solid var(--gold);">
+                        <h3 style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--gold); margin-bottom: 12px;">LIE #1:</h3>
+                        <p style="font-size: 18px; line-height: 1.6;">"I'm not good enough to get deals like the star players"</p>
+                    </div>
+                    
+                    <div class="lie-card" style="background: var(--white-subtle); border-radius: 20px; padding: 30px; border-left: 4px solid var(--gold);">
+                        <h3 style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--gold); margin-bottom: 12px;">LIE #2:</h3>
+                        <p style="font-size: 18px; line-height: 1.6;">"I'm too busy with practice and school to build a brand"</p>
+                    </div>
+                    
+                    <div class="lie-card" style="background: var(--white-subtle); border-radius: 20px; padding: 30px; border-left: 4px solid var(--gold);">
+                        <h3 style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--gold); margin-bottom: 12px;">LIE #3:</h3>
+                        <p style="font-size: 18px; line-height: 1.6;">"I don't know the right people or have connections"</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 60px; text-align: center;">
+                    <p style="font-size: 24px; font-weight: 600; line-height: 1.4; margin-bottom: 30px;">Meanwhile, the top 1% are quietly taking <span class="gold-text">95% of the $2.5 billion</span> NIL market.</p>
+                    <h2 style="font-family: 'Unbounded', sans-serif; font-size: 48px; font-weight: 700; color: var(--gold);">That ends now.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">$2.5B</div>
+                    <div class="stat-label">NIL Market Size</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Goes to Top 1%</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">ESPN</div>
+                    <div class="stat-label">Featured NIL Leader</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">US Capitol</div>
+                    <div class="stat-label">NIL Legislation Advisor</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VSL Section -->
+    <section class="vsl-section" style="padding: 80px 0; background: var(--black);">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <h2 style="font-family: 'Unbounded', sans-serif; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px;">
+                    Watch How Athletes Are <span class="gold-text">Taking Back NIL</span>
+                </h2>
+                <p style="font-size: 20px; color: var(--muted-white); margin-bottom: 40px;">
+                    Discover the exact system that's helping athletes secure deals they never thought possible
+                </p>
+                
+                <!-- YouTube Video Embed -->
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: var(--dark-gray); border-radius: 16px; margin-bottom: 30px;">
+                    <iframe 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                        src="https://www.youtube.com/embed/I6h5VbMGqUs?si=spA3zbjEA_xW-Rlt&rel=0&modestbranding=1" 
+                        title="The 99 Sports - NIL Success System" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                
+                <p style="font-size: 16px; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">
+                    ⬇️ Get The System Below ⬇️
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opt-in Section -->
+    <section class="optin-section" style="padding: 60px 0; background: var(--dark-gray);">
+        <div class="container">
+            <div class="optin-card">
+                <h2>Here's the truth they don't want you to know:</h2>
+                <p class="optin-description" style="font-size: 20px; margin-bottom: 25px;">Every single NIL deal that goes to a "star" athlete could have gone to you—if you had the exact system to turn potential into profit.</p>
+                
+                <div style="margin: 40px 0; padding: 30px; background: var(--gold-tint); border-radius: 16px;">
+                    <p style="font-weight: 600; margin-bottom: 20px; color: var(--white);">While other athletes wait for opportunities to find them, <span class="gold-text">The 99 athletes create them.</span></p>
+                    <p style="font-weight: 600; margin-bottom: 20px; color: var(--white);">While others make excuses, <span class="gold-text">our athletes make money.</span></p>
+                    <p style="font-weight: 600; color: var(--white);">While others wonder "what if," <span class="gold-text">our athletes know exactly what to do.</span></p>
+                </div>
+                
+                <p class="optin-description">The same system that got me featured on <strong>Amazon Prime's "The Money Game."</strong><br>
+                The same system that made <strong>ESPN call me a "Top NIL Leader."</strong><br>
+                The same system that got me invited to <strong>the US Capitol to help write NIL legislation.</strong></p>
+                
+                <p style="font-size: 24px; font-weight: 700; margin: 30px 0; font-family: 'Unbounded', sans-serif;">I didn't follow the footsteps of NIL. <span class="gold-text">I created them.</span></p>
+                <p style="font-size: 20px; margin-bottom: 40px;">And now I'm handing you the blueprint.</p>
+                
+                <!-- ConvertKit Form - Replace YOUR_FORM_ID with your actual ConvertKit form ID -->
+                <form class="optin-form" action="https://app.convertkit.com/forms/YOUR_FORM_ID/subscriptions" method="POST" data-sv-form="YOUR_FORM_ID" data-uid="YOUR_FORM_UID">
+                    <input type="email" name="email_address" placeholder="Enter your email" required>
+                    <!-- Optional: Add custom fields -->
+                    <input type="hidden" name="tags[]" value="athlete-landing-page">
+                    <button type="submit" class="btn-primary" data-element="submit" style="font-size: 18px; padding: 0 40px; height: 56px;">UNLOCK YOUR NIL POTENTIAL - GET THE SYSTEM NOW</button>
+                </form>
+                
+                <!-- Alternative: ConvertKit JavaScript Embed -->
+                <!-- 
+                <script async data-uid="YOUR_FORM_UID" src="https://the99sports.ck.page/YOUR_FORM_UID/index.js"></script>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What You'll <span class="gold-text">Learn</span></h2>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Personal Brand Strategy</h3>
+                    <p>Build a brand that stands out and attracts sponsors. Learn what makes you unique and how to showcase it.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Deal Negotiation</h3>
+                    <p>Know your worth and negotiate like a pro. Get templates, scripts, and real examples from 70+ brand deals.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Content Creation</h3>
+                    <p>Create content that converts followers into fans and fans into revenue. Quality over quantity approach.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Brand Partnerships</h3>
+                    <p>Learn how to identify, approach, and secure brand deals that align with your values and goals.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Long-term Growth</h3>
+                    <p>Build a brand that outlasts your playing career. Create opportunities beyond sports.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Network Access</h3>
+                    <p>Connect with other athletes, brands, and mentors who can help accelerate your NIL journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your <span class="gold-text">NIL Journey</span></h2>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Discover Your Brand</h3>
+                        <p>Complete our brand assessment to identify your unique value proposition and target audience.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Build Your Foundation</h3>
+                        <p>Set up your profiles, create your media kit, and establish your brand guidelines.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Create & Connect</h3>
+                        <p>Start creating authentic content and connecting with brands that align with your values.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Scale Your Success</h3>
+                        <p>Leverage your wins to secure bigger deals and build lasting brand relationships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The 99 taught me that my value extends far beyond the field. I went from zero NIL deals to signing with three major brands in just 4 months."</p>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>Division I Soccer • University of Texas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Stop Being Part of the <span class="gold-text">90% Who Get Nothing</span></h2>
+            <p>Join the athletes who are taking control of their NIL future.</p>
+            <div class="cta-buttons">
+                <button class="btn-primary" onclick="document.querySelector('.optin-form').scrollIntoView({behavior: 'smooth'})" style="font-size: 18px; padding: 0 40px; height: 56px;">GET THE SYSTEM NOW</button>
+                <a href="/programs" class="btn-secondary">For Your Program</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/images/font-logos.png" alt="The 99">
+            </div>
+            <div class="footer-links">
+            </div>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="refund-policy.html">Refund Policy</a>
+            </div>
+            <div class="footer-socials" style="display: flex; gap: 16px; align-items: center;">
+                <a href="https://www.instagram.com/the99sports/" target="_blank" rel="noopener noreferrer" style="color: var(--muted-white); transition: color 0.3s ease;">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="footer-copy">© 2024 The 99. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
