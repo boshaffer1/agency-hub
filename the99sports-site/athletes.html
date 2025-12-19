@@ -101,6 +101,18 @@
             color: var(--gold);
         }
 
+        @keyframes pulseGlow {
+            0% { 
+                filter: brightness(1) drop-shadow(0 0 20px rgba(212,175,55,0.4)); 
+            }
+            50% { 
+                filter: brightness(1.05) drop-shadow(0 0 30px rgba(212,175,55,0.6)); 
+            }
+            100% { 
+                filter: brightness(1) drop-shadow(0 0 20px rgba(212,175,55,0.4)); 
+            }
+        }
+
         .hero-subtitle {
             font-size: 18px;
             color: var(--muted-white);
@@ -606,6 +618,54 @@
                 <div class="stat-item">
                     <div class="stat-number">US Capitol</div>
                     <div class="stat-label">NIL Legislation Advisor</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Truth Section with Photos -->
+    <section class="truth-section" style="padding: 80px 20px; background: var(--black);">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 80px; flex-wrap: wrap;">
+                <!-- Left: Text Content -->
+                <div class="truth-content" style="flex: 1; min-width: 300px; max-width: 600px;">
+                    <h2 style="font-family: 'Unbounded', sans-serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-transform: uppercase; margin-bottom: 30px;">
+                        THE ATHLETES GETTING PAID<br>
+                        <span style="color: var(--gold);">DON'T HAVE TO BE THE BEST PLAYERS</span>
+                    </h2>
+                    
+                    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 24px; color: rgba(255,255,255,0.9);">
+                        Regardless of what level you're at, You're standing in a golden window of opportunity. This is the moment to build connections, create income streams, and lay the foundation for life, not just the next few years. The truth is simple: the game ends for everyone. But your brand doesn't have to.
+                    </p>
+                    
+                    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 24px; color: rgba(255,255,255,0.9);">
+                        Imagine moving on to the next chapter with real income, lasting relationships, and a personal brand that opens doors most athletes will never get to. While others are scrambling to figure out "what's next," you've already built it, while you were still playing.
+                    </p>
+                    
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
+                        That's what The 99 Sports is designed to create: not just temporary money, but a future.
+                    </p>
+                </div>
+                
+                <!-- Right: Staggered Corner Overlay Photos -->
+                <div class="transformation-photos fade-in" style="position: relative; height: 600px; display: flex; align-items: center; justify-content: center;">
+                    <!-- LSU Photo (Background, moved up more) -->
+                    <div style="position: absolute; left: 0; top: -30px; z-index: 1;">
+                        <img src="assets/images/trace-lsu-basketball.jpg" alt="Trace Young at LSU Basketball Practice" 
+                             style="width: 380px; height: 475px; object-fit: cover; border-radius: 12px; 
+                                    box-shadow: 0 0 30px rgba(212,175,55,0.4), 0 20px 40px rgba(0,0,0,0.6);
+                                    animation: pulseGlow 4s ease-in-out infinite;">
+                    </div>
+                    
+                    <!-- Mercedes Photo (Foreground, moved down significantly more) -->
+                    <div style="position: absolute; right: 0; bottom: -120px; z-index: 2;">
+                        <img src="assets/images/trace-mercedes-partnership.jpg" alt="Trace Young Mercedes-Benz Partnership" 
+                             style="width: 420px; height: 525px; object-fit: cover; object-position: center top; 
+                                    border-radius: 12px; 
+                                    box-shadow: 0 0 30px rgba(212,175,55,0.4), 0 30px 60px rgba(0,0,0,0.8);
+                                    animation: pulseGlow 4s ease-in-out infinite;
+                                    animation-delay: 2s;">
+                    </div>
                 </div>
             </div>
         </div>
