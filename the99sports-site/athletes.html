@@ -35,12 +35,16 @@
             color: var(--white);
             line-height: 1.6;
             overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         /* Navigation */
@@ -118,6 +122,65 @@
             color: var(--muted-white);
             margin-bottom: 40px;
             letter-spacing: -0.02em;
+        }
+
+        /* Accordion styles for mobile */
+        .accordion-section {
+            margin-bottom: 20px;
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 15px 0;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-family: 'Unbounded', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            width: 100%;
+            text-align: left;
+            transition: color 0.3s;
+        }
+
+        .accordion-header:hover {
+            color: var(--gold);
+        }
+
+        .accordion-icon {
+            font-size: 20px;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-icon.expanded {
+            transform: rotate(45deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.expanded {
+            max-height: 1000px;
+        }
+
+        .accordion-content > div {
+            padding-bottom: 20px;
+        }
+
+        /* Show/hide content based on screen size */
+        .collapsible-section {
+            display: none;
+        }
+
+        .desktop-content {
+            display: block;
         }
 
         /* Stats Bar */
@@ -395,6 +458,29 @@
             line-height: 1.5;
             margin-bottom: 30px;
             font-weight: 300;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        /* Add quotation marks */
+        .testimonial-text::before {
+            content: '"';
+            font-size: 48px;
+            color: var(--gold);
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            font-family: 'Unbounded', sans-serif;
+        }
+
+        .testimonial-text::after {
+            content: '"';
+            font-size: 48px;
+            color: var(--gold);
+            position: absolute;
+            bottom: -20px;
+            right: -10px;
+            font-family: 'Unbounded', sans-serif;
         }
 
         .testimonial-author {
@@ -495,8 +581,29 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            /* Fix black bar on right side */
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                max-width: 100vw;
+                overflow-x: hidden;
+            }
+
+            .container {
+                padding: 0 15px;
+                max-width: 100%;
+            }
+
             h1 {
                 font-size: 48px;
+            }
+
+            /* Reduce subheadline font size to fit one line */
+            .hero-subtitle {
+                font-size: 14px;
+                line-height: 1.4;
             }
 
             .section-header h2,
@@ -509,8 +616,30 @@
                 font-size: 36px;
             }
 
+            /* Adjust "Inside the 99 Network" section to show 2 columns, 3 rows (6 cards) */
             .benefits-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                max-width: 100%;
+            }
+
+            .benefit-card {
+                padding: 20px 15px;
+                text-align: center;
+            }
+
+            .benefit-card h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .benefit-card p {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+
+            .benefit-icon {
+                margin: 0 auto 15px auto !important;
             }
 
             .process-step {
@@ -534,10 +663,200 @@
 
             .testimonial-text {
                 font-size: 18px;
+                padding: 25px 15px; /* More padding on mobile */
+            }
+
+            /* Adjust quotation marks for mobile */
+            .testimonial-text::before {
+                top: 0px;
+                left: 0px;
+                font-size: 36px;
+            }
+
+            .testimonial-text::after {
+                bottom: -10px;
+                right: 0px;
+                font-size: 36px;
             }
 
             .hero {
-                padding: 120px 0 60px;
+                padding: 100px 0 40px; /* Reduced padding for mobile */
+            }
+
+            /* Reduce negative space on mobile - further tightened */
+            .three-lies-section {
+                padding: 40px 0 !important; /* Reduced from 80px */
+            }
+
+            .stats-bar {
+                padding: 20px 0; /* Reduced from 40px */
+            }
+
+            .truth-section {
+                padding: 40px 20px !important; /* Reduced from 80px */
+            }
+
+            .vsl-section {
+                padding: 40px 0 !important; /* Reduced from 80px */
+            }
+
+            .optin-section {
+                padding: 30px 0 !important; /* Reduced from 60px */
+            }
+
+            .benefits-section {
+                padding: 40px 0; /* Reduced from 80px */
+            }
+
+            .process-section {
+                padding: 40px 0; /* Reduced from 80px */
+            }
+
+            .testimonial-section {
+                padding: 40px 0; /* Reduced from 80px */
+            }
+
+            .cta-section {
+                padding: 60px 0; /* Reduced from 100px */
+            }
+
+            .people-diagram-section {
+                padding: 30px 0 !important;
+            }
+
+            /* Hide accordion content by default on mobile */
+            .accordion-content {
+                display: block;
+            }
+
+            /* Enable collapsible sections for body paragraphs */
+            .collapsible-section {
+                display: block;
+            }
+
+            .collapsible-section .accordion-content {
+                max-height: 0;
+                overflow: hidden;
+            }
+
+            .collapsible-section .accordion-content.expanded {
+                max-height: none;
+            }
+
+            /* Show collapsible content and hide desktop content on mobile */
+            .collapsible-section {
+                display: block !important;
+            }
+
+            .desktop-content {
+                display: none !important;
+            }
+
+            /* Tighten card spacing */
+            .lie-card {
+                margin-bottom: 20px !important;
+                padding: 20px !important; /* Reduced from 30px */
+            }
+
+            /* Mobile X icon positioning */
+            .lie-card h3 {
+                flex-direction: row !important;
+                align-items: flex-start !important;
+                gap: 10px !important;
+                font-size: 20px !important;
+            }
+
+            .lie-card h3 span {
+                width: 32px !important;
+                height: 32px !important;
+                font-size: 20px !important;
+                flex-shrink: 0;
+            }
+
+            .lie-card p {
+                margin-left: 42px !important; /* Align with text after smaller icon */
+                font-size: 16px !important;
+            }
+
+            /* Adjust benefit cards spacing */
+            .section-header {
+                margin-bottom: 30px;
+            }
+
+            .testimonial-card {
+                padding: 25px; /* Reduced from 40px */
+            }
+
+            .optin-card {
+                padding: 30px 25px; /* Reduced from 60px 40px */
+            }
+
+            /* Improve mobile photo layout */
+            .transformation-photos {
+                height: 400px !important; /* Reduced from 600px */
+                margin-top: 40px;
+            }
+
+            .transformation-photos img {
+                width: 280px !important; /* Smaller images */
+                height: 350px !important;
+            }
+
+            /* Adjust staggered photos for mobile */
+            .transformation-photos > div:first-child {
+                top: 0 !important;
+                left: -20px !important;
+            }
+
+            .transformation-photos > div:last-child {
+                bottom: -80px !important;
+                right: -20px !important;
+            }
+
+            /* Center content better */
+            .truth-section > .container > div {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 40px !important;
+            }
+
+            .truth-content {
+                max-width: 100% !important;
+            }
+
+            /* Reduce gaps in process timeline */
+            .process-timeline {
+                gap: 25px; /* Reduced from 40px */
+            }
+
+            /* Tighten stats container */
+            .stats-container {
+                gap: 20px; /* Reduced from 40px */
+            }
+
+            .stat-item {
+                padding: 10px; /* Reduced from 20px */
+            }
+
+            /* People diagram mobile adjustments */
+            .people-grid {
+                grid-template-columns: repeat(10, 1fr) !important; /* 10 per row on mobile */
+                gap: 6px !important;
+                max-width: 100% !important;
+            }
+
+            .people-diagram-section {
+                padding: 40px 0 !important;
+            }
+
+            .people-diagram-section h3 {
+                font-size: 24px !important;
+                margin-bottom: 20px !important;
+            }
+
+            /* Adjust people figure sizes for mobile */
+            .people-grid div {
+                font-size: 16px !important;
             }
         }
 
@@ -548,6 +867,38 @@
 
             .section-header h2 {
                 font-size: 28px;
+            }
+
+            /* Further reduce spacing on small screens */
+            .hero {
+                padding: 80px 0 30px;
+            }
+
+            section {
+                padding: 40px 0 !important;
+            }
+
+            .optin-card {
+                padding: 30px 20px;
+            }
+
+            .benefit-card {
+                padding: 25px 20px;
+            }
+
+            .lie-card {
+                padding: 20px !important;
+            }
+
+            /* Make content more compact */
+            .truth-section p {
+                font-size: 1.1rem !important;
+                margin-bottom: 20px !important;
+            }
+
+            .testimonial-text {
+                font-size: 16px;
+                line-height: 1.4;
             }
         }
     </style>
@@ -578,18 +929,27 @@
             <div style="max-width: 900px; margin: 0 auto;">
                 <div style="display: flex; flex-direction: column; gap: 40px;">
                     <div class="lie-card" style="background: var(--white-subtle); border-radius: 20px; padding: 30px; border-left: 4px solid var(--gold);">
-                        <h3 style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--gold); margin-bottom: 12px;">LIE #1:</h3>
-                        <p style="font-size: 18px; line-height: 1.6;">"I'm not good enough to get deals like the star players"</p>
+                        <h3 style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 15px;">
+                            <span style="color: #ff4757; font-size: 28px; background: rgba(255, 71, 87, 0.1); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">✕</span>
+                            PROBLEM #1:
+                        </h3>
+                        <p style="font-size: 18px; line-height: 1.6; margin-left: 55px;">"I'm not good enough to get deals like the star players"</p>
                     </div>
                     
                     <div class="lie-card" style="background: var(--white-subtle); border-radius: 20px; padding: 30px; border-left: 4px solid var(--gold);">
-                        <h3 style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--gold); margin-bottom: 12px;">LIE #2:</h3>
-                        <p style="font-size: 18px; line-height: 1.6;">"I'm too busy with practice and school to build a brand"</p>
+                        <h3 style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 15px;">
+                            <span style="color: #ff4757; font-size: 28px; background: rgba(255, 71, 87, 0.1); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">✕</span>
+                            PROBLEM #2:
+                        </h3>
+                        <p style="font-size: 18px; line-height: 1.6; margin-left: 55px;">"I'm too busy with practice and school to build a brand"</p>
                     </div>
                     
                     <div class="lie-card" style="background: var(--white-subtle); border-radius: 20px; padding: 30px; border-left: 4px solid var(--gold);">
-                        <h3 style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--gold); margin-bottom: 12px;">LIE #3:</h3>
-                        <p style="font-size: 18px; line-height: 1.6;">"I don't know the right people or have connections"</p>
+                        <h3 style="font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 600; color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 15px;">
+                            <span style="color: #ff4757; font-size: 28px; background: rgba(255, 71, 87, 0.1); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">✕</span>
+                            PROBLEM #3:
+                        </h3>
+                        <p style="font-size: 18px; line-height: 1.6; margin-left: 55px;">"I don't know the right people or have connections"</p>
                     </div>
                 </div>
                 
@@ -625,6 +985,131 @@
         </div>
     </section>
 
+    <!-- People Diagram Section -->
+    <section class="people-diagram-section" style="padding: 60px 0; background: var(--black); text-align: center;">
+        <div class="container">
+            <h3 style="font-family: 'Unbounded', sans-serif; font-size: 32px; margin-bottom: 30px; color: var(--white);">
+                Don't Be Part of the <span class="gold-text">90% Who Get Nothing</span>
+            </h3>
+            <div class="people-grid" style="display: grid; grid-template-columns: repeat(20, 1fr); gap: 8px; max-width: 800px; margin: 0 auto; align-items: center;">
+                <!-- Top 1% - Gold figures -->
+                <div style="color: var(--gold); font-size: 24px;">👤</div>
+                <div style="color: var(--gold); font-size: 24px;">👤</div>
+                <!-- Remaining 99% - White figures -->
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <!-- Second row -->
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <!-- Third row -->
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <!-- Fourth row -->
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <!-- Fifth row -->
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+                <div style="color: var(--muted-white); font-size: 20px;">👤</div>
+            </div>
+            <div style="margin-top: 30px;">
+                <p style="color: var(--gold); font-weight: 600; margin-bottom: 10px;">
+                    <span style="color: var(--gold); font-size: 24px;">👤👤</span> Top 1% get 95% of NIL money
+                </p>
+                <p style="color: var(--muted-white);">
+                    <span style="color: var(--muted-white); font-size: 20px;">👤</span> 99% of athletes get almost nothing
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Truth Section with Photos -->
     <section class="truth-section" style="padding: 80px 20px; background: var(--black);">
         <div class="container" style="max-width: 1200px; margin: 0 auto;">
@@ -636,17 +1121,43 @@
                         <span style="color: var(--gold);">DON'T HAVE TO BE THE BEST PLAYERS</span>
                     </h2>
                     
-                    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 24px; color: rgba(255,255,255,0.9);">
-                        Regardless of what level you're at, You're standing in a golden window of opportunity. This is the moment to build connections, create income streams, and lay the foundation for life, not just the next few years. The truth is simple: the game ends for everyone. But your brand doesn't have to.
-                    </p>
+                    <!-- Mobile Collapsible Section -->
+                    <div class="collapsible-section" style="display: none;">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            Why This Changes Everything
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div>
+                                <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 24px; color: rgba(255,255,255,0.9);">
+                                    Regardless of what level you're at, You're standing in a golden window of opportunity. This is the moment to build connections, create income streams, and lay the foundation for life, not just the next few years. The truth is simple: the game ends for everyone. But your brand doesn't have to.
+                                </p>
+                                
+                                <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 24px; color: rgba(255,255,255,0.9);">
+                                    Imagine moving on to the next chapter with real income, lasting relationships, and a personal brand that opens doors most athletes will never get to. While others are scrambling to figure out "what's next," you've already built it, while you were still playing.
+                                </p>
+                                
+                                <p style="font-size: 1.2rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
+                                    That's what The 99 Sports is designed to create: not just temporary money, but a future.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 24px; color: rgba(255,255,255,0.9);">
-                        Imagine moving on to the next chapter with real income, lasting relationships, and a personal brand that opens doors most athletes will never get to. While others are scrambling to figure out "what's next," you've already built it, while you were still playing.
-                    </p>
-                    
-                    <p style="font-size: 1.2rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
-                        That's what The 99 Sports is designed to create: not just temporary money, but a future.
-                    </p>
+                    <!-- Desktop Version (always visible) -->
+                    <div class="desktop-content">
+                        <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 24px; color: rgba(255,255,255,0.9);">
+                            Regardless of what level you're at, You're standing in a golden window of opportunity. This is the moment to build connections, create income streams, and lay the foundation for life, not just the next few years. The truth is simple: the game ends for everyone. But your brand doesn't have to.
+                        </p>
+                        
+                        <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 24px; color: rgba(255,255,255,0.9);">
+                            Imagine moving on to the next chapter with real income, lasting relationships, and a personal brand that opens doors most athletes will never get to. While others are scrambling to figure out "what's next," you've already built it, while you were still playing.
+                        </p>
+                        
+                        <p style="font-size: 1.2rem; line-height: 1.8; color: rgba(255,255,255,0.9);">
+                            That's what The 99 Sports is designed to create: not just temporary money, but a future.
+                        </p>
+                    </div>
                 </div>
                 
                 <!-- Right: Staggered Corner Overlay Photos -->
@@ -711,18 +1222,45 @@
                 <h2>Here's the truth they don't want you to know:</h2>
                 <p class="optin-description" style="font-size: 20px; margin-bottom: 25px;">Every single NIL deal that goes to a "star" athlete could have gone to you—if you had the exact system to turn potential into profit.</p>
                 
-                <div style="margin: 40px 0; padding: 30px; background: var(--gold-tint); border-radius: 16px;">
-                    <p style="font-weight: 600; margin-bottom: 20px; color: var(--white);">While other athletes wait for opportunities to find them, <span class="gold-text">The 99 athletes create them.</span></p>
-                    <p style="font-weight: 600; margin-bottom: 20px; color: var(--white);">While others make excuses, <span class="gold-text">our athletes make money.</span></p>
-                    <p style="font-weight: 600; color: var(--white);">While others wonder "what if," <span class="gold-text">our athletes know exactly what to do.</span></p>
+                <!-- Mobile Collapsible Section -->
+                <div class="collapsible-section" style="display: none;">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        The Truth About NIL Success
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div>
+                            <div style="margin: 20px 0; padding: 30px; background: var(--gold-tint); border-radius: 16px;">
+                                <p style="font-weight: 600; margin-bottom: 20px; color: var(--white);">While other athletes wait for opportunities to find them, <span class="gold-text">The 99 athletes create them.</span></p>
+                                <p style="font-weight: 600; margin-bottom: 20px; color: var(--white);">While others make excuses, <span class="gold-text">our athletes make money.</span></p>
+                                <p style="font-weight: 600; color: var(--white);">While others wonder "what if," <span class="gold-text">our athletes know exactly what to do.</span></p>
+                            </div>
+                            
+                            <p class="optin-description">The same system that got me featured on <strong>Amazon Prime's "The Money Game."</strong><br>
+                            The same system that made <strong>ESPN call me a "Top NIL Leader."</strong><br>
+                            The same system that got me invited to <strong>the US Capitol to help write NIL legislation.</strong></p>
+                            
+                            <p style="font-size: 24px; font-weight: 700; margin: 30px 0; font-family: 'Unbounded', sans-serif;">I didn't follow the footsteps of NIL. <span class="gold-text">I created them.</span></p>
+                            <p style="font-size: 20px; margin-bottom: 40px;">And now I'm handing you the blueprint.</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <p class="optin-description">The same system that got me featured on <strong>Amazon Prime's "The Money Game."</strong><br>
-                The same system that made <strong>ESPN call me a "Top NIL Leader."</strong><br>
-                The same system that got me invited to <strong>the US Capitol to help write NIL legislation.</strong></p>
-                
-                <p style="font-size: 24px; font-weight: 700; margin: 30px 0; font-family: 'Unbounded', sans-serif;">I didn't follow the footsteps of NIL. <span class="gold-text">I created them.</span></p>
-                <p style="font-size: 20px; margin-bottom: 40px;">And now I'm handing you the blueprint.</p>
+                <!-- Desktop Version -->
+                <div class="desktop-content">
+                    <div style="margin: 40px 0; padding: 30px; background: var(--gold-tint); border-radius: 16px;">
+                        <p style="font-weight: 600; margin-bottom: 20px; color: var(--white);">While other athletes wait for opportunities to find them, <span class="gold-text">The 99 athletes create them.</span></p>
+                        <p style="font-weight: 600; margin-bottom: 20px; color: var(--white);">While others make excuses, <span class="gold-text">our athletes make money.</span></p>
+                        <p style="font-weight: 600; color: var(--white);">While others wonder "what if," <span class="gold-text">our athletes know exactly what to do.</span></p>
+                    </div>
+                    
+                    <p class="optin-description">The same system that got me featured on <strong>Amazon Prime's "The Money Game."</strong><br>
+                    The same system that made <strong>ESPN call me a "Top NIL Leader."</strong><br>
+                    The same system that got me invited to <strong>the US Capitol to help write NIL legislation.</strong></p>
+                    
+                    <p style="font-size: 24px; font-weight: 700; margin: 30px 0; font-family: 'Unbounded', sans-serif;">I didn't follow the footsteps of NIL. <span class="gold-text">I created them.</span></p>
+                    <p style="font-size: 20px; margin-bottom: 40px;">And now I'm handing you the blueprint.</p>
+                </div>
                 
                 <!-- ConvertKit Form - Replace YOUR_FORM_ID with your actual ConvertKit form ID -->
                 <form class="optin-form" action="https://app.convertkit.com/forms/YOUR_FORM_ID/subscriptions" method="POST" data-sv-form="YOUR_FORM_ID" data-uid="YOUR_FORM_UID">
@@ -750,7 +1288,7 @@
             
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon" style="margin-bottom: 20px;"><i data-lucide="handshake" style="width: 48px; height: 48px; color: var(--gold); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));"></i></div>
+                    <div class="benefit-icon" style="margin-bottom: 20px;"><i data-lucide="trophy" style="width: 48px; height: 48px; color: var(--gold); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));"></i></div>
                     <h3 style="color: var(--gold);">Exclusive Brand Partnerships</h3>
                     <p>Get priority access to brand deals before they hit the market. Our direct relationships with Fortune 500 companies and emerging brands deliver opportunities that others never even hear about.</p>
                 </div>
@@ -884,6 +1422,22 @@
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
+        
+        // Accordion toggle functionality
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.accordion-icon');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.textContent = '+';
+                icon.classList.remove('expanded');
+            } else {
+                content.classList.add('expanded');
+                icon.textContent = '−';
+                icon.classList.add('expanded');
+            }
+        }
     </script>
 </body>
 </html>
