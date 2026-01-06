@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>For Athletes | The 99 Sports - Build Your NIL Brand</title>
     <meta name="description" content="Join The 99 Sports and learn how to build an NIL brand that outlasts your career. Built by an athlete, for every athlete.">
     
@@ -16,6 +16,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
         }
 
         :root {
@@ -63,6 +68,70 @@
             align-items: center;
             z-index: 1000;
             min-width: fit-content;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: rgba(8, 8, 8, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 80px 20px 20px;
+            transition: right 0.3s ease;
+            z-index: 1000;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            color: var(--muted-white);
+            text-decoration: none;
+            padding: 16px 0;
+            font-size: 18px;
+            font-weight: 500;
+            border-bottom: 1px solid var(--white-subtle);
+            transition: color 0.3s;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--gold);
+        }
+
+        .mobile-menu a.active {
+            color: var(--white);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .mobile-overlay.active {
+            display: block;
         }
 
         nav a {
@@ -347,16 +416,29 @@
         }
 
         .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .benefit-card {
             background: var(--white-subtle);
-            border-radius: 20px;
-            padding: 40px 30px;
+            border-radius: 16px;
+            padding: 24px 30px;
             transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .benefit-icon {
+            flex-shrink: 0;
+        }
+
+        .benefit-content {
+            flex: 1;
         }
 
         .benefit-card:hover {
@@ -617,16 +699,17 @@
                 font-size: 36px;
             }
 
-            /* Adjust "Inside the 99 Network" section to show 2 columns, 3 rows (6 cards) */
+            /* Keep benefits as rows on mobile */
             .benefits-grid {
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 15px;
+                gap: 16px;
                 max-width: 100%;
             }
 
             .benefit-card {
                 padding: 20px 15px;
+                flex-direction: column;
                 text-align: center;
+                gap: 12px;
             }
 
             .benefit-card h3 {
@@ -660,6 +743,19 @@
             nav {
                 width: calc(100% - 32px);
                 overflow-x: auto;
+            }
+
+            /* Show mobile menu toggle and hide desktop nav links */
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
             }
 
             .testimonial-text {
@@ -842,8 +938,9 @@
             /* People diagram mobile adjustments */
             .people-grid {
                 grid-template-columns: repeat(10, 1fr) !important; /* 10 per row on mobile */
-                gap: 6px !important;
+                gap: 4px !important;
                 max-width: 100% !important;
+                padding: 0 10px !important;
             }
 
             .people-diagram-section {
@@ -857,7 +954,18 @@
 
             /* Adjust people figure sizes for mobile */
             .people-grid div {
-                font-size: 16px !important;
+                font-size: 14px !important;
+                line-height: 1 !important;
+            }
+
+            /* Fix people diagram alignment on mobile */
+            .people-diagram-section h3 {
+                text-align: center !important;
+                padding: 0 20px !important;
+            }
+
+            .people-diagram-section .container {
+                padding: 0 20px !important;
             }
         }
 
@@ -914,7 +1022,22 @@
         <a href="/programs">For Programs</a>
         <a href="/about">About</a>
         <a href="/contact">Contact</a>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+            ☰
+        </button>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" onclick="closeMobileMenu()"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="/">Home</a>
+        <a href="/athletes" class="active">For Athletes</a>
+        <a href="/programs">For Programs</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -1289,39 +1412,51 @@
             
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon" style="margin-bottom: 20px;"><i data-lucide="trophy" style="width: 48px; height: 48px; color: var(--gold); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));"></i></div>
-                    <h3 style="color: var(--gold);">Exclusive Brand Partnerships</h3>
-                    <p>Get priority access to brand deals before they hit the market. Our direct relationships with Fortune 500 companies and emerging brands deliver opportunities that others never even hear about.</p>
+                    <div class="benefit-icon"><i data-lucide="trophy" style="width: 40px; height: 40px; color: var(--gold); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));"></i></div>
+                    <div class="benefit-content">
+                        <h3 style="color: var(--gold); margin-bottom: 8px;">Exclusive Brand Partnerships</h3>
+                        <p>Get priority access to brand deals before they hit the market. Our direct relationships with Fortune 500 companies and emerging brands deliver opportunities that others never even hear about.</p>
+                    </div>
                 </div>
                 
                 <div class="benefit-card">
-                    <div class="benefit-icon" style="margin-bottom: 20px;"><i data-lucide="sparkles" style="width: 48px; height: 48px; color: var(--gold); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));"></i></div>
-                    <h3 style="color: var(--gold);">AI Deal Engine</h3>
-                    <p>Let our AI do the outreach—you focus on playing. Our tools contact brands locally and globally with professional pitches, personalized campaigns, and follow-ups to secure real NIL deals. No guessing. Just smarter outreach.</p>
+                    <div class="benefit-icon"><i data-lucide="sparkles" style="width: 40px; height: 40px; color: var(--gold); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));"></i></div>
+                    <div class="benefit-content">
+                        <h3 style="color: var(--gold); margin-bottom: 8px;">AI Deal Engine</h3>
+                        <p>Let our AI do the outreach—you focus on playing. Our tools contact brands locally and globally with professional pitches, personalized campaigns, and follow-ups to secure real NIL deals. No guessing. Just smarter outreach.</p>
+                    </div>
                 </div>
                 
                 <div class="benefit-card">
-                    <div class="benefit-icon" style="margin-bottom: 20px;"><i data-lucide="calendar" style="width: 48px; height: 48px; color: var(--gold); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));"></i></div>
-                    <h3 style="color: var(--gold);">Smart Content Calendar</h3>
-                    <p>Know exactly what to post—and when. A custom content calendar built for growth with trend inspiration, examples from top creators, and endless ideas so you never hit a creative wall again.</p>
+                    <div class="benefit-icon"><i data-lucide="calendar" style="width: 40px; height: 40px; color: var(--gold); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));"></i></div>
+                    <div class="benefit-content">
+                        <h3 style="color: var(--gold); margin-bottom: 8px;">Smart Content Calendar</h3>
+                        <p>Know exactly what to post—and when. A custom content calendar built for growth with trend inspiration, examples from top creators, and endless ideas so you never hit a creative wall again.</p>
+                    </div>
                 </div>
                 
                 <div class="benefit-card">
-                    <div class="benefit-icon" style="margin-bottom: 20px;"><i data-lucide="graduation-cap" style="width: 48px; height: 48px; color: var(--gold); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));"></i></div>
-                    <h3 style="color: var(--gold);">NIL Workshops & Coaching</h3>
-                    <p>Hands-on support from elite NIL coaches. Our workshops give you direct guidance, feedback, accountability, and support from the best NIL brand-building minds in the world.</p>
+                    <div class="benefit-icon"><i data-lucide="graduation-cap" style="width: 40px; height: 40px; color: var(--gold); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));"></i></div>
+                    <div class="benefit-content">
+                        <h3 style="color: var(--gold); margin-bottom: 8px;">NIL Workshops & Coaching</h3>
+                        <p>Hands-on support from elite NIL coaches. Our workshops give you direct guidance, feedback, accountability, and support from the best NIL brand-building minds in the world.</p>
+                    </div>
                 </div>
                 
                 <div class="benefit-card">
-                    <div class="benefit-icon" style="margin-bottom: 20px;"><i data-lucide="users" style="width: 48px; height: 48px; color: var(--gold); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));"></i></div>
-                    <h3 style="color: var(--gold);">Exclusive Athlete Creator Community</h3>
-                    <p>Join a private network of driven athlete-creators worldwide who collaborate, support each other's content, share strategies, and help amplify every post.</p>
+                    <div class="benefit-icon"><i data-lucide="users" style="width: 40px; height: 40px; color: var(--gold); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));"></i></div>
+                    <div class="benefit-content">
+                        <h3 style="color: var(--gold); margin-bottom: 8px;">Exclusive Athlete Creator Community</h3>
+                        <p>Join a private network of driven athlete-creators worldwide who collaborate, support each other's content, share strategies, and help amplify every post.</p>
+                    </div>
                 </div>
                 
                 <div class="benefit-card">
-                    <div class="benefit-icon" style="margin-bottom: 20px;"><i data-lucide="book-open" style="width: 48px; height: 48px; color: var(--gold); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));"></i></div>
-                    <h3 style="color: var(--gold);">The 99 Playbook</h3>
-                    <p>A proven system to monetize every platform. Step-by-step guidance on how to build, grow, and turn your brand into income across Instagram, TikTok, YouTube, and more.</p>
+                    <div class="benefit-icon"><i data-lucide="book-open" style="width: 40px; height: 40px; color: var(--gold); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));"></i></div>
+                    <div class="benefit-content">
+                        <h3 style="color: var(--gold); margin-bottom: 8px;">The 99 Playbook</h3>
+                        <p>A proven system to monetize every platform. Step-by-step guidance on how to build, grow, and turn your brand into income across Instagram, TikTok, YouTube, and more.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1438,6 +1573,33 @@
                 icon.textContent = '−';
                 icon.classList.add('expanded');
             }
+        }
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            const overlay = document.querySelector('.mobile-overlay');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (menu.classList.contains('active')) {
+                menu.classList.remove('active');
+                overlay.classList.remove('active');
+                toggle.innerHTML = '☰';
+            } else {
+                menu.classList.add('active');
+                overlay.classList.add('active');
+                toggle.innerHTML = '✕';
+            }
+        }
+
+        function closeMobileMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            const overlay = document.querySelector('.mobile-overlay');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+            toggle.innerHTML = '☰';
         }
     </script>
 </body>
