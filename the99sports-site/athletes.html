@@ -124,13 +124,23 @@
             letter-spacing: -0.02em;
         }
 
-        /* Accordion styles for mobile */
+        /* Desktop: Show full content, hide accordions */
+        .collapsible-section {
+            display: none;
+        }
+
+        .desktop-content {
+            display: block;
+        }
+
+        /* Accordion styles - hidden on desktop */
         .accordion-section {
             margin-bottom: 20px;
+            display: none;
         }
 
         .accordion-header {
-            display: flex;
+            display: none;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
@@ -161,26 +171,17 @@
         }
 
         .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
+            max-height: none;
+            overflow: visible;
+            transition: none;
         }
 
         .accordion-content.expanded {
-            max-height: 1000px;
+            max-height: none;
         }
 
         .accordion-content > div {
             padding-bottom: 20px;
-        }
-
-        /* Show/hide content based on screen size */
-        .collapsible-section {
-            display: none;
-        }
-
-        .desktop-content {
-            display: block;
         }
 
         /* Stats Bar */
@@ -618,7 +619,7 @@
 
             /* Adjust "Inside the 99 Network" section to show 2 columns, 3 rows (6 cards) */
             .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr) !important;
                 gap: 15px;
                 max-width: 100%;
             }
@@ -724,23 +725,23 @@
                 padding: 30px 0 !important;
             }
 
-            /* Hide accordion content by default on mobile */
+            /* Mobile: Enable accordions and hide desktop content */
+            .accordion-section {
+                display: block;
+            }
+
+            .accordion-header {
+                display: flex;
+            }
+
             .accordion-content {
-                display: block;
-            }
-
-            /* Enable collapsible sections for body paragraphs */
-            .collapsible-section {
-                display: block;
-            }
-
-            .collapsible-section .accordion-content {
                 max-height: 0;
                 overflow: hidden;
+                transition: max-height 0.3s ease;
             }
 
-            .collapsible-section .accordion-content.expanded {
-                max-height: none;
+            .accordion-content.expanded {
+                max-height: 1000px;
             }
 
             /* Show collapsible content and hide desktop content on mobile */
