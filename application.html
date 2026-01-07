@@ -531,6 +531,25 @@
             }
         }
         
+        /* Carousel Responsive Styles */
+        @media (max-width: 768px) {
+            .carousel-prev, .carousel-next {
+                display: none !important;
+            }
+            
+            .testimonial-card {
+                padding: 30px !important;
+            }
+            
+            .testimonial-text {
+                font-size: 18px !important;
+            }
+            
+            .carousel-container {
+                min-height: 240px;
+            }
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .hero-section {
@@ -652,7 +671,7 @@
         </div>
     </section>
     
-    <!-- Social Proof Section -->
+    <!-- Social Proof Section with Rotating Testimonials -->
     <section class="social-proof">
         <div class="container">
             <h2 class="section-title">Trusted by Industry Leaders</h2>
@@ -660,112 +679,132 @@
                 Coaches, executives, and brands trust The 99 Network to transform athlete potential
             </p>
             
-            <!-- Coach & Executive Testimonials -->
-            <div class="testimonials-grid" style="margin-bottom: 60px;">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar" style="background: white; padding: 8px;">
-                            <img src="assets/images/ncaa-logo.png" alt="NCAA" style="width: 100%; height: 100%; object-fit: contain;">
+            <!-- Rotating Testimonials Carousel -->
+            <div class="testimonials-carousel" style="position: relative; max-width: 900px; margin: 60px auto;">
+                <div class="carousel-container" style="overflow: hidden; position: relative; min-height: 280px;">
+                    <div class="carousel-track" style="display: flex; transition: transform 0.5s ease;">
+                        <!-- Testimonial 1 -->
+                        <div class="carousel-slide" style="min-width: 100%; padding: 0 20px;">
+                            <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; text-align: center;">
+                                <div class="testimonial-avatar" style="width: 80px; height: 80px; background: white; border-radius: 50%; padding: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/ncaa-logo.png" alt="NCAA" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <p class="testimonial-text" style="font-size: 20px; line-height: 1.6; color: var(--muted-white); margin-bottom: 25px; font-style: italic;">
+                                    "Trace bridges the gap between athletes, brands, and universities in a way I haven't seen before. He understands the complexities of the NIL landscape."
+                                </p>
+                                <h4 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">Jim Isch</h4>
+                                <p class="sport" style="font-size: 14px; color: var(--muted-white); text-transform: uppercase; letter-spacing: 1px;">NCAA Executive / Former COO</p>
+                            </div>
                         </div>
-                        <div class="testimonial-info">
-                            <h4>Jim Isch</h4>
-                            <p class="sport">NCAA Executive / Former COO</p>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="carousel-slide" style="min-width: 100%; padding: 0 20px;">
+                            <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; text-align: center;">
+                                <div class="testimonial-avatar" style="width: 80px; height: 80px; background: white; border-radius: 50%; padding: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/lsu-logo.png" alt="LSU" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <p class="testimonial-text" style="font-size: 20px; line-height: 1.6; color: var(--muted-white); margin-bottom: 25px; font-style: italic;">
+                                    "Trace has built a powerful brand that serves as a model for student-athletes everywhere. His framework is practical and proven."
+                                </p>
+                                <h4 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">Matt McMahon</h4>
+                                <p class="sport" style="font-size: 14px; color: var(--muted-white); text-transform: uppercase; letter-spacing: 1px;">LSU Head Basketball Coach</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="carousel-slide" style="min-width: 100%; padding: 0 20px;">
+                            <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; text-align: center;">
+                                <div class="testimonial-avatar" style="width: 80px; height: 80px; background: white; border-radius: 50%; padding: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/nike-logo.png" alt="Nike" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <p class="testimonial-text" style="font-size: 20px; line-height: 1.6; color: var(--muted-white); margin-bottom: 25px; font-style: italic;">
+                                    "Trace has proven success building athlete brands. His framework for personal branding and deal-making is invaluable for any program."
+                                </p>
+                                <h4 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">Ian Hamilton</h4>
+                                <p class="sport" style="font-size: 14px; color: var(--muted-white); text-transform: uppercase; letter-spacing: 1px;">Former Nike Global Marketing Director</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 4 -->
+                        <div class="carousel-slide" style="min-width: 100%; padding: 0 20px;">
+                            <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; text-align: center;">
+                                <div class="testimonial-avatar" style="width: 80px; height: 80px; background: white; border-radius: 50%; padding: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/louisville-logo.png" alt="Louisville" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <p class="testimonial-text" style="font-size: 20px; line-height: 1.6; color: var(--muted-white); margin-bottom: 25px; font-style: italic;">
+                                    "Trace has the credibility to speak on NIL because he's lived it. His experience closing 70+ deals gives him a perspective that resonates with our athletes."
+                                </p>
+                                <h4 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">Ronnie Hamilton</h4>
+                                <p class="sport" style="font-size: 14px; color: var(--muted-white); text-transform: uppercase; letter-spacing: 1px;">Louisville Assistant Coach</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 5 -->
+                        <div class="carousel-slide" style="min-width: 100%; padding: 0 20px;">
+                            <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; text-align: center;">
+                                <div class="testimonial-avatar" style="width: 80px; height: 80px; background: white; border-radius: 50%; padding: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/rice-logo.png" alt="Rice" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <p class="testimonial-text" style="font-size: 20px; line-height: 1.6; color: var(--muted-white); margin-bottom: 25px; font-style: italic;">
+                                    "Trace understands NIL from every angle—athlete, brand, institution. That 360-degree perspective makes his insights uniquely valuable."
+                                </p>
+                                <h4 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">Rob Lanier</h4>
+                                <p class="sport" style="font-size: 14px; color: var(--muted-white); text-transform: uppercase; letter-spacing: 1px;">Rice Head Basketball Coach</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 6 -->
+                        <div class="carousel-slide" style="min-width: 100%; padding: 0 20px;">
+                            <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; text-align: center;">
+                                <div class="testimonial-avatar" style="width: 80px; height: 80px; background: white; border-radius: 50%; padding: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/smu-logo.png" alt="SMU" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <p class="testimonial-text" style="font-size: 20px; line-height: 1.6; color: var(--muted-white); margin-bottom: 25px; font-style: italic;">
+                                    "The platform Trace has built gives athletes a real blueprint for success. It's not theory—it's actionable and it works."
+                                </p>
+                                <h4 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">Chris Capko</h4>
+                                <p class="sport" style="font-size: 14px; color: var(--muted-white); text-transform: uppercase; letter-spacing: 1px;">SMU Assistant Coach</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 7 -->
+                        <div class="carousel-slide" style="min-width: 100%; padding: 0 20px;">
+                            <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; text-align: center;">
+                                <div class="testimonial-avatar" style="width: 80px; height: 80px; background: white; border-radius: 50%; padding: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/minnesota-logo.png" alt="Minnesota" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <p class="testimonial-text" style="font-size: 20px; line-height: 1.6; color: var(--muted-white); margin-bottom: 25px; font-style: italic;">
+                                    "What sets Trace apart is his authenticity. Athletes trust him because he's been in their shoes and built something real."
+                                </p>
+                                <h4 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">Aaron Katsuma</h4>
+                                <p class="sport" style="font-size: 14px; color: var(--muted-white); text-transform: uppercase; letter-spacing: 1px;">Minnesota Assistant Coach</p>
+                            </div>
                         </div>
                     </div>
-                    <p class="testimonial-text">
-                        "Trace bridges the gap between athletes, brands, and universities in a way I haven't seen before. He understands the complexities of the NIL landscape."
-                    </p>
                 </div>
                 
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar" style="background: white; padding: 8px;">
-                            <img src="assets/images/lsu-logo.png" alt="LSU" style="width: 100%; height: 100%; object-fit: contain;">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Matt McMahon</h4>
-                            <p class="sport">LSU Head Basketball Coach</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">
-                        "Trace has built a powerful brand that serves as a model for student-athletes everywhere. His framework is practical and proven."
-                    </p>
+                <!-- Navigation Dots -->
+                <div class="carousel-dots" style="display: flex; justify-content: center; gap: 8px; margin-top: 30px;">
+                    <button class="dot active" style="width: 10px; height: 10px; border-radius: 50%; background: var(--gold); border: none; cursor: pointer; transition: all 0.3s;" onclick="goToSlide(0)"></button>
+                    <button class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(212, 175, 55, 0.3); border: none; cursor: pointer; transition: all 0.3s;" onclick="goToSlide(1)"></button>
+                    <button class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(212, 175, 55, 0.3); border: none; cursor: pointer; transition: all 0.3s;" onclick="goToSlide(2)"></button>
+                    <button class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(212, 175, 55, 0.3); border: none; cursor: pointer; transition: all 0.3s;" onclick="goToSlide(3)"></button>
+                    <button class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(212, 175, 55, 0.3); border: none; cursor: pointer; transition: all 0.3s;" onclick="goToSlide(4)"></button>
+                    <button class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(212, 175, 55, 0.3); border: none; cursor: pointer; transition: all 0.3s;" onclick="goToSlide(5)"></button>
+                    <button class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(212, 175, 55, 0.3); border: none; cursor: pointer; transition: all 0.3s;" onclick="goToSlide(6)"></button>
                 </div>
                 
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar" style="background: white; padding: 8px;">
-                            <img src="assets/images/nike-logo.png" alt="Nike" style="width: 100%; height: 100%; object-fit: contain;">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Ian Hamilton</h4>
-                            <p class="sport">Former Nike Global Marketing Director</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">
-                        "Trace has proven success building athlete brands. His framework for personal branding and deal-making is invaluable for any program."
-                    </p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar" style="background: white; padding: 8px;">
-                            <img src="assets/images/louisville-logo.png" alt="Louisville" style="width: 100%; height: 100%; object-fit: contain;">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Ronnie Hamilton</h4>
-                            <p class="sport">Louisville Assistant Coach</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">
-                        "Trace has the credibility to speak on NIL because he's lived it. His experience closing 70+ deals gives him a perspective that resonates with our athletes."
-                    </p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar" style="background: white; padding: 8px;">
-                            <img src="assets/images/rice-logo.png" alt="Rice" style="width: 100%; height: 100%; object-fit: contain;">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Rob Lanier</h4>
-                            <p class="sport">Rice Head Basketball Coach</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">
-                        "Trace understands NIL from every angle—athlete, brand, institution. That 360-degree perspective makes his insights uniquely valuable."
-                    </p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar" style="background: white; padding: 8px;">
-                            <img src="assets/images/smu-logo.png" alt="SMU" style="width: 100%; height: 100%; object-fit: contain;">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Chris Capko</h4>
-                            <p class="sport">SMU Assistant Coach</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">
-                        "The platform Trace has built gives athletes a real blueprint for success. It's not theory—it's actionable and it works."
-                    </p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar" style="background: white; padding: 8px;">
-                            <img src="assets/images/minnesota-logo.png" alt="Minnesota" style="width: 100%; height: 100%; object-fit: contain;">
-                        </div>
-                        <div class="testimonial-info">
-                            <h4>Aaron Katsuma</h4>
-                            <p class="sport">Minnesota Assistant Coach</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">
-                        "What sets Trace apart is his authenticity. Athletes trust him because he's been in their shoes and built something real."
-                    </p>
-                </div>
+                <!-- Navigation Arrows -->
+                <button class="carousel-prev" style="position: absolute; left: -40px; top: 50%; transform: translateY(-50%); background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s;" onclick="prevSlide()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="carousel-next" style="position: absolute; right: -40px; top: 50%; transform: translateY(-50%); background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s;" onclick="nextSlide()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
@@ -896,6 +935,67 @@
     </footer>
     
     <script>
+        // Testimonial Carousel
+        let currentSlide = 0;
+        const totalSlides = 7;
+        const track = document.querySelector('.carousel-track');
+        const dots = document.querySelectorAll('.carousel-dots .dot');
+        let autoPlayInterval;
+        
+        function updateSlide(index) {
+            currentSlide = index;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                if (i === currentSlide) {
+                    dot.classList.add('active');
+                    dot.style.background = 'var(--gold)';
+                } else {
+                    dot.classList.remove('active');
+                    dot.style.background = 'rgba(212, 175, 55, 0.3)';
+                }
+            });
+        }
+        
+        function goToSlide(index) {
+            updateSlide(index);
+            resetAutoPlay();
+        }
+        
+        function nextSlide() {
+            const next = (currentSlide + 1) % totalSlides;
+            updateSlide(next);
+            resetAutoPlay();
+        }
+        
+        function prevSlide() {
+            const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlide(prev);
+            resetAutoPlay();
+        }
+        
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                nextSlide();
+            }, 5000); // Change slide every 5 seconds
+        }
+        
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+        
+        // Start autoplay when page loads
+        startAutoPlay();
+        
+        // Pause on hover
+        const carousel = document.querySelector('.testimonials-carousel');
+        if (carousel) {
+            carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+            carousel.addEventListener('mouseleave', () => startAutoPlay());
+        }
+        
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
