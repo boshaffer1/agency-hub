@@ -7,6 +7,7 @@
     { "source": "/waitlist", "destination": "/waitlist.html" },
     { "source": "/application", "destination": "/application.html" },
     { "source": "/thank-you", "destination": "/thank-you.html" },
+    { "source": "/thank-you-waitlist", "destination": "/thank-you-waitlist.html" },
     { "source": "/the99sports", "destination": "/the99sports-site/the99sports-landing.html" },
     { "source": "/the99sports-funnel", "destination": "/the99sports-site/two-step-funnel-final.html" },
     { "source": "/deal-club", "destination": "/monthly-deal-club-site/index.html" },

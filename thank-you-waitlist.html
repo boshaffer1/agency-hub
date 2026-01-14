@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thank you for joining The 99 Network - Your journey to NIL success starts now">
+    <meta name="description" content="Thank you for contacting The 99 Network - We'll be in touch soon">
     <title>Thank You - The 99 Network</title>
     
     <!-- Favicon -->
@@ -75,7 +75,7 @@
         }
         
         .content-wrapper {
-            max-width: 800px;
+            max-width: 700px;
             width: 100%;
             text-align: center;
             position: relative;
@@ -94,26 +94,31 @@
             width: auto;
         }
         
-        /* Success Icon */
-        .success-icon {
+        /* Clock Icon */
+        .wait-icon {
             width: 100px;
             height: 100px;
             margin: 0 auto 30px;
-            background: linear-gradient(135deg, var(--gold) 0%, #c4a235 100%);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.1) 100%);
+            border: 2px solid var(--gold);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             animation: scaleIn 0.5s ease-out 0.3s both;
-            box-shadow: var(--gold-shadow);
         }
         
-        .success-icon svg {
+        .wait-icon svg {
             width: 50px;
             height: 50px;
-            stroke: var(--black);
-            stroke-width: 3;
-            animation: drawCheck 0.5s ease-out 0.8s both;
+            stroke: var(--gold);
+            stroke-width: 2;
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
         
         /* Content */
@@ -140,7 +145,7 @@
         .thank-you-subtitle {
             font-size: 24px;
             color: var(--muted-white);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             line-height: 1.5;
             animation: fadeIn 1s ease-out 0.7s both;
         }
@@ -148,66 +153,33 @@
         .thank-you-message {
             font-size: 18px;
             color: var(--muted-white);
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             line-height: 1.6;
             animation: fadeIn 1s ease-out 0.9s both;
         }
         
-        /* Next Steps Box */
-        .next-steps {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.02) 100%);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 40px;
+            padding: 30px;
             margin: 40px 0;
             animation: fadeIn 1s ease-out 1.1s both;
         }
         
-        .next-steps-title {
+        .info-box-title {
             font-family: 'Unbounded', sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 25px;
-            text-transform: uppercase;
-        }
-        
-        .steps-list {
-            text-align: left;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .step-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        
-        .step-number {
-            width: 30px;
-            height: 30px;
-            background: var(--gold);
-            color: var(--black);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            flex-shrink: 0;
-            margin-right: 15px;
-            font-family: 'Unbounded', sans-serif;
-        }
-        
-        .step-text {
-            color: var(--muted-white);
-        }
-        
-        .step-text strong {
-            color: var(--white);
+            font-size: 20px;
             font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        
+        .info-box-text {
+            font-size: 16px;
+            color: var(--muted-white);
+            line-height: 1.6;
         }
         
         /* CTA Button */
@@ -255,7 +227,7 @@
         }
         
         .social-links-title {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--muted-white);
             margin-bottom: 20px;
         }
@@ -267,8 +239,8 @@
         }
         
         .social-button {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 12px;
             display: flex;
@@ -286,8 +258,8 @@
         }
         
         .social-button svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             fill: var(--gold);
         }
         
@@ -330,17 +302,6 @@
             }
         }
         
-        @keyframes drawCheck {
-            from {
-                stroke-dasharray: 100;
-                stroke-dashoffset: 100;
-            }
-            to {
-                stroke-dasharray: 100;
-                stroke-dashoffset: 0;
-            }
-        }
-        
         /* Responsive */
         @media (max-width: 768px) {
             .thank-you-container {
@@ -355,12 +316,8 @@
                 font-size: 20px;
             }
             
-            .next-steps {
-                padding: 30px 20px;
-            }
-            
-            .next-steps-title {
-                font-size: 24px;
+            .info-box {
+                padding: 25px 20px;
             }
             
             .cta-button {
@@ -386,7 +343,7 @@
                 font-size: 16px;
             }
             
-            .step-item {
+            .info-box-text {
                 font-size: 15px;
             }
         }
@@ -400,53 +357,37 @@
                 <img src="assets/images/font-logo.png" alt="The 99 Network" style="height: 60px; width: auto;">
             </div>
             
-            <!-- Success Icon -->
-            <div class="success-icon">
+            <!-- Wait Icon -->
+            <div class="wait-icon">
                 <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 6V12L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
             </div>
             
             <!-- Main Content -->
             <h1 class="thank-you-title">
-                <span class="gold-text">Thank You!</span>
+                <span class="gold-text">Thank You</span><br>
+                For Contacting Us
             </h1>
             
             <p class="thank-you-subtitle">
-                Your Call Has Been Scheduled
+                We've Received Your Application
             </p>
             
             <p class="thank-you-message">
-                You should have received an invite to the call in your email.
+                Thanks for your interest in The 99 Network. 
                 <br><br>
-                <strong style="color: var(--gold); font-size: 20px;">Please check your email now for the call details.</strong>
-                <br><br>
-                Make sure to show up on time for your strategy session.
+                <strong>We will be in touch soon.</strong>
             </p>
             
-            <!-- Next Steps -->
-            <div class="next-steps">
-                <h2 class="next-steps-title">Important Reminders</h2>
-                <div class="steps-list">
-                    <div class="step-item">
-                        <div class="step-number">✓</div>
-                        <div class="step-text">
-                            <strong>Check your email</strong> for the calendar invite and call link
-                        </div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number">✓</div>
-                        <div class="step-text">
-                            <strong>Add to your calendar</strong> to ensure you don't miss it
-                        </div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number">✓</div>
-                        <div class="step-text">
-                            <strong>Show up on time</strong> - We have limited slots and punctuality is important
-                        </div>
-                    </div>
-                </div>
+            <!-- Info Box -->
+            <div class="info-box">
+                <h3 class="info-box-title">What's Next?</h3>
+                <p class="info-box-text">
+                    Our team is currently reviewing applications and will reach out to qualified candidates. 
+                    In the meantime, follow us on social media for daily NIL tips and success stories.
+                </p>
             </div>
             
             <!-- CTA -->
@@ -461,7 +402,7 @@
             
             <!-- Social Links -->
             <div class="social-links">
-                <p class="social-links-title">Follow Us For Daily NIL Tips & Success Stories</p>
+                <p class="social-links-title">Stay Connected</p>
                 <div class="social-buttons">
                     <a href="https://instagram.com/the99sports" target="_blank" class="social-button">
                         <svg viewBox="0 0 24 24">
