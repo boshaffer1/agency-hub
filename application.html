@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The 99 Network - Discover the proven system elite athletes use to secure 6-figure brand deals and build lasting partnerships">
+    <title>The 99 Network - Transform Your Athletic Brand Into a 6-Figure Business</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/the99-circle-favicon.png">
+    <link rel="shortcut icon" type="image/png" href="assets/images/the99-circle-favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Hyros Tracking Code -->
+    <script>
+    var head = document.head;
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = "https://214451.t.hyros.com/v1/lst/universal-script?ph=917d2e30bc02420cee197e09fa7d3a1bf1717ad6062173f72a939f774ee0a334&tag=!clicked&ref_url=" + encodeURI(document.URL) ;
+    head.appendChild(script);
+    </script>
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --black: #0A0A0A;
+            --white: #FFFFFF;
+            --dark-gray: #1A1A1A;
+            --muted-white: rgba(255, 255, 255, 0.8);
+            --gold-glow: 0 0 30px rgba(212, 175, 55, 0.4);
+            --gold-shadow: 0 4px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            padding: 40px 20px 60px;
+            background: linear-gradient(180deg, var(--black) 0%, #0f0f0f 50%, var(--black) 100%);
+            position: relative;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 500px;
+            background: radial-gradient(ellipse at center top, rgba(212, 175, 55, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Logo */
+        .logo {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .logo h2 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: -0.02em;
+            text-shadow: var(--gold-glow);
+        }
+        
+        /* Headline */
+        .headline {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .headline h1 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: clamp(28px, 4vw, 48px);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, var(--white) 0%, var(--muted-white) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .headline .gold-text {
+            color: var(--gold);
+            -webkit-text-fill-color: var(--gold);
+            text-shadow: var(--gold-glow);
+        }
+        
+        .subheadline {
+            font-size: clamp(18px, 3vw, 24px);
+            color: var(--muted-white);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        
+        /* Video Section */
+        .video-section {
+            margin: 50px auto;
+            max-width: 1100px;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), var(--gold-shadow);
+            background: #000;
+        }
+        
+        .video-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, transparent, var(--gold), transparent);
+            opacity: 0.3;
+            border-radius: 20px;
+            z-index: -1;
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 60px auto;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 24px 60px;
+            background: linear-gradient(135deg, var(--gold) 0%, #c4a235 100%);
+            color: var(--black);
+            font-family: 'Unbounded', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 60px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: var(--gold-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.5);
+        }
+        
+        .cta-button svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+        
+        .urgency-text {
+            margin-top: 20px;
+            font-size: 16px;
+            color: var(--gold);
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Social Proof Section */
+        .social-proof {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, var(--black) 0%, var(--dark-gray) 50%, var(--black) 100%);
+        }
+        
+        .section-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: var(--muted-white);
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto 80px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.02) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--gold-shadow);
+            border-color: var(--gold);
+        }
+        
+        .stat-number {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 56px;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 10px;
+            text-shadow: var(--gold-glow);
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), #c4a235);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--black);
+            flex-shrink: 0;
+        }
+        
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .testimonial-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-info .sport {
+            font-size: 14px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--muted-white);
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-result {
+            padding: 15px;
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 3px solid var(--gold);
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 80px 20px;
+            background: var(--black);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 30px;
+        }
+        
+        .feature-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        
+        .feature-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--muted-white);
+        }
+        
+        /* Final CTA Section */
+        .final-cta {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, var(--dark-gray) 0%, var(--black) 100%);
+            text-align: center;
+            position: relative;
+        }
+        
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .final-cta .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .final-headline {
+            font-family: 'Unbounded', sans-serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        
+        .final-subheadline {
+            font-size: 20px;
+            color: var(--muted-white);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            background: var(--black);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .footer-disclaimer {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.6;
+        }
+        
+        .footer-disclaimer h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Carousel Responsive Styles */
+        @media (max-width: 768px) {
+            .carousel-prev, .carousel-next {
+                display: none !important;
+            }
+            
+            .testimonial-card {
+                padding: 30px !important;
+            }
+            
+            .testimonial-text {
+                font-size: 18px !important;
+            }
+            
+            .carousel-container {
+                min-height: 240px;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 30px 15px 40px;
+            }
+            
+            .logo h2 {
+                font-size: 28px;
+            }
+            
+            .cta-button {
+                padding: 20px 40px;
+                font-size: 18px;
+            }
+            
+            .stats-grid,
+            .testimonials-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .stat-card {
+                padding: 30px;
+            }
+            
+            .stat-number {
+                font-size: 42px;
+            }
+            
+            .feature-card {
+                padding: 30px;
+            }
+            
+            .final-cta {
+                padding: 60px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .headline h1 {
+                font-size: 32px;
+            }
+            
+            .subheadline {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .testimonial-card {
+                padding: 20px;
+            }
+            
+            .cta-button {
+                padding: 18px 30px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="assets/images/the99-white-logo.png" alt="The 99 Network" style="height: 60px; width: auto;">
+            </div>
+            
+            <!-- Headline -->
+            <div class="headline">
+                <h1>
+                    I Wasn't The Best Player On My Team... 
+                    But I Became One Of The <span class="gold-text">Highest-Paid NIL Athletes</span> 
+                    In America. Here's How:
+                </h1>
+                <p class="subheadline">
+                    Discover the proven system that landed me 70+ brand deals without being a star player
+                </p>
+            </div>
+            
+            <!-- Video Section -->
+            <div class="video-section">
+                <div class="video-wrapper">
+                    <!-- Wistia Video Embed -->
+                    <script src="https://fast.wistia.com/player.js" async></script>
+                    <script src="https://fast.wistia.com/embed/i6ybjfr84g.js" async type="module"></script>
+                    <style>
+                        wistia-player[media-id='i6ybjfr84g']:not(:defined) { 
+                            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/i6ybjfr84g/swatch'); 
+                            display: block; 
+                            filter: blur(5px); 
+                            padding-top: 56.25%; 
+                        }
+                        .video-wrapper wistia-player {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    </style>
+                    <wistia-player media-id="i6ybjfr84g" seo="false" aspect="1.7777777777777777"></wistia-player>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <a href="https://the99sports.typeform.com/contact" target="_blank" class="cta-button">
+                    Apply To Join The 99 Network
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Social Proof Section with Rotating Testimonials -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 class="section-title">Trusted by Industry Leaders</h2>
+            <p class="section-subtitle">
+                Coaches, executives, and brands trust The 99 Network to transform athlete potential
+            </p>
+            
+            <!-- Rotating Testimonials Carousel -->
+            <div class="testimonials-carousel" style="position: relative; max-width: 900px; margin: 60px auto;">
+                <div class="carousel-container" style="overflow: hidden; position: relative; min-height: 280px;">
+                    <div class="carousel-track" style="display: flex; transition: transform 0.5s ease;">
+                        <!-- Testimonial 1 -->
+                        <div class="carousel-slide" style="min-width: 100%; padding: 0 20px;">
+                            <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; text-align: center;">
+                                <div class="testimonial-avatar" style="width: 80px; height: 80px; background: white; border-radius: 50%; padding: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/ncaa-logo.png" alt="NCAA" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <p class="testimonial-text" style="font-size: 20px; line-height: 1.6; color: var(--muted-white); margin-bottom: 25px; font-style: italic;">
+                                    "Trace bridges the gap between athletes, brands, and universities in a way I haven't seen before. He understands the complexities of the NIL landscape."
+                                </p>
+                                <h4 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">Jim Isch</h4>
+                                <p class="sport" style="font-size: 14px; color: var(--muted-white); text-transform: uppercase; letter-spacing: 1px;">NCAA Executive / Former COO</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="carousel-slide" style="min-width: 100%; padding: 0 20px;">
+                            <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; text-align: center;">
+                                <div class="testimonial-avatar" style="width: 80px; height: 80px; background: white; border-radius: 50%; padding: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/lsu-logo.png" alt="LSU" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <p class="testimonial-text" style="font-size: 20px; line-height: 1.6; color: var(--muted-white); margin-bottom: 25px; font-style: italic;">
+                                    "Trace has built a powerful brand that serves as a model for student-athletes everywhere. His framework is practical and proven."
+                                </p>
+                                <h4 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">Matt McMahon</h4>
+                                <p class="sport" style="font-size: 14px; color: var(--muted-white); text-transform: uppercase; letter-spacing: 1px;">LSU Head Basketball Coach</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="carousel-slide" style="min-width: 100%; padding: 0 20px;">
+                            <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; text-align: center;">
+                                <div class="testimonial-avatar" style="width: 80px; height: 80px; background: white; border-radius: 50%; padding: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/nike-logo.png" alt="Nike" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <p class="testimonial-text" style="font-size: 20px; line-height: 1.6; color: var(--muted-white); margin-bottom: 25px; font-style: italic;">
+                                    "Trace has proven success building athlete brands. His framework for personal branding and deal-making is invaluable for any program."
+                                </p>
+                                <h4 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">Ian Hamilton</h4>
+                                <p class="sport" style="font-size: 14px; color: var(--muted-white); text-transform: uppercase; letter-spacing: 1px;">Former Nike Global Marketing Director</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 4 -->
+                        <div class="carousel-slide" style="min-width: 100%; padding: 0 20px;">
+                            <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; text-align: center;">
+                                <div class="testimonial-avatar" style="width: 80px; height: 80px; background: white; border-radius: 50%; padding: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/louisville-logo.png" alt="Louisville" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <p class="testimonial-text" style="font-size: 20px; line-height: 1.6; color: var(--muted-white); margin-bottom: 25px; font-style: italic;">
+                                    "Trace has the credibility to speak on NIL because he's lived it. His experience closing 70+ deals gives him a perspective that resonates with our athletes."
+                                </p>
+                                <h4 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">Ronnie Hamilton</h4>
+                                <p class="sport" style="font-size: 14px; color: var(--muted-white); text-transform: uppercase; letter-spacing: 1px;">Louisville Assistant Coach</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 5 -->
+                        <div class="carousel-slide" style="min-width: 100%; padding: 0 20px;">
+                            <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; text-align: center;">
+                                <div class="testimonial-avatar" style="width: 80px; height: 80px; background: white; border-radius: 50%; padding: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/rice-logo.png" alt="Rice" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <p class="testimonial-text" style="font-size: 20px; line-height: 1.6; color: var(--muted-white); margin-bottom: 25px; font-style: italic;">
+                                    "Trace understands NIL from every angle—athlete, brand, institution. That 360-degree perspective makes his insights uniquely valuable."
+                                </p>
+                                <h4 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">Rob Lanier</h4>
+                                <p class="sport" style="font-size: 14px; color: var(--muted-white); text-transform: uppercase; letter-spacing: 1px;">Rice Head Basketball Coach</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 6 -->
+                        <div class="carousel-slide" style="min-width: 100%; padding: 0 20px;">
+                            <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; text-align: center;">
+                                <div class="testimonial-avatar" style="width: 80px; height: 80px; background: white; border-radius: 50%; padding: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/smu-logo.png" alt="SMU" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <p class="testimonial-text" style="font-size: 20px; line-height: 1.6; color: var(--muted-white); margin-bottom: 25px; font-style: italic;">
+                                    "The platform Trace has built gives athletes a real blueprint for success. It's not theory—it's actionable and it works."
+                                </p>
+                                <h4 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">Chris Capko</h4>
+                                <p class="sport" style="font-size: 14px; color: var(--muted-white); text-transform: uppercase; letter-spacing: 1px;">SMU Assistant Coach</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 7 -->
+                        <div class="carousel-slide" style="min-width: 100%; padding: 0 20px;">
+                            <div class="testimonial-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; text-align: center;">
+                                <div class="testimonial-avatar" style="width: 80px; height: 80px; background: white; border-radius: 50%; padding: 10px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/minnesota-logo.png" alt="Minnesota" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <p class="testimonial-text" style="font-size: 20px; line-height: 1.6; color: var(--muted-white); margin-bottom: 25px; font-style: italic;">
+                                    "What sets Trace apart is his authenticity. Athletes trust him because he's been in their shoes and built something real."
+                                </p>
+                                <h4 style="font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 5px;">Aaron Katsuma</h4>
+                                <p class="sport" style="font-size: 14px; color: var(--muted-white); text-transform: uppercase; letter-spacing: 1px;">Minnesota Assistant Coach</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Dots -->
+                <div class="carousel-dots" style="display: flex; justify-content: center; gap: 8px; margin-top: 30px;">
+                    <button class="dot active" style="width: 10px; height: 10px; border-radius: 50%; background: var(--gold); border: none; cursor: pointer; transition: all 0.3s;" onclick="goToSlide(0)"></button>
+                    <button class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(212, 175, 55, 0.3); border: none; cursor: pointer; transition: all 0.3s;" onclick="goToSlide(1)"></button>
+                    <button class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(212, 175, 55, 0.3); border: none; cursor: pointer; transition: all 0.3s;" onclick="goToSlide(2)"></button>
+                    <button class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(212, 175, 55, 0.3); border: none; cursor: pointer; transition: all 0.3s;" onclick="goToSlide(3)"></button>
+                    <button class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(212, 175, 55, 0.3); border: none; cursor: pointer; transition: all 0.3s;" onclick="goToSlide(4)"></button>
+                    <button class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(212, 175, 55, 0.3); border: none; cursor: pointer; transition: all 0.3s;" onclick="goToSlide(5)"></button>
+                    <button class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(212, 175, 55, 0.3); border: none; cursor: pointer; transition: all 0.3s;" onclick="goToSlide(6)"></button>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="carousel-prev" style="position: absolute; left: -40px; top: 50%; transform: translateY(-50%); background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s;" onclick="prevSlide()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="carousel-next" style="position: absolute; right: -40px; top: 50%; transform: translateY(-50%); background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s;" onclick="nextSlide()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">YOUR COMPLETE <span class="gold-text">NIL ACCELERATION SYSTEM</span></h2>
+            <p class="section-subtitle">
+                Everything you need to transform your athletic career into lasting financial success
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="margin-bottom: 20px; background: transparent; width: auto; height: auto;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="var(--gold)" style="filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));">
+                            <path d="M5 7h14l-.89 10.698a2 2 0 0 1-1.98 1.802h-8.26a2 2 0 0 1-1.98-1.802L5 7zm2 0l.5-2.571A1.5 1.5 0 0 1 8.973 3h6.054A1.5 1.5 0 0 1 16.5 4.429L17 7M10 12v3m4-3v3"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" style="color: var(--gold);">Exclusive Brand Partnerships</h3>
+                    <p class="feature-description">
+                        Get priority access to brand deals before they hit the market. Our direct relationships with Fortune 500 companies and emerging brands deliver opportunities that others never even hear about.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="margin-bottom: 20px; background: transparent; width: auto; height: auto;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="var(--gold)" style="filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" style="color: var(--gold);">AI Deal Engine</h3>
+                    <p class="feature-description">
+                        Let our AI do the outreach—you focus on playing. Our tools contact brands locally and globally with professional pitches, personalized campaigns, and follow-ups to secure real NIL deals. No guessing. Just smarter outreach.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="margin-bottom: 20px; background: transparent; width: auto; height: auto;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" style="color: var(--gold);">Smart Content Calendar</h3>
+                    <p class="feature-description">
+                        Know exactly what to post—and when. A custom content calendar built for growth with trend inspiration, examples from top creators, and endless ideas so you never hit a creative wall again.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="margin-bottom: 20px; background: transparent; width: auto; height: auto;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" style="color: var(--gold);">NIL Workshops & Coaching</h3>
+                    <p class="feature-description">
+                        Hands-on support from elite NIL coaches. Our workshops give you direct guidance, feedback, accountability, and support from the best NIL brand-building minds in the world.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="margin-bottom: 20px; background: transparent; width: auto; height: auto;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" style="color: var(--gold);">Exclusive Athlete Creator Community</h3>
+                    <p class="feature-description">
+                        Join a private network of driven athlete-creators worldwide who collaborate, support each other's content, share strategies, and help amplify every post.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="margin-bottom: 20px; background: transparent; width: auto; height: auto;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" style="color: var(--gold);">The 99 Playbook</h3>
+                    <p class="feature-description">
+                        A proven system to monetize every platform. Step-by-step guidance on how to build, grow, and turn your brand into income across Instagram, TikTok, YouTube, and more.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="apply">
+        <div class="container">
+            <h2 class="final-headline">
+                Your Competition Is Already <span class="gold-text">Getting Ahead</span>
+            </h2>
+            <p class="final-subheadline">
+                While you're waiting for the "perfect time," other athletes are securing the brand deals you deserve. 
+                Don't let another season pass without maximizing your earning potential.
+            </p>
+            
+            <a href="https://the99sports.typeform.com/contact" target="_blank" class="cta-button">
+                Secure Your Spot Now
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor"/>
+                </svg>
+            </a>
+            
+            <p class="urgency-text" style="margin-top: 30px;">
+                🔒 Your information is 100% secure and will never be shared
+            </p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-disclaimer">
+                <p>© 2024 The 99 Network. All Rights Reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Testimonial Carousel
+        let currentSlide = 0;
+        const totalSlides = 7;
+        const track = document.querySelector('.carousel-track');
+        const dots = document.querySelectorAll('.carousel-dots .dot');
+        let autoPlayInterval;
+        
+        function updateSlide(index) {
+            currentSlide = index;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                if (i === currentSlide) {
+                    dot.classList.add('active');
+                    dot.style.background = 'var(--gold)';
+                } else {
+                    dot.classList.remove('active');
+                    dot.style.background = 'rgba(212, 175, 55, 0.3)';
+                }
+            });
+        }
+        
+        function goToSlide(index) {
+            updateSlide(index);
+            resetAutoPlay();
+        }
+        
+        function nextSlide() {
+            const next = (currentSlide + 1) % totalSlides;
+            updateSlide(next);
+            resetAutoPlay();
+        }
+        
+        function prevSlide() {
+            const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlide(prev);
+            resetAutoPlay();
+        }
+        
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                nextSlide();
+            }, 5000); // Change slide every 5 seconds
+        }
+        
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+        
+        // Start autoplay when page loads
+        startAutoPlay();
+        
+        // Pause on hover
+        const carousel = document.querySelector('.testimonials-carousel');
+        if (carousel) {
+            carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+            carousel.addEventListener('mouseleave', () => startAutoPlay());
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.stat-card, .testimonial-card, .feature-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
