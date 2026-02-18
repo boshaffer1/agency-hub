@@ -11,6 +11,7 @@
     { "source": "/the99sports", "destination": "/the99sports-site/the99sports-landing.html" },
     { "source": "/the99sports-funnel", "destination": "/the99sports-site/two-step-funnel-final.html" },
     { "source": "/deal-club", "destination": "/monthly-deal-club-site/index.html" },
-    { "source": "/deal-club/:path*", "destination": "/monthly-deal-club-site/:path*" }
+    { "source": "/deal-club/:path*", "destination": "/monthly-deal-club-site/:path*" },
+    { "source": "/optin", "destination": "/optin.html" }
   ]
 }
